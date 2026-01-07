@@ -52,6 +52,7 @@
   --color-wine: var(--wine);
   --color-gold: var(--gold);
   --color-light-gold: var(--light-gold);
+  --color-dark-blood: var(--dark-blood);
 }
 
 :root {
@@ -90,6 +91,7 @@
 
   --darken-wine: oklch(0.1929 0.0669 26.17);
   --wine: oklch(0.2404 0.098661 29.2339);
+  --dark-blood: oklch(0.2548 0.0634 22.66);
   --gold: oklch(0.8173 0.0644 82.5);
   --light-gold: oklch(0.9627 0.0361 82.18);
 }
