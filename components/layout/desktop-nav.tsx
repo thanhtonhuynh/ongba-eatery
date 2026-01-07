@@ -20,7 +20,7 @@ export function DesktopNav() {
       <ul className="font-titoli flex">
         {navItems.map((item, i) => (
           <li key={i}>
-            <Button className="text-2xl uppercase" variant="link">
+            <Button className="text-xl uppercase" variant="link">
               <Link href={item.href}>{item.title}</Link>
             </Button>
           </li>
