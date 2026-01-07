@@ -24,7 +24,7 @@ export function Locations() {
 
           <div className="space-y-2 text-center">
             <h2 className="font-titoli text-xl font-bold">Coquitlam</h2>
-            <p>976 Denman St, Vancouver, BC V6G 2M1</p>
+            <p>1163 Pinetree Wy Unit 1045, Coquitlam, BC V3B 7Z3</p>
             <p>(+1) 604-620-5595</p>
           </div>
         </div>

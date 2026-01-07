@@ -50,7 +50,7 @@ function PatternPanel() {
 
       <div className="absolute inset-0 bg-[url('/pattern-lightgold.svg')] bg-size-[400px] bg-center bg-repeat opacity-50" />
 
-      <div className="absolute inset-0 bg-linear-to-b from-black/5 to-black/20" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/5 to-black/30" />
     </div>
   );
 }
