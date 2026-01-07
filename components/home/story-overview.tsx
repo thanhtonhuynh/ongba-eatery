@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Heading } from "../heading";
 import { DoubleBorderButton } from "../ui/button";
 
 export function StoryOverview() {
@@ -7,7 +8,7 @@ export function StoryOverview() {
       <PatternPanel />
 
       <div className="flex flex-col items-center justify-center gap-8 px-4 text-center">
-        <h1 className="font-titoli text-5xl tracking-wide uppercase">Our Story</h1>
+        <Heading>Our Story</Heading>
         <p className="text-lg">
           Our parents&apos; love story is one of sacrifice, strength, and unbreakable faith.
         </p>
