@@ -1,15 +1,16 @@
+import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indicator";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Figtree } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const titoli = localFont({
+  src: "../public/titoliDiTesta.woff2",
+  variable: "--font-titoli",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className={`${figtree.variable} ${titoli.variable}`}>
+      <body className={`antialiased`}>
+        <div className="relative mx-auto flex min-h-screen flex-col scroll-smooth">
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+        </div>
+        <TailwindScreenSizeIndicator />
       </body>
     </html>
   );
