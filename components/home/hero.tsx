@@ -24,7 +24,7 @@ export function Hero() {
 
         <DoubleBorderButton
           size={"lg"}
-          className={"font-titoli h-14 p-6 text-xl tracking-wide uppercase"}
+          className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
         >
           <Link href="#">Reserve a table</Link>
         </DoubleBorderButton>

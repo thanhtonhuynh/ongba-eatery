@@ -48,7 +48,8 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  --color-darken-wine: var(--darken-wine);
+  --color-darkest-wine: var(--darkest-wine);
+  --color-dark-wine: var(--dark-wine);
   --color-wine: var(--wine);
   --color-gold: var(--gold);
   --color-light-gold: var(--light-gold);
@@ -89,7 +90,8 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --darken-wine: oklch(0.1929 0.0669 26.17);
+  --darkest-wine: oklch(0.1758 0.0421 22.37);
+  --dark-wine: oklch(0.1929 0.0669 26.18);
   --wine: oklch(0.2404 0.098661 29.2339);
   --dark-blood: oklch(0.2548 0.0634 22.66);
   --gold: oklch(0.8173 0.0644 82.5);
@@ -135,6 +137,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-darken-wine text-gold;
+    @apply bg-darkest-wine text-gold;
   }
 }
