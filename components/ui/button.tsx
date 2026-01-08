@@ -12,7 +12,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-gold text-foreground hover:bg-light-gold",
         outline:
-          "border-border bg-input/30 hover:bg-input/50 hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
+          "border-gold bg-light-gold/30 hover:bg-light-gold/50 hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
         ghost:
@@ -57,12 +57,18 @@ function Button({
 
 function DoubleBorderButton({
   className,
+  disabled,
   variant = "default",
   size = "default",
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
   return (
-    <div className="border-gold inline-flex items-center justify-center rounded-full border p-1">
+    <div
+      className={cn(
+        "border-gold inline-flex items-center justify-center rounded-full border p-1",
+        disabled && "opacity-50",
+      )}
+    >
       <ButtonPrimitive
         data-slot="button"
         className={cn(buttonVariants({ variant, size, className }), "rounded-full")}

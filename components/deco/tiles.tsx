@@ -28,7 +28,7 @@ export function TileImage({
   return (
     <div
       className={cn(
-        "relative aspect-square overflow-hidden border border-[#f7ce83]/45",
+        "border-gold/50 relative aspect-square overflow-hidden border",
         variant === "square" && "rounded-none",
         variant === "roundTL" && "rounded-tl-[200px]",
         variant === "roundBL" && "rounded-bl-[200px]",

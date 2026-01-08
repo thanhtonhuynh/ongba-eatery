@@ -1,6 +1,6 @@
-import LogoGold from "@/assets/logo-gold.png";
-import Image from "next/image";
+import Link from "next/link";
 import { Heading } from "../heading";
+import { OngbaWithLogo } from "../ongba-with-logo";
 import { DoubleBorderButton } from "../ui/button";
 
 export function StoryOverview() {
@@ -14,27 +14,13 @@ export function StoryOverview() {
           Our parents&apos; love story is one of sacrifice, strength, and unbreakable faith.
         </p>
 
-        <div className="relative">
-          <Image
-            src={LogoGold}
-            alt="Ongba's Logo"
-            className="absolute top-1/4 left-1/2 h-1/3 w-auto -translate-x-1/2 -translate-y-1/2"
-          />
-
-          <Image
-            src={"/story-overview.png"}
-            alt="Our Story"
-            width={422}
-            height={562}
-            className="border-gold rounded-tl-[100px] rounded-br-[100px] border object-cover"
-          />
-        </div>
+        <OngbaWithLogo width={422} height={562} />
 
         <DoubleBorderButton
           size={"lg"}
           className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
         >
-          Read More
+          <Link href={"/story"}>Read More</Link>
         </DoubleBorderButton>
       </div>
 
@@ -45,12 +31,10 @@ export function StoryOverview() {
 
 function PatternPanel() {
   return (
-    <div className="relative hidden min-h-screen md:block">
-      <div className="bg-wine absolute inset-0" />
+    <div className="bg-wine relative hidden min-h-screen md:block">
+      <div className="absolute inset-0 bg-[url('/pattern-lightgold.svg')] bg-size-[400px] bg-center bg-repeat opacity-40" />
 
-      <div className="absolute inset-0 bg-[url('/pattern-lightgold.svg')] bg-size-[400px] bg-center bg-repeat opacity-50" />
-
-      <div className="absolute inset-0 bg-linear-to-b from-black/5 to-black/30" />
+      <div className="to-darkest-wine/80 from-darkest-wine/5 absolute inset-0 bg-linear-to-b" />
     </div>
   );
 }
