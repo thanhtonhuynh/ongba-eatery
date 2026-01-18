@@ -72,7 +72,7 @@ export function DoubleImageCarousel({ slides }: { slides: DoubleSlide[] }) {
               >
                 <span
                   className={cn(
-                    "absolute size-3.5 rounded-full transition-all",
+                    "absolute size-3.5 rounded-full transition-all duration-200",
                     active ? "bg-gold scale-100" : "scale-50 bg-transparent",
                   )}
                 />

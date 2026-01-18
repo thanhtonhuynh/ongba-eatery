@@ -2,11 +2,16 @@ import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indi
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
 const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
+
+const bricolage_grotesque = Bricolage_Grotesque({
+  subsets: ["vietnamese"],
+  variable: "--font-bricolage-grotesque",
+});
 
 const titoli = localFont({
   src: "../public/titoliDiTesta.woff2",
@@ -24,7 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${figtree.variable} ${titoli.variable}`}>
+    <html
+      lang="en"
+      className={`${figtree.variable} ${titoli.variable} ${bricolage_grotesque.variable}`}
+    >
       <body className={`antialiased`}>
         <div className="relative mx-auto flex min-h-screen flex-col scroll-smooth">
           <Header />

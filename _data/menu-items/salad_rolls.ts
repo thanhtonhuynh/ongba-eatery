@@ -1,0 +1,53 @@
+import { MenuItem } from "@/_types";
+
+export const salad_rolls: MenuItem[] = [
+  {
+    id: "special_salad_roll",
+    category: "salad_rolls",
+    title: "Gỏi Cuốn Đặc Biệt",
+    subtitle: "House Special Salad Rolls",
+    description: "Salad rolls stuffed with spring rolls\nChoice: pork / veggie spring rolls",
+    price: 14,
+    imgSrc: "/menu/salad_rolls/special_salad_roll.png",
+    dietary: ["gluten", "pork", "vegetarian", "peanut"],
+    badge: "best_seller",
+  },
+  {
+    id: "prawn_salad_roll",
+    category: "salad_rolls",
+    title: "Gỏi Cuốn Tôm",
+    subtitle: "Prawn Salad Rolls",
+    price: 12,
+    imgSrc: "/menu/salad_rolls/prawn_salad_roll.png",
+    dietary: ["seafood", "peanut"],
+  },
+  {
+    id: "chicken_salad_roll",
+    category: "salad_rolls",
+    title: "Gỏi Cuốn Gà Nướng Xả",
+    subtitle: "Chicken Salad Rolls",
+    price: 13,
+    imgSrc: "/menu/salad_rolls/chicken_salad_roll.png",
+    dietary: ["chicken", "peanut"],
+    badge: "best_seller",
+  },
+  {
+    id: "tofu_salad_roll",
+    category: "salad_rolls",
+    title: "Gỏi Cuốn Đậu Phụ Chiên Ướp Xả",
+    subtitle: "Tofu Salad Rolls",
+    price: 13,
+    imgSrc: "/menu/salad_rolls/tofu_salad_roll.png",
+    dietary: ["vegetarian", "peanut"],
+    badge: "best_seller",
+  },
+  {
+    id: "avocado_salad_roll",
+    category: "salad_rolls",
+    title: "Gỏi Cuốn Bơ",
+    subtitle: "Avocado Salad Rolls",
+    price: 12,
+    imgSrc: "/menu/salad_rolls/avocado_salad_roll.png",
+    dietary: ["vegetarian", "peanut"],
+  },
+];
