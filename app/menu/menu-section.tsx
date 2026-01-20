@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
 
 type Props = {
+  id: string;
+  isFeatured?: boolean;
   index?: number;
   title: string;
   description?: string;
@@ -11,14 +13,19 @@ type Props = {
   addOns?: AddOnItem[];
 };
 
-export function MenuSection({ index, title, description, items, addOns }: Props) {
+export function MenuSection({ id, isFeatured, index, title, description, items, addOns }: Props) {
   if (items.length === 0) {
     return null;
   }
 
   return (
     <section
-      className={cn("space-y-6 p-6", index !== undefined && index % 2 === 0 && "bg-dark-wine")}
+      id={id}
+      className={cn(
+        "space-y-6 p-6",
+        index !== undefined && index % 2 === 0 && "bg-dark-wine",
+        isFeatured && "bg-wine",
+      )}
     >
       <OrnamentLine />
 
@@ -40,8 +47,8 @@ export function MenuSection({ index, title, description, items, addOns }: Props)
 
         {/* Add-ons */}
         {addOns && addOns.length > 0 && (
-          <div className="space-y-1">
-            <h3 className="text-lg font-semibold uppercase">Add-Ons</h3>
+          <div className="space-y-1 text-sm">
+            <h3 className="text-base font-bold uppercase">Add-Ons</h3>
             <ul className="space-y-2">
               {addOns.map((addOn, idx) => (
                 <li key={idx} className="uppercase">

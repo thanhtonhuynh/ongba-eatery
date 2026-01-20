@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${titoli.variable} ${bricolage_grotesque.variable}`}
+      className={`${figtree.variable} ${titoli.variable} ${bricolage_grotesque.variable} scroll-smooth`}
     >
       <body className={`antialiased`}>
         <div className="relative mx-auto flex min-h-screen flex-col scroll-smooth">
