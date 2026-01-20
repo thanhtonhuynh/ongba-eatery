@@ -6,7 +6,7 @@ export type MenuCategoryKey =
   | "noodle_soup"
   | "rice_and_vermicelli"
   | "drink"
-  | "dessert";
+  | "desserts";
 
 export type MenuBadge = "new" | "best_seller";
 
@@ -53,10 +53,16 @@ export type MenuItem = {
   badge?: MenuBadge;
 };
 
+export type AddOnItem = {
+  title: string;
+  price: number;
+};
+
 export type MenuCategory = {
   key: MenuCategoryKey;
   title: string;
   description?: string;
+  addOns?: AddOnItem[];
 };
 
 export type Curated = {

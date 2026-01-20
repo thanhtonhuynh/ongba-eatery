@@ -8,10 +8,10 @@ type Props = {
 
 export function ItemCard({ item }: Props) {
   return (
-    <Card className="text-gold border-gold/50 relative flex flex-row items-start border bg-transparent px-6 py-4">
+    <Card className="text-gold border-gold/50 relative flex max-w-lg flex-row items-start bg-transparent py-3">
       {/* New badge */}
       {item.badge && (
-        <div className="absolute top-3 left-4">
+        <div className="absolute top-1 left-1">
           {BADGE_META[item.badge].iconSrc ? (
             <>
               <Image
@@ -38,7 +38,7 @@ export function ItemCard({ item }: Props) {
       <div className="flex-1">
         <CardHeader className="px-0">
           {/* Dish name */}
-          <CardTitle className="font-bricolage-grotesque flex items-start justify-between font-semibold">
+          <CardTitle className="font-bricolage-grotesque flex items-start justify-between gap-1 font-bold">
             <div className="flex flex-col gap-1 tracking-tight uppercase">
               <span>{item.title}</span>
               {item.subtitle && <span>{item.subtitle}</span>}
@@ -47,10 +47,13 @@ export function ItemCard({ item }: Props) {
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="mt-4 space-y-2 px-0">
+        <CardContent className="mt-3 space-y-3 px-0">
+          {/* Dish description */}
+          {item.description && <p className="whitespace-pre-line">{item.description}</p>}
+
           {/* Dietary tags */}
           {item.dietary && item.dietary.length > 0 && (
-            <div className="flex gap-6">
+            <div className="flex gap-2">
               {item.dietary.map((tag) => {
                 const meta = DIETARY_META[tag];
 
@@ -63,15 +66,12 @@ export function ItemCard({ item }: Props) {
                       height={16}
                       className="inline-flex"
                     />
-                    {meta.label}
+                    <span className="sr-only">{meta.label}</span>
                   </span>
                 );
               })}
             </div>
           )}
-
-          {/* Dish description */}
-          {item.description && <p className="whitespace-pre-line">{item.description}</p>}
         </CardContent>
       </div>
     </Card>

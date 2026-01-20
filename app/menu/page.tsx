@@ -38,6 +38,7 @@ export default function MenuPage() {
           title={category.title}
           description={category.description}
           items={itemsByCategory[category.key] ?? []}
+          addOns={category.addOns}
         />
       ))}
     </>

@@ -2,6 +2,7 @@ import { MenuItem } from "@/_types";
 import { appetizer } from "./appetizer";
 import { banh_mi } from "./banh-mi";
 import { chefSpecialty } from "./chef-specialty";
+import { desserts } from "./dessert";
 import { drinks } from "./drinks";
 import { noodle_soup } from "./noodle-soup";
 import { rice_and_vermicelli } from "./rice-and-vermicelli";
@@ -15,4 +16,5 @@ export const menuItems: MenuItem[] = [
   ...noodle_soup,
   ...rice_and_vermicelli,
   ...drinks,
+  ...desserts,
 ];
