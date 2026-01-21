@@ -52,6 +52,25 @@ export default function MenuPage() {
           addOns={category.addOns}
         />
       ))}
+
+      {/* Catering with Us Section */}
+      <div className="bg-dark-wine flex flex-col items-center p-6 py-12">
+        <h2 className="font-titoli text-5xl font-bold tracking-wider uppercase">
+          Catering with Us
+        </h2>
+
+        <div className="mt-6 space-y-3">
+          <p>We offer catering services for all occasions. Contact us for more details!</p>
+          <p>
+            Email: <a href="mailto:ongbavietnamese@gmail.com">ongbavietnamese@gmail.com</a>
+          </p>
+          <p>
+            Phone: <a href="tel:+16046205595">+1 (604) 620-5595</a>
+          </p>
+        </div>
+      </div>
+
+      <HorizontalPatternBand />
     </>
   );
 }
