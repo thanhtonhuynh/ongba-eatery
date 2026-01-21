@@ -13,7 +13,7 @@ export default function MenuPage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <div className="flex flex-col items-center gap-8 px-6 py-16 text-center">
+      <div className="flex flex-col items-center gap-8 px-6 py-15 text-center">
         <Heading>Downtown Menu</Heading>
 
         <DoubleBorderButton

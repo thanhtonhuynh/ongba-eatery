@@ -9,9 +9,9 @@ type NavItem = {
 const navItems: NavItem[] = [
   { title: "Our Story", href: "/story" },
   { title: "Menu", href: "/menu" },
-  { title: "Career", href: "career" },
-  { title: "Contact", href: "contact" },
-  { title: "Merchandise", href: "merchandise" },
+  { title: "Careers", href: "/careers" },
+  { title: "Contact", href: "/contact" },
+  { title: "Merchandise", href: "/merchandise" },
 ];
 
 export function DesktopNav() {

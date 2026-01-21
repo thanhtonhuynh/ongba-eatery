@@ -71,3 +71,9 @@ export type Curated = {
   description?: string;
   items: MenuItem[];
 };
+
+export type Person = {
+  imgSrc: string;
+  name: string;
+  role: string;
+};
