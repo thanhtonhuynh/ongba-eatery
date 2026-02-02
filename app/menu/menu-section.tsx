@@ -1,4 +1,4 @@
-import { AddOnItem, MenuItem } from "@/_types";
+import { AddOnItem, MenuItem, Product } from "@/_types";
 import { OrnamentLine } from "@/components/deco/ornament-line";
 import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
@@ -9,7 +9,7 @@ type Props = {
   index?: number;
   title: string;
   description?: string;
-  items: MenuItem[];
+  items: MenuItem[] | Product[];
   addOns?: AddOnItem[];
 };
 

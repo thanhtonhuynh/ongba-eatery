@@ -1,4 +1,4 @@
-import { MenuCategory } from "@/_types";
+import { MenuCategory, ProductCategory } from "@/_types";
 
 export const categories: MenuCategory[] = [
   { key: "chef_specialty", title: "Chef's Specialty" },
@@ -48,3 +48,8 @@ export const categories: MenuCategory[] = [
   { key: "drink", title: "Beverages" },
   { key: "desserts", title: "Desserts" },
 ];
+
+export const productCategories = [
+  { key: "homemade", title: "Homemade Products" },
+  { key: "merchandise", title: "Merchandise" },
+] satisfies ProductCategory[];

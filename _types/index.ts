@@ -8,6 +8,8 @@ export type MenuCategoryKey =
   | "drink"
   | "desserts";
 
+export type ProductCategoryKey = "homemade" | "merchandise";
+
 export type MenuBadge = "new" | "best_seller";
 
 export const BADGE_META: Record<MenuBadge, { label: string; iconSrc?: string; sr: string }> = {
@@ -63,6 +65,23 @@ export type MenuCategory = {
   title: string;
   description?: string;
   addOns?: AddOnItem[];
+};
+
+export type ProductCategory = {
+  key: ProductCategoryKey;
+  title: string;
+  description?: string;
+};
+
+export type Product = {
+  id: string;
+  category: ProductCategoryKey;
+
+  title: string;
+  description?: string;
+
+  price: number;
+  imgSrc?: string;
 };
 
 export type Curated = {

@@ -1,16 +1,16 @@
-import { BADGE_META, DIETARY_META, MenuItem } from "@/_types";
+import { BADGE_META, DIETARY_META, MenuItem, Product } from "@/_types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
 type Props = {
-  item: MenuItem;
+  item: MenuItem | Product;
 };
 
 export function ItemCard({ item }: Props) {
   return (
     <Card className="text-gold border-gold/50 relative flex max-w-lg flex-row items-start bg-transparent py-3">
       {/* New badge */}
-      {item.badge && (
+      {"badge" in item && item.badge && (
         <div className="absolute top-1 left-1">
           {BADGE_META[item.badge].iconSrc ? (
             <>
@@ -41,7 +41,7 @@ export function ItemCard({ item }: Props) {
           <CardTitle className="font-bricolage-grotesque flex items-start justify-between gap-1 font-bold">
             <div className="flex flex-col gap-1 tracking-tight uppercase">
               <span>{item.title}</span>
-              {item.subtitle && <span>{item.subtitle}</span>}
+              {"subtitle" in item && item.subtitle && <span>{item.subtitle}</span>}
             </div>
             <span>{item.price}</span>
           </CardTitle>
@@ -52,7 +52,7 @@ export function ItemCard({ item }: Props) {
           {item.description && <p className="whitespace-pre-line">{item.description}</p>}
 
           {/* Dietary tags */}
-          {item.dietary && item.dietary.length > 0 && (
+          {"dietary" in item && item.dietary && item.dietary.length > 0 && (
             <div className="flex gap-2">
               {item.dietary.map((tag) => {
                 const meta = DIETARY_META[tag];
