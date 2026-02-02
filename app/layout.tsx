@@ -1,6 +1,5 @@
 import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indicator";
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
+import { Footer, Header } from "@/components/layout";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import localFont from "next/font/local";

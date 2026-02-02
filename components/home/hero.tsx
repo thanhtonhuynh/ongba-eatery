@@ -5,7 +5,7 @@ import { DoubleBorderButton } from "../ui/button";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-var(--spacing)*16)] flex-col place-content-center">
+    <section className="relative flex min-h-screen flex-col place-content-center">
       <Image src={"/hero-image.jpg"} alt="Hero" fill className="object-cover" />
       <div className="bg-foreground/80 absolute inset-0" />
 
