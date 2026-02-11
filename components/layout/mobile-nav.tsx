@@ -56,16 +56,16 @@ export function MobileNav() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative lg:hidden">
       <motion.nav
         initial={false}
         animate={isOpen ? "open" : "closed"}
         custom={{ origin }}
         ref={containerRef}
-        className="relative lg:hidden"
+        className="relative"
       >
         <motion.div
-          className="fixed inset-0 z-40 bg-red-500"
+          className="bg-dark-wine fixed inset-0 z-40"
           variants={sidebarVariants}
           custom={{ origin }}
         />

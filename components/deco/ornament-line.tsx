@@ -5,6 +5,7 @@ type Props = {
   size?: "full" | "half";
 };
 
+/** Decorative line with a star in the center */
 export function OrnamentLine({ size = "full" }: Props) {
   return (
     <div className="relative flex items-center justify-center gap-2">
@@ -15,6 +16,7 @@ export function OrnamentLine({ size = "full" }: Props) {
   );
 }
 
+/** Dashed line */
 function DashedLine({ size }: Props) {
   return (
     <div

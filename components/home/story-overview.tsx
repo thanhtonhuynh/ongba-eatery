@@ -1,40 +1,45 @@
 import Link from "next/link";
-import { Heading } from "../heading";
 import { OngbaWithLogo } from "../ongba-with-logo";
+import { Typography } from "../typography";
 import { DoubleBorderButton } from "../ui/button";
 
 export function StoryOverview() {
   return (
     <section className="bg-dark-wine grid min-h-screen grid-cols-1 md:grid-cols-[1fr_2fr_1fr]">
-      <PatternPanel />
+      <PatternPanel position="top" />
 
-      <div className="flex flex-col items-center justify-center gap-8 px-4 text-center">
-        <Heading>Our Story</Heading>
-        <p className="text-lg">
+      <div className="flex flex-col items-center justify-center gap-6 px-6 py-12 text-center sm:gap-8">
+        <Typography variant="h1">Our Story</Typography>
+
+        <Typography variant="body">
           Our parents&apos; love story is one of sacrifice, strength, and unbreakable faith.
-        </p>
+        </Typography>
 
-        <OngbaWithLogo width={422} height={562} />
+        <div className="mt-2 w-full max-w-[250px] sm:max-w-[350px] md:max-w-[422px]">
+          <OngbaWithLogo width={422} height={562} />
+        </div>
 
-        <DoubleBorderButton
-          size={"lg"}
-          className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
-        >
-          <Link href={"/story"}>Read More</Link>
-        </DoubleBorderButton>
+        <DoubleBorderButton nativeButton={false} render={<Link href={"/story"}>Read More</Link>} />
       </div>
 
-      <PatternPanel />
+      <PatternPanel position="bottom" />
     </section>
   );
 }
 
-function PatternPanel() {
+function PatternPanel({ position }: { position: "top" | "bottom" }) {
   return (
-    <div className="bg-wine relative hidden min-h-screen md:block">
+    <div className="bg-wine relative md:block md:min-h-screen">
       <div className="absolute inset-0 bg-[url('/pattern-lightgold.svg')] bg-size-[400px] bg-center bg-repeat opacity-40" />
 
-      <div className="to-darkest-wine/80 from-darkest-wine/5 absolute inset-0 bg-linear-to-b" />
+      {/* On &lt; md: top panel fades at bottom; bottom panel fades at top (opposite). On md+: same gradient for both. */}
+      <div
+        className={
+          position === "top"
+            ? "to-darkest-wine/80 from-darkest-wine/5 absolute inset-0 bg-linear-to-b"
+            : "max-md:from-darkest-wine/80 max-md:to-darkest-wine/5 md:from-darkest-wine/5 md:to-darkest-wine/80 absolute inset-0 bg-linear-to-b"
+        }
+      />
     </div>
   );
 }
