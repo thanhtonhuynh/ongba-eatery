@@ -40,7 +40,7 @@ export function DoubleImageCarousel({ slides }: { slides: DoubleSlide[] }) {
         <CarouselContent>
           {slides.map((s, idx) => (
             <CarouselItem key={idx}>
-              <div className="grid h-90 grid-cols-2 gap-3">
+              <div className="grid h-64 grid-cols-2 gap-2 sm:h-80 sm:gap-3 md:h-90">
                 <PhotoFrame src={s.leftSrc} alt={s.leftAlt} />
                 <PhotoFrame src={s.rightSrc} alt={s.rightAlt} />
               </div>

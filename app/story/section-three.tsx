@@ -3,19 +3,19 @@ import Image from "next/image";
 
 export function SectionThree() {
   return (
-    <section className="space-y-6 p-6">
+    <section className="space-y-4 p-4 sm:space-y-6 sm:p-6">
       <OrnamentLine size="half" />
 
-      <div className="p-6">
-        <div className="mx-auto flex w-full max-w-xl flex-col gap-8">
-          <div className="space-y-4">
+      <div className="p-4 sm:p-6">
+        <div className="mx-auto flex w-full max-w-xl flex-col gap-6 sm:gap-8">
+          <div className="space-y-4 text-sm sm:text-base">
             <p>It took 75 days at sea.</p>
             <p>We arrived with nothing but love, faith, and each other.</p>
             <p>No country. No guarantees. Just a family, determined to live free.</p>
           </div>
 
           <div className="border-gold/50 space-y-4 border p-2">
-            <div className={"border-gold/50 relative h-90 border"}>
+            <div className="border-gold/50 relative h-56 border sm:h-72 md:h-90">
               <Image
                 src={"/story/ongba-children-1.png"}
                 alt={"Ongba Children 1"}
@@ -24,7 +24,7 @@ export function SectionThree() {
               />
             </div>
 
-            <div className={"border-gold/50 relative h-90 border"}>
+            <div className="border-gold/50 relative h-56 border sm:h-72 md:h-90">
               <Image
                 src={"/story/ongba-children-2.png"}
                 alt={"Ongba Children 2"}
@@ -34,7 +34,7 @@ export function SectionThree() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 text-sm sm:text-base">
             <p>
               Today, we honour Bố and Mẹ by sharing their story and their spirit through our food.
               Every dish we serve is rooted in their journey. Every meal is a reminder that love,

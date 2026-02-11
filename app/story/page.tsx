@@ -1,5 +1,5 @@
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
-import { Heading } from "@/components/heading";
+import { Typography } from "@/components/typography";
 import { Overview } from "./overview";
 import { SectionFour } from "./section-four";
 import { SectionOne } from "./section-one";
@@ -11,11 +11,11 @@ export default function StoryPage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <div className="flex flex-col items-center gap-8 px-6 py-16 text-center">
-        <Heading>Our Story</Heading>
-        <p className="text-lg italic">
+      <div className="flex flex-col items-center gap-6 px-4 py-10 text-center sm:gap-8 sm:px-6 sm:py-16">
+        <Typography variant="h1">Our Story</Typography>
+        <Typography variant="body" className="italic">
           Our parents' love story is one of sacrifice, strength, and unbreakable faith.
-        </p>
+        </Typography>
       </div>
 
       <Overview />
@@ -28,7 +28,7 @@ export default function StoryPage() {
 
       <SectionFour />
 
-      <HorizontalPatternBand />
+      <HorizontalPatternBand blurTop fromColor="from-dark-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }

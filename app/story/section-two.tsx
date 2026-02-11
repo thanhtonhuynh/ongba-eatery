@@ -24,28 +24,28 @@ const slides: DoubleSlide[] = [
 
 export function SectionTwo() {
   return (
-    <section className="bg-dark-wine space-y-6 p-6">
+    <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
       <OrnamentLine size="half" />
 
-      <div className="p-6">
-        <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-8">
-          <p>
+      <div className="p-4 sm:p-6">
+        <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-6 sm:gap-8">
+          <p className="text-sm sm:text-base">
             When Bố was imprisoned for trying to help over 100 people escape by boat, Mẹ was left
             alone with four young children. Every month, she traveled for days—sometimes without
             food, sometimes walking for miles—to bring him supplies so he could survive. Prisons
             didn't feed inmates, Bố survival depended on the devotion of family.
           </p>
 
-          <div className="w-full px-4">
+          <div className="w-full px-2 sm:px-4">
             <DoubleImageCarousel slides={slides} />
           </div>
 
-          <p>
+          <p className="text-sm sm:text-base">
             Years later, when hope seemed out of reach, a kind friend offered Mẹ a small sailboat to
             help our family escape. In return, Mẹ gave him the sewing machine Bố had given her on
             their wedding day—not out of obligation, but as a gesture of deep appreciation.
           </p>
-          <p>
+          <p className="text-sm sm:text-base">
             On the day of the escape, she rode her bicycle to the prison and waited near a hidden
             spot. Bố, having earned the right to work outside the prison walls, made his move. He
             ran, jumped on the bike, and they rode with everything they had—straight to the shore,

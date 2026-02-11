@@ -3,17 +3,19 @@ import { OngbaWithLogo } from "@/components/ongba-with-logo";
 
 export function Overview() {
   return (
-    <section className="bg-dark-wine space-y-6 p-6">
+    <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
       <OrnamentLine />
 
-      <div className="border-gold/50 flex flex-col items-center gap-8 border p-6">
-        <h2 className="text-xl font-semibold tracking-widest uppercase">
+      <div className="border-gold/50 flex flex-col items-center gap-6 border p-4 sm:gap-8 sm:p-6">
+        <h2 className="text-center text-lg font-semibold tracking-widest uppercase sm:text-xl">
           Ông Bà Vietnamese Eatery
         </h2>
 
-        <OngbaWithLogo width={281} height={374} />
+        <div className="w-full max-w-[240px] sm:max-w-[281px]">
+          <OngbaWithLogo width={281} height={374} />
+        </div>
 
-        <div className="flex w-full max-w-xl flex-col gap-8">
+        <div className="flex w-full max-w-xl flex-col gap-4 text-sm sm:gap-8 sm:text-base">
           <p>
             We named the restaurant Ông Bà — which means “grandparents” in Vietnamese — in honour of
             our parents, Bố and Mẹ, whose love, faith, and courage built the foundation of our
