@@ -45,3 +45,28 @@ export function Header() {
     </header>
   );
 }
+
+// Spacer to prevent content jump on header resize
+const HEADER_HEIGHT_DEFAULT = 100;
+const HEADER_HEIGHT_SCROLLED = 64;
+const HEADER_PADDING = 16; // py-2 = 8px top + 8px bottom
+
+export function HeaderSpacer() {
+  const { scrollY } = useScroll();
+  const [scrolled, setScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50);
+  });
+
+  return (
+    <motion.div
+      animate={{
+        height: scrolled
+          ? HEADER_HEIGHT_SCROLLED + HEADER_PADDING
+          : HEADER_HEIGHT_DEFAULT + HEADER_PADDING,
+      }}
+      transition={{ type: "spring", stiffness: 120, damping: 18 }}
+    />
+  );
+}

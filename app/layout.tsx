@@ -1,5 +1,5 @@
 import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indicator";
-import { Footer, Header } from "@/components/layout";
+import { Footer, Header, HeaderSpacer } from "@/components/layout";
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import localFont from "next/font/local";
@@ -35,6 +35,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <div className="relative mx-auto flex min-h-screen flex-col scroll-smooth">
           <Header />
+          <HeaderSpacer />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
         </div>
