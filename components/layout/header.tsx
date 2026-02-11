@@ -15,7 +15,7 @@ export function Header() {
 
   // Detect scroll change
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 100);
+    setScrolled(latest > 50);
   });
 
   return (
@@ -59,7 +59,7 @@ export function HeaderSpacer() {
   const [scrolled, setScrolled] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 100);
+    setScrolled(latest > 50);
   });
 
   return (
