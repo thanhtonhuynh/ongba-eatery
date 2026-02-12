@@ -1,5 +1,7 @@
 import { AddOnItem, MenuItem, Product } from "@/_types";
+import { Container } from "@/components/container";
 import { OrnamentLine } from "@/components/deco/ornament-line";
+import { Typography } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
 
@@ -19,46 +21,52 @@ export function MenuSection({ id, isFeatured, index, title, description, items, 
   }
 
   return (
-    <section
+    <Container
+      variant="section"
       id={id}
       className={cn(
-        "space-y-6 p-6",
+        "scroll-mt-20",
         index !== undefined && index % 2 === 0 && "bg-dark-wine",
         isFeatured && "bg-wine",
       )}
     >
       <OrnamentLine />
 
-      <div className="space-y-6 px-6">
+      <Container variant="section-inner" maxWidth="7xl">
         {/* Title & description */}
-        <div className="space-y-3">
-          <h2 className="font-titoli text-4xl font-semibold tracking-widest uppercase">{title}</h2>
-          {description && <p className="text-gold/80 whitespace-pre-line">{description}</p>}
-        </div>
-
-        {/* Items */}
-        <div className="grid auto-rows-fr grid-cols-2 gap-6 gap-x-15">
-          {items.map((item) => (
-            <div key={item.id} className="">
-              <ItemCard item={item} />
-            </div>
-          ))}
+        <div className="space-y-3 sm:space-y-6">
+          <Typography variant="h2">{title}</Typography>
+          {description && (
+            <Typography variant="body-sm" className="text-secondary">
+              {description}
+            </Typography>
+          )}
         </div>
 
         {/* Add-ons */}
         {addOns && addOns.length > 0 && (
-          <div className="space-y-1 text-sm">
-            <h3 className="text-base font-bold uppercase">Add-Ons</h3>
+          <div className="mb-6 space-y-1">
+            {/* <h3 className="text-sm font-bold uppercase sm:text-base">Add-Ons</h3> */}
+            <Typography variant="h3">Add-Ons</Typography>
             <ul className="space-y-2">
               {addOns.map((addOn, idx) => (
-                <li key={idx} className="uppercase">
-                  {addOn.title} (+{addOn.price})
+                <li key={idx}>
+                  <Typography variant="body-sm">
+                    {addOn.title} +{addOn.price}
+                  </Typography>
                 </li>
               ))}
             </ul>
           </div>
         )}
-      </div>
-    </section>
+
+        {/* Items */}
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-x-15">
+          {items.map((item) => (
+            <ItemCard key={item.id} item={item} />
+          ))}
+        </div>
+      </Container>
+    </Container>
   );
 }

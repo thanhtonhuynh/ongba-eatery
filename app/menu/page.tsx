@@ -1,8 +1,9 @@
 import { categories } from "@/_data/categories";
 import { featuredItems } from "@/_data/curated";
 import { itemsByCategory } from "@/_data_access";
+import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
-import { Heading } from "@/components/heading";
+import { Typography } from "@/components/typography";
 import { DoubleBorderButton } from "@/components/ui/button";
 import Link from "next/link";
 import { MenuNav } from "./menu-nav";
@@ -13,18 +14,10 @@ export default function MenuPage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <div className="flex flex-col items-center gap-8 px-6 py-15 text-center">
-        <Heading>Downtown Menu</Heading>
-
-        <DoubleBorderButton
-          size={"lg"}
-          className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
-        >
-          <Link href="#">Reserve a table</Link>
-        </DoubleBorderButton>
-
-        <p className="text-lg italic">We encourage to call us directly to place a pick-up order.</p>
-      </div>
+      <Container variant="page-header">
+        <Typography variant="h1">Downtown Menu</Typography>
+        <DoubleBorderButton nativeButton={false} render={<Link href="#">Reserve a table</Link>} />
+      </Container>
 
       {/* Featured items */}
       <MenuSection
@@ -36,7 +29,7 @@ export default function MenuPage() {
       />
 
       {/* Menu Nav */}
-      <div className="border-gold/50 border p-6">
+      <div className="border-gold/50 border p-3 sm:p-6">
         <MenuNav />
       </div>
 
@@ -54,12 +47,12 @@ export default function MenuPage() {
       ))}
 
       {/* Catering with Us Section */}
-      <div className="bg-dark-wine flex flex-col items-center p-6 py-12">
-        <h2 className="font-titoli text-5xl font-bold tracking-wider uppercase">
+      <div className="bg-dark-wine flex flex-col items-center p-4 py-10 sm:p-6 sm:py-12">
+        <h2 className="font-titoli text-center text-3xl font-bold tracking-wider uppercase sm:text-4xl md:text-5xl">
           Catering with Us
         </h2>
 
-        <div className="mt-6 space-y-3">
+        <div className="mt-4 space-y-3 text-center text-sm sm:mt-6 sm:text-base">
           <p>We offer catering services for all occasions. Contact us for more details!</p>
           <p>
             Email: <a href="mailto:ongbavietnamese@gmail.com">ongbavietnamese@gmail.com</a>

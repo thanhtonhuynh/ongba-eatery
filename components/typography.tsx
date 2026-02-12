@@ -50,13 +50,13 @@ export function Typography({
       );
     case "body":
       return (
-        <div className={cn("text-base xl:text-lg", className)} {...props}>
+        <div className={cn("text-base whitespace-pre-line xl:text-lg", className)} {...props}>
           {children}
         </div>
       );
     case "body-sm":
       return (
-        <div className={cn("text-sm md:text-base", className)} {...props}>
+        <div className={cn("text-sm whitespace-pre-line md:text-base", className)} {...props}>
           {children}
         </div>
       );
