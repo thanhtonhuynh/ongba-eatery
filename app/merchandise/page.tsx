@@ -9,7 +9,7 @@ export default function MerchandisePage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <section className="flex flex-col items-center space-y-6 py-15">
+      <section className="flex flex-col items-center space-y-6 px-4 py-10 sm:py-15">
         <Heading>Merchandise</Heading>
 
         {/* <DoubleBorderButton

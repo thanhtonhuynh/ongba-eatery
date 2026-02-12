@@ -1,7 +1,8 @@
+import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
-import { Heading } from "@/components/heading";
+import { TileImage } from "@/components/deco/tiles";
+import { Typography } from "@/components/typography";
 import { DoubleBorderButton } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -9,77 +10,47 @@ export default function ContactPage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <section className="flex flex-col items-center space-y-6 px-12 py-15">
-        <Heading>Contact</Heading>
+      <Container variant="page-header">
+        <Typography variant="h1">Contact</Typography>
+      </Container>
 
-        <div className="grid w-full grid-cols-2 gap-15">
-          <div className="flex flex-col space-y-6">
-            <h2 className="font-titoli text-center text-2xl font-semibold tracking-wide uppercase">
-              Downtown
-            </h2>
+      <Container
+        variant="section"
+        className="mx-auto mb-20 grid w-full max-w-380 grid-cols-1 gap-6 py-0 lg:grid-cols-2 lg:gap-15 lg:py-0"
+      >
+        <div className="relative px-3">
+          <TileImage animated img={"/interior.jpg"} alt="Ông Bà Eatery" />
 
-            <div className="border-gold/50 relative h-80 rounded-tl-[100px] rounded-br-[100px] border">
-              <Image
-                src={"/interior.jpg"}
-                alt={"Ông Bà Eatery"}
-                fill
-                className="rounded-tl-[100px] rounded-br-[100px] object-cover"
-              />
-            </div>
+          {/* Make this overlay the image */}
+          <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
+            <Typography variant="h3">Downtown</Typography>
+            <Typography variant="body-sm" className="space-y-1 whitespace-nowrap">
+              <div>976 Denman St</div>
+              <div>Vancouver, BC V6G 2M1</div>
+              <div>(+1) 604-620-5595</div>
+            </Typography>
 
-            <div className="space-y-2">
-              <p>976 Denman St, Vancouver, BC V6G 2M1</p>
-              <p>(+1) 604-620-5595</p>
-              <p>Sun - Thu: 11:00 AM to 9:00 PM</p>
-              <p>Last call: 8:45 PM</p>
-              <p>Fri & Sat: 11:00 AM to 10:00 PM</p>
-              <p>Last call: 9:45 PM</p>
-            </div>
-
-            <div className="self-center">
-              <DoubleBorderButton
-                size={"lg"}
-                className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
-              >
-                <Link href="#">View Menu</Link>
-              </DoubleBorderButton>
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-6">
-            <h2 className="font-titoli text-center text-2xl font-semibold tracking-wide uppercase">
-              Coquitlam
-            </h2>
-
-            <div className="border-gold/50 relative h-80 rounded-tl-[100px] rounded-br-[100px] border">
-              <Image
-                src={"/hero-image.jpg"}
-                alt={"Ông Bà Eatery"}
-                fill
-                className="rounded-tl-[100px] rounded-br-[100px] object-cover"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <p>1163 Pinetree Wy Unit 1045, Coquitlam, BC V3B 7Z3</p>
-              <p>(+1) 604-620-5595</p>
-              <p>Sun - Thu: 11:00 AM to 9:00 PM</p>
-              <p>Last call: 8:45 PM</p>
-              <p>Fri & Sat: 11:00 AM to 10:00 PM</p>
-              <p>Last call: 9:45 PM</p>
-            </div>
-
-            <div className="self-center">
-              <DoubleBorderButton
-                size={"lg"}
-                className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
-              >
-                <Link href="#">View Menu</Link>
-              </DoubleBorderButton>
-            </div>
+            <DoubleBorderButton nativeButton={false} render={<Link href="#">View Menu</Link>} />
           </div>
         </div>
-      </section>
+
+        <div className="relative px-3">
+          <TileImage animated img={"/hero-image.jpg"} alt="Ông Bà Eatery" />
+
+          <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
+            <Typography variant="h3">Coquitlam</Typography>
+            <Typography variant="body-sm" className="space-y-1 whitespace-nowrap">
+              <div>1163 Pinetree Wy Unit 1045</div>
+              <div>Coquitlam, BC V3B 7Z3</div>
+              <div>(+1) 604-620-5595</div>
+            </Typography>
+
+            <DoubleBorderButton nativeButton={false} render={<Link href="#">View Menu</Link>} />
+          </div>
+        </div>
+      </Container>
+
+      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }

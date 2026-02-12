@@ -11,10 +11,10 @@ export default function CareersPage() {
     <>
       <HorizontalPatternBand blurBottom />
 
-      <section className="flex flex-col items-center space-y-6 py-15">
+      <section className="flex flex-col items-center space-y-6 px-4 py-10 sm:py-15">
         <Heading>Careers</Heading>
 
-        <div className="max-w-3xl space-y-6 p-6">
+        <div className="max-w-3xl space-y-4 p-4 text-sm sm:space-y-6 sm:p-6 sm:text-base">
           <p>
             At Ông Bà, we believe food is more than just what's on the plate — it's about
             connection, family, and creating moments that feed the soul. For us, a restaurant is not
@@ -37,25 +37,25 @@ export default function CareersPage() {
 
         <DoubleBorderButton
           size={"lg"}
-          className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
+          className="font-titoli h-12 px-6 py-5 text-base tracking-wide uppercase sm:h-14 sm:px-8 sm:py-6 sm:text-xl"
         >
           <Link href="#">Apply Now</Link>
         </DoubleBorderButton>
       </section>
 
-      <section className="bg-dark-wine space-y-6 p-6">
+      <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
         <OrnamentLine />
 
-        <h2 className="font-titoli text-center text-4xl font-semibold tracking-widest uppercase">
+        <h2 className="font-titoli text-center text-2xl font-semibold tracking-widest uppercase sm:text-3xl md:text-4xl">
           Our Ongba Family
         </h2>
 
         <div className="flex flex-col items-center gap-6">
           <PersonCard person={teamMembers[0]} />
 
-          <ul className="mt-3 flex justify-center gap-12">
+          <ul className="mt-3 flex flex-col items-center justify-center gap-6 sm:flex-row sm:flex-wrap sm:gap-12">
             {teamMembers.slice(1).map((person, idx) => (
-              <li key={idx} className="">
+              <li key={idx}>
                 <PersonCard person={person} />
               </li>
             ))}

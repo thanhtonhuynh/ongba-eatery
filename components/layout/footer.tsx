@@ -4,13 +4,13 @@ import { Heading } from "../heading";
 export function Footer() {
   return (
     <footer>
-      <section className="bg-dark-wine flex flex-col space-y-6 p-6">
+      <section className="bg-dark-wine flex flex-col space-y-4 p-4 sm:space-y-6 sm:p-6">
         <OrnamentLine />
 
-        <div className="border-gold/50 flex flex-col gap-8 border p-6">
+        <div className="border-gold/50 flex flex-col gap-6 border p-4 sm:gap-8 sm:p-6">
           <Heading className="self-center">Find Us</Heading>
 
-          <div>
+          <div className="text-sm sm:text-base">
             <p className="uppercase">Open 7 days a week</p>
             <p>Sun - Thu: 11:00 AM to 9:00 PM</p>
             <p>Last call: 8:45 PM</p>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
       </section>
 
-      <section className="bg-dark-night flex flex-col items-center p-4">
+      <section className="bg-dark-night flex flex-col items-center gap-2 p-4 text-center text-sm sm:text-base">
         <p>Crafted from the freshest ingredients and rooted in family values to feed the soul</p>
         <p>
           Copyright &copy; {new Date().getFullYear()}, Ông Bà Vietnamese Eatery. All rights

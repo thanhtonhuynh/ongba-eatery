@@ -28,7 +28,7 @@ export function Typography({
       return (
         <div
           className={cn(
-            "font-titoli text-3xl font-bold tracking-wider uppercase sm:text-4xl lg:text-5xl",
+            "font-titoli text-2xl font-bold tracking-wider uppercase sm:text-3xl lg:text-4xl",
             className,
           )}
           {...props}

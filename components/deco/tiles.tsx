@@ -3,7 +3,7 @@ import * as motion from "motion/react-client";
 import Image from "next/image";
 
 type TileImageVariant =
-  | "square"
+  | "square" // default
   | "roundTL"
   | "roundBR"
   | "roundBL"
@@ -25,7 +25,7 @@ type TileMotionProps = {
 export function TileImage({
   img,
   alt,
-  variant,
+  variant = "square",
   className,
   dim = false,
   animated = false,
@@ -34,7 +34,7 @@ export function TileImage({
 }: {
   img: string;
   alt: string;
-  variant: TileImageVariant;
+  variant?: TileImageVariant;
   className?: string;
   dim?: boolean;
 } & TileMotionProps) {
@@ -44,9 +44,8 @@ export function TileImage({
     <motion.div
       className={cn(
         // Double-border frame
-        "group border-gold/40 relative aspect-square rounded-[28px] border bg-transparent p-[2px]",
+        "group border-gold/40 relative aspect-square rounded-4xl border bg-transparent p-[2px]",
         // Corner language (slightly tighter on small screens, larger on md+)
-        variant === "square" && "rounded-none",
         variant === "roundTL" && "rounded-tl-[120px] sm:rounded-tl-[160px] md:rounded-tl-[200px]",
         variant === "roundBL" && "rounded-bl-[120px] sm:rounded-bl-[160px] md:rounded-bl-[200px]",
         variant === "roundBR" && "rounded-br-[120px] sm:rounded-br-[160px] md:rounded-br-[200px]",
@@ -73,8 +72,7 @@ export function TileImage({
     >
       <div
         className={cn(
-          "border-gold/40 relative h-full w-full overflow-hidden rounded-[24px] border",
-          variant === "square" && "rounded-none",
+          "border-gold/40 relative h-full w-full overflow-hidden rounded-3xl border",
           variant === "roundTL" && "rounded-tl-[116px] sm:rounded-tl-[156px] md:rounded-tl-[196px]",
           variant === "roundBL" && "rounded-bl-[116px] sm:rounded-bl-[156px] md:rounded-bl-[196px]",
           variant === "roundBR" && "rounded-br-[116px] sm:rounded-br-[156px] md:rounded-br-[196px]",

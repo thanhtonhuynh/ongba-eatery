@@ -65,13 +65,16 @@ function DoubleBorderButton({
   return (
     <div
       className={cn(
-        "border-gold inline-flex items-center justify-center rounded-full border p-1",
+        "border-gold inline-flex items-center justify-center rounded-full border p-px",
         disabled && "opacity-50",
       )}
     >
       <ButtonPrimitive
         data-slot="button"
-        className={cn(buttonVariants({ variant, size, className }), "rounded-full")}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          "font-titoli h-10 rounded-full px-6 py-4 text-base tracking-wide uppercase sm:h-12 sm:px-8 sm:py-5 sm:text-lg",
+        )}
         {...props}
       />
     </div>
