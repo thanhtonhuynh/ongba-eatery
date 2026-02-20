@@ -31,7 +31,7 @@ export function Header() {
           scrolled && "border-gold/50 bg-dark-wine border px-2 sm:px-3",
         )}
         animate={{ height: scrolled ? 64 : 100 }}
-        transition={{ type: "spring", stiffness: 120, damping: 18 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 1 }}
       >
         <Button
           variant="link"
@@ -69,7 +69,7 @@ export function HeaderSpacer() {
           ? HEADER_HEIGHT_SCROLLED + HEADER_PADDING
           : HEADER_HEIGHT_DEFAULT + HEADER_PADDING,
       }}
-      transition={{ type: "spring", stiffness: 120, damping: 18 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
     />
   );
 }
