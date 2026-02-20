@@ -10,7 +10,7 @@ export default function MenuPage() {
       <HorizontalPatternBand blurBottom />
 
       <Container variant="page-header">
-        <Typography variant="h1">Menu</Typography>
+        <Typography variant="h1">Menus</Typography>
         <Typography variant="body" className="text-secondary">
           Select a location to view the menu
         </Typography>
@@ -30,7 +30,7 @@ export default function MenuPage() {
               <div>Vancouver, BC V6G 2M1</div>
             </Typography>
 
-            <AnimatedButton href="/menu/vancouver" text="View Menu" />
+            <AnimatedButton href="/menus/vancouver" text="View Menu" />
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function MenuPage() {
               <div>Coquitlam, BC V3B 7Z3</div>
             </Typography>
 
-            <AnimatedButton href="/menu/coquitlam" text="View Menu" />
+            <AnimatedButton href="/menus/coquitlam" text="View Menu" />
           </div>
         </div>
       </Container>

@@ -46,12 +46,10 @@ export default function VancouverMenuPage() {
       ))}
 
       {/* Catering with Us Section */}
-      <div className="bg-dark-wine flex flex-col items-center p-4 py-10 sm:p-6 sm:py-12">
-        <h2 className="font-titoli text-center text-3xl font-bold tracking-wider uppercase sm:text-4xl md:text-5xl">
-          Catering with Us
-        </h2>
+      <div className="bg-dark-wine flex flex-col items-center gap-6 p-4 py-10 sm:p-6 sm:py-12">
+        <Typography variant="h1">Catering with Us</Typography>
 
-        <div className="mt-4 space-y-3 text-center text-sm sm:mt-6 sm:text-base">
+        <div className="mt-4 space-y-3 text-sm sm:mt-6 sm:text-base">
           <p>We offer catering services for all occasions. Contact us for more details!</p>
           <p>
             Email: <a href="mailto:ongbavietnamese@gmail.com">ongbavietnamese@gmail.com</a>

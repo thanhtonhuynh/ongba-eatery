@@ -111,7 +111,7 @@ export function MenuOverview() {
           </div>
         </div>
 
-        <AnimatedButton size="xl" href="/menu" text="View Menu" />
+        <AnimatedButton size="xl" href="/menus" text="View Menu" />
       </div>
     </section>
   );

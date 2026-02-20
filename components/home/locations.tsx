@@ -33,7 +33,7 @@ export function Locations() {
           </div>
         </div>
 
-        <AnimatedButton size="xl" href="/contact" text="View Locations" />
+        <AnimatedButton size="xl" href="/locations" text="View Locations" />
       </div>
     </section>
   );

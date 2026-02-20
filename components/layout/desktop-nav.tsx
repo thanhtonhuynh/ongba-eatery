@@ -13,15 +13,15 @@ type NavItem = {
 export const navItems: NavItem[] = [
   { title: "Our Story", href: "/story" },
   {
-    title: "Menu",
-    href: "/menu",
+    title: "Menus",
+    href: "/menus",
     children: [
-      { title: "Vancouver", href: "/menu/vancouver" },
-      { title: "Coquitlam", href: "/menu/coquitlam" },
+      { title: "Vancouver", href: "/menus/vancouver" },
+      { title: "Coquitlam", href: "/menus/coquitlam" },
     ],
   },
   { title: "Careers", href: "/careers" },
-  { title: "Contact", href: "/contact" },
+  { title: "Locations", href: "/locations" },
   { title: "Merchandise", href: "/merchandise" },
 ];
 

@@ -130,7 +130,7 @@ const MenuItem = ({ item, toggle }: { item: NavItemType; toggle: () => void }) =
       <div className="flex flex-col items-end gap-2">
         <Link
           href={item.href}
-          className="font-titoli text-3xl tracking-wider uppercase transition-colors"
+          className="font-bricolage-grotesque text-2xl tracking-wider uppercase transition-colors"
         >
           {item.title}
         </Link>
@@ -138,7 +138,7 @@ const MenuItem = ({ item, toggle }: { item: NavItemType; toggle: () => void }) =
           <Link
             key={j}
             href={child.href}
-            className="font-titoli text-gold/90 text-xl tracking-wider uppercase transition-colors"
+            className="font-bricolage-grotesque text-secondary text-lg tracking-wider uppercase transition-colors"
           >
             {child.title}
           </Link>

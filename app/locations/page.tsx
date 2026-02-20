@@ -2,8 +2,7 @@ import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { TileImage } from "@/components/deco/tiles";
 import { Typography } from "@/components/typography";
-import { DoubleBorderButton } from "@/components/ui/button";
-import Link from "next/link";
+import { AnimatedButton } from "@/components/ui/button";
 
 export default function ContactPage() {
   return (
@@ -11,7 +10,7 @@ export default function ContactPage() {
       <HorizontalPatternBand blurBottom />
 
       <Container variant="page-header">
-        <Typography variant="h1">Contact</Typography>
+        <Typography variant="h1">Locations</Typography>
       </Container>
 
       <Container
@@ -30,10 +29,7 @@ export default function ContactPage() {
               <div>(+1) 604-620-5595</div>
             </Typography>
 
-            <DoubleBorderButton
-              nativeButton={false}
-              render={<Link href="/menu/vancouver">View Menu</Link>}
-            />
+            <AnimatedButton href="/menus/vancouver" text="View Menu" />
           </div>
         </div>
 
@@ -48,10 +44,7 @@ export default function ContactPage() {
               <div>(+1) 604-620-5595</div>
             </Typography>
 
-            <DoubleBorderButton
-              nativeButton={false}
-              render={<Link href="/menu/coquitlam">View Menu</Link>}
-            />
+            <AnimatedButton href="/menus/coquitlam" text="View Menu" />
           </div>
         </div>
       </Container>
