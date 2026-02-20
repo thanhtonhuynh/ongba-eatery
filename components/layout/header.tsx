@@ -69,7 +69,7 @@ export function HeaderSpacer() {
           ? HEADER_HEIGHT_SCROLLED + HEADER_PADDING
           : HEADER_HEIGHT_DEFAULT + HEADER_PADDING,
       }}
-      transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.7 }}
     />
   );
 }
