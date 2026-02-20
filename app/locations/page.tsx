@@ -34,7 +34,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative px-3">
-          <TileImage animated img={"/hero-image.jpg"} alt="Ông Bà Eatery" />
+          <TileImage animated img={"/hero.jpg"} alt="Ông Bà Eatery" />
 
           <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
             <Typography variant="h3">Coquitlam</Typography>
