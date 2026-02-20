@@ -12,9 +12,9 @@ export default function Page() {
       <Hero />
       <StoryOverview />
       <MenuOverview />
+      <OurProducts />
       <JoinOurTeam />
       <Locations />
-      <OurProducts />
       <Reviews />
     </>
   );

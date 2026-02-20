@@ -23,14 +23,17 @@ export default function ContactPage() {
 
           {/* Make this overlay the image */}
           <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
-            <Typography variant="h3">Downtown</Typography>
+            <Typography variant="h3">Vancouver</Typography>
             <Typography variant="body-sm" className="space-y-1 whitespace-nowrap">
               <div>976 Denman St</div>
               <div>Vancouver, BC V6G 2M1</div>
               <div>(+1) 604-620-5595</div>
             </Typography>
 
-            <DoubleBorderButton nativeButton={false} render={<Link href="#">View Menu</Link>} />
+            <DoubleBorderButton
+              nativeButton={false}
+              render={<Link href="/menu/vancouver">View Menu</Link>}
+            />
           </div>
         </div>
 
@@ -45,7 +48,10 @@ export default function ContactPage() {
               <div>(+1) 604-620-5595</div>
             </Typography>
 
-            <DoubleBorderButton nativeButton={false} render={<Link href="#">View Menu</Link>} />
+            <DoubleBorderButton
+              nativeButton={false}
+              render={<Link href="/menu/coquitlam">View Menu</Link>}
+            />
           </div>
         </div>
       </Container>

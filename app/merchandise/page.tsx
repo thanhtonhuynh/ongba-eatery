@@ -1,7 +1,7 @@
 import { productCategories } from "@/_data/categories";
 import { productsByCategory } from "@/_data_access";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
-import { Heading } from "@/components/heading";
+import { Typography } from "@/components/typography";
 import { MenuSection } from "../menu/menu-section";
 
 export default function MerchandisePage() {
@@ -10,7 +10,8 @@ export default function MerchandisePage() {
       <HorizontalPatternBand blurBottom />
 
       <section className="flex flex-col items-center space-y-6 px-4 py-10 sm:py-15">
-        <Heading>Merchandise</Heading>
+        {/* <Heading>Merchandise</Heading> */}
+        <Typography variant="h1">Merchandise</Typography>
 
         {/* <DoubleBorderButton
           size={"lg"}
@@ -30,7 +31,7 @@ export default function MerchandisePage() {
         />
       ))}
 
-      <HorizontalPatternBand />
+      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }

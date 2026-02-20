@@ -1,24 +1,23 @@
-import Link from "next/link";
 import { OrnamentLine } from "../deco/ornament-line";
 import { Typography } from "../typography";
-import { DoubleBorderButton } from "../ui/button";
+import { AnimatedButton } from "../ui/button";
 
 export function Locations() {
   return (
-    <section className="flex min-h-[50svh] flex-col space-y-6 p-3 sm:p-6">
+    <section className="bg-dark-wine flex min-h-[50svh] flex-col space-y-6 p-3 sm:p-6">
       <OrnamentLine />
 
       <div className="flex flex-1 flex-col items-center justify-center gap-6 pb-3 sm:gap-8 sm:p-6">
         <Typography variant="h1">Locations</Typography>
 
         <Typography variant="body">
-          Explore our locations and view each restaurant's menu, featuring signature dishes
+          Explore our locations and view each restaurant&apos;s menu, featuring signature dishes
           available only at select spots.
         </Typography>
 
-        <div className="my-6 grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="my-6 flex w-full max-w-6xl flex-col gap-6 sm:flex-row sm:justify-between">
           <div className="space-y-2">
-            <Typography variant="h3">Downtown</Typography>
+            <Typography variant="h3">Vancouver</Typography>
             <Typography variant="body-sm">
               <div>976 Denman St, Vancouver, BC V6G 2M1</div>
               <div>(+1) 604-620-5595</div>
@@ -34,10 +33,7 @@ export function Locations() {
           </div>
         </div>
 
-        <DoubleBorderButton
-          nativeButton={false}
-          render={<Link href={"/contact"}>View Locations</Link>}
-        />
+        <AnimatedButton size="xl" href="/contact" text="View Locations" />
       </div>
     </section>
   );

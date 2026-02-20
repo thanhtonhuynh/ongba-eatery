@@ -2,12 +2,11 @@
 
 import { useInView } from "motion/react";
 import * as motion from "motion/react-client";
-import Link from "next/link";
 import { useRef } from "react";
 import { OrnamentLine } from "../deco/ornament-line";
 import { TileImage, TileShape } from "../deco/tiles";
 import { Typography } from "../typography";
-import { DoubleBorderButton } from "../ui/button";
+import { AnimatedButton } from "../ui/button";
 
 // Props explanation:
 // Stiffness: higher stiffness means more force required to move the element, and therefore a more bouncy motion.
@@ -44,7 +43,7 @@ export function MenuOverview() {
           Traditional flavour with modern twist - Food nourished for the soul
         </Typography>
 
-        <div ref={mosaicRef} className="w-full max-w-5xl overflow-hidden">
+        <div ref={mosaicRef} className="w-full max-w-5xl overflow-hidden p-3">
           <div className="grid grid-cols-6 gap-3">
             {/* Big hero tile: slide in from left + fade; reverse when scroll out */}
             <motion.div
@@ -112,7 +111,7 @@ export function MenuOverview() {
           </div>
         </div>
 
-        <DoubleBorderButton nativeButton={false} render={<Link href={"/menu"}>View Menu</Link>} />
+        <AnimatedButton size="xl" href="/menu" text="View Menu" />
       </div>
     </section>
   );

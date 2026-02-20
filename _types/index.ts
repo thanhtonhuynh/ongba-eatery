@@ -8,6 +8,16 @@ export type MenuCategoryKey =
   | "drink"
   | "desserts";
 
+export type CoquitlamMenuCategoryKey =
+  | "cq_signature_starter"
+  | "cq_classic_starter"
+  | "cq_banh_mi"
+  | "cq_signature_entree"
+  | "cq_classic_noodle_soup"
+  | "cq_rice_and_noodle";
+
+export type AllMenuCategoryKey = MenuCategoryKey | CoquitlamMenuCategoryKey;
+
 export type ProductCategoryKey = "homemade" | "merchandise";
 
 export type MenuBadge = "new" | "best_seller";
@@ -42,7 +52,7 @@ export const DIETARY_META: Record<DietaryTag, { label: string; iconSrc: string }
 
 export type MenuItem = {
   id: string;
-  category: MenuCategoryKey;
+  category: AllMenuCategoryKey;
 
   title: string;
   subtitle?: string;
@@ -62,6 +72,13 @@ export type AddOnItem = {
 
 export type MenuCategory = {
   key: MenuCategoryKey;
+  title: string;
+  description?: string;
+  addOns?: AddOnItem[];
+};
+
+export type CoquitlamMenuCategory = {
+  key: CoquitlamMenuCategoryKey;
   title: string;
   description?: string;
   addOns?: AddOnItem[];

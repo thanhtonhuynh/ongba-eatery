@@ -1,13 +1,8 @@
-import { categories } from "@/_data/categories";
-import { featuredItems } from "@/_data/curated";
-import { itemsByCategory } from "@/_data_access";
 import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
+import { TileImage } from "@/components/deco/tiles";
 import { Typography } from "@/components/typography";
-import { DoubleBorderButton } from "@/components/ui/button";
-import Link from "next/link";
-import { MenuNav } from "./menu-nav";
-import { MenuSection } from "./menu-section";
+import { AnimatedButton } from "@/components/ui/button";
 
 export default function MenuPage() {
   return (
@@ -15,55 +10,46 @@ export default function MenuPage() {
       <HorizontalPatternBand blurBottom />
 
       <Container variant="page-header">
-        <Typography variant="h1">Downtown Menu</Typography>
-        <DoubleBorderButton nativeButton={false} render={<Link href="#">Reserve a table</Link>} />
+        <Typography variant="h1">Menu</Typography>
+        <Typography variant="body" className="text-secondary">
+          Select a location to view the menu
+        </Typography>
       </Container>
 
-      {/* Featured items */}
-      <MenuSection
-        id="features"
-        isFeatured
-        title={featuredItems.title}
-        description={featuredItems.description}
-        items={featuredItems.items}
-      />
+      <Container
+        variant="section"
+        className="mx-auto mb-20 grid w-full max-w-380 grid-cols-1 gap-6 py-0 lg:grid-cols-2 lg:gap-15 lg:py-0"
+      >
+        <div className="relative px-3">
+          <TileImage animated img={"/interior.jpg"} alt="Ông Bà Eatery Vancouver" />
 
-      {/* Menu Nav */}
-      <div className="border-gold/50 border p-3 sm:p-6">
-        <MenuNav />
-      </div>
+          <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
+            <Typography variant="h3">Vancouver</Typography>
+            <Typography variant="body-sm" className="space-y-1 whitespace-nowrap">
+              <div>976 Denman St</div>
+              <div>Vancouver, BC V6G 2M1</div>
+            </Typography>
 
-      {/* Menu Sections */}
-      {categories.map((category, index) => (
-        <MenuSection
-          key={category.key}
-          id={category.key}
-          index={index}
-          title={category.title}
-          description={category.description}
-          items={itemsByCategory[category.key] ?? []}
-          addOns={category.addOns}
-        />
-      ))}
-
-      {/* Catering with Us Section */}
-      <div className="bg-dark-wine flex flex-col items-center p-4 py-10 sm:p-6 sm:py-12">
-        <h2 className="font-titoli text-center text-3xl font-bold tracking-wider uppercase sm:text-4xl md:text-5xl">
-          Catering with Us
-        </h2>
-
-        <div className="mt-4 space-y-3 text-center text-sm sm:mt-6 sm:text-base">
-          <p>We offer catering services for all occasions. Contact us for more details!</p>
-          <p>
-            Email: <a href="mailto:ongbavietnamese@gmail.com">ongbavietnamese@gmail.com</a>
-          </p>
-          <p>
-            Phone: <a href="tel:+16046205595">+1 (604) 620-5595</a>
-          </p>
+            <AnimatedButton href="/menu/vancouver" text="View Menu" />
+          </div>
         </div>
-      </div>
 
-      <HorizontalPatternBand />
+        <div className="relative px-3">
+          <TileImage animated img={"/hero-image.jpg"} alt="Ông Bà Eatery Coquitlam" />
+
+          <div className="bg-darkest-wine/90 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 space-y-6 rounded-4xl px-8 py-6 text-center sm:min-w-72 md:min-w-80 xl:min-w-96">
+            <Typography variant="h3">Coquitlam</Typography>
+            <Typography variant="body-sm" className="space-y-1 whitespace-nowrap">
+              <div>1163 Pinetree Wy Unit 1045</div>
+              <div>Coquitlam, BC V3B 7Z3</div>
+            </Typography>
+
+            <AnimatedButton href="/menu/coquitlam" text="View Menu" />
+          </div>
+        </div>
+      </Container>
+
+      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }

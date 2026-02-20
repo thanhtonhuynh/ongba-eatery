@@ -1,7 +1,7 @@
 import { teamMembers } from "@/_data/people";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { OrnamentLine } from "@/components/deco/ornament-line";
-import { Heading } from "@/components/heading";
+import { Typography } from "@/components/typography";
 import { DoubleBorderButton } from "@/components/ui/button";
 import Link from "next/link";
 import { PersonCard } from "./person-card";
@@ -12,26 +12,27 @@ export default function CareersPage() {
       <HorizontalPatternBand blurBottom />
 
       <section className="flex flex-col items-center space-y-6 px-4 py-10 sm:py-15">
-        <Heading>Careers</Heading>
+        <Typography variant="h1">Careers</Typography>
 
         <div className="max-w-3xl space-y-4 p-4 text-sm sm:space-y-6 sm:p-6 sm:text-base">
           <p>
-            At Ông Bà, we believe food is more than just what's on the plate — it's about
-            connection, family, and creating moments that feed the soul. For us, a restaurant is not
-            just a workplace; it's a home where passion, tradition, and modern creativity come
-            together.
+            At Ongba Eatery, we believe food is more than just what&apos;s on the plate — it&apos;s
+            about connection, family, and creating moments that feed the soul. For us, a restaurant
+            is not just a workplace; it&apos;s a home where passion, tradition, and modern
+            creativity come together.
           </p>
           <p>
-            We're always looking for dedicated, enthusiastic, and curious people to join our growing
-            family. Whether you're an experienced chef, a hospitality professional, or someone with
-            a big heart and a love for Vietnamese food, there's a place for you here. Work in a
-            supportive, family-oriented environment. Be part of a team that values tradition while
-            embracing innovation. Share in our mission to bring soulful, modern Vietnamese cuisine
-            to our community. Grow with us as we expand into new locations and new opportunities.
+            We&apos;re always looking for dedicated, enthusiastic, and curious people to join our
+            growing family. Whether you&apos;re an experienced chef, a hospitality professional, or
+            someone with a big heart and a love for Vietnamese food, there&apos;s a place for you
+            here. Work in a supportive, family-oriented environment. Be part of a team that values
+            tradition while embracing innovation. Share in our mission to bring soulful, modern
+            Vietnamese cuisine to our community. Grow with us as we expand into new locations and
+            new opportunities.
           </p>
           <p>
-            If you're passionate about food, love working with people, and want to be part of a team
-            that feels like family, we'd love to hear from you.
+            If you&apos;re passionate about food, love working with people, and want to be part of a
+            team that feels like family, we&apos;d love to hear from you.
           </p>
         </div>
 
@@ -63,7 +64,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <HorizontalPatternBand />
+      <HorizontalPatternBand blurTop fromColor="from-dark-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const buttonVariants = cva(
   "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 rounded-4xl border border-transparent bg-clip-padding text-sm font-medium focus-visible:ring-[3px] aria-invalid:ring-[3px] [&_svg:not([class*='size-'])]:size-4 inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none shrink-0 [&_svg]:shrink-0 outline-none group/button select-none hover:cursor-pointer",
@@ -27,6 +28,7 @@ const buttonVariants = cva(
         xs: "h-6 gap-1 px-2.5 text-xs has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
         lg: "h-10 gap-1.5 px-4 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
+        xl: "h-12 gap-1.5 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 text-md",
         icon: "size-9",
         "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
@@ -78,6 +80,60 @@ function DoubleBorderButton({
         {...props}
       />
     </div>
+  );
+}
+
+export function AnimatedButton({
+  href,
+  text,
+  size = "default",
+  variant = "default",
+}: VariantProps<typeof buttonVariants> & { href: string; text: string }) {
+  return (
+    <div className="border-gold inline-flex items-center justify-center rounded-full border p-px">
+      <Button
+        nativeButton={false}
+        className={cn(
+          buttonVariants({ size, variant }),
+          "font-bricolage-grotesque group bg-gold hover:border-gold hover:bg-wine rounded-full tracking-wide uppercase shadow-lg transition delay-[0.1s] duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]",
+        )}
+        render={
+          <Link href={href}>
+            <div className="relative overflow-hidden">
+              <p className="text-wine flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-[-20px]">
+                {text}
+              </p>
+              <p
+                aria-hidden
+                className="text-gold absolute top-5 left-0 flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:top-0"
+              >
+                {text}
+              </p>
+            </div>
+          </Link>
+        }
+      />
+    </div>
+  );
+}
+
+export function AnimatedLink({
+  href,
+  text,
+  className,
+}: {
+  href: string;
+  text: string;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn("group font-bricolage-grotesque relative whitespace-nowrap", className)}
+    >
+      {text}
+      <span className="bg-gold absolute -bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-full" />
+    </Link>
   );
 }
 

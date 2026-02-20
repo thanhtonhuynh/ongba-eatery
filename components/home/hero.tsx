@@ -1,7 +1,6 @@
 import LogoGold from "@/assets/logo-gold.png";
 import Image from "next/image";
-import Link from "next/link";
-import { DoubleBorderButton } from "../ui/button";
+import { AnimatedButton } from "../ui/button";
 
 export function Hero() {
   return (
@@ -21,7 +20,7 @@ export function Hero() {
           </span>
         </div>
 
-        <DoubleBorderButton nativeButton={false} render={<Link href="#">Reserve a table</Link>} />
+        <AnimatedButton size="xl" href="#" text="Reserve a table" />
       </div>
     </section>
   );

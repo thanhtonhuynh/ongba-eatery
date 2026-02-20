@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { OrnamentLine } from "../deco/ornament-line";
 import { TileImage } from "../deco/tiles";
 import { Typography } from "../typography";
-import { DoubleBorderButton } from "../ui/button";
+import { AnimatedButton } from "../ui/button";
 
 export function OurProducts() {
   return (
@@ -14,7 +13,7 @@ export function OurProducts() {
 
         <Typography variant="body">
           Experience our authentic homemade sauces and exclusive merchandise, made with care to
-          extend our restaurant's tradition beyond the table.
+          extend our restaurant&apos;s tradition beyond the table.
         </Typography>
 
         <div className="my-6 grid w-full max-w-3xl grid-cols-2 gap-3">
@@ -27,10 +26,7 @@ export function OurProducts() {
           <TileImage dim img="/chili-garlic.jpg" alt="Chili Garlic" variant="leafL" />
         </div>
 
-        <DoubleBorderButton
-          nativeButton={false}
-          render={<Link href={"/merchandise"}>Explore Our Products</Link>}
-        />
+        <AnimatedButton size="xl" href="/merchandise" text="Explore Our Products" />
       </div>
     </section>
   );

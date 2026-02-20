@@ -8,14 +8,14 @@ import Link from "next/link";
 import { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { navItems } from "./desktop-nav";
 
+// Slight correction so expansion aligns with visual center of the icon (~2–3px left and down)
+const BUTTON_ORIGIN_OFFSET = { x: -3, y: 3 };
+
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [origin, setOrigin] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const toggleButtonRef = useRef<HTMLButtonElement | null>(null);
-
-  // Slight correction so expansion aligns with visual center of the icon (~2–3px left and down)
-  const BUTTON_ORIGIN_OFFSET = { x: -3, y: 3 };
 
   const toggle = useCallback(() => {
     if (!isOpen && toggleButtonRef.current) {
@@ -116,13 +116,9 @@ const itemVariants = {
   },
 };
 
-const MenuItem = ({
-  item,
-  toggle,
-}: {
-  item: { title: string; href: string };
-  toggle: () => void;
-}) => {
+type NavItemType = (typeof navItems)[number];
+
+const MenuItem = ({ item, toggle }: { item: NavItemType; toggle: () => void }) => {
   return (
     <motion.li
       className="mb-6 cursor-pointer"
@@ -131,12 +127,23 @@ const MenuItem = ({
       whileTap={{ scale: 0.95 }}
       onClick={toggle}
     >
-      <Link
-        href={item.href}
-        className="font-titoli text-3xl tracking-wider uppercase transition-colors"
-      >
-        {item.title}
-      </Link>
+      <div className="flex flex-col items-end gap-2">
+        <Link
+          href={item.href}
+          className="font-titoli text-3xl tracking-wider uppercase transition-colors"
+        >
+          {item.title}
+        </Link>
+        {item.children?.map((child, j) => (
+          <Link
+            key={j}
+            href={child.href}
+            className="font-titoli text-gold/90 text-xl tracking-wider uppercase transition-colors"
+          >
+            {child.title}
+          </Link>
+        ))}
+      </div>
     </motion.li>
   );
 };

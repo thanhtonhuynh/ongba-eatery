@@ -18,7 +18,7 @@ const titoli = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ông Bà Eatery | Vietnamese Restaurant",
+  title: "Ongba Eatery",
   description: "Honouring Vietnamese tradition with a modern twist.",
 };
 

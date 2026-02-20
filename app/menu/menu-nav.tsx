@@ -1,7 +1,12 @@
-import { categories } from "@/_data/categories";
 import Link from "next/link";
 
-export function MenuNav() {
+type CategoryLike = { key: string; title: string };
+
+type Props = {
+  categories: CategoryLike[];
+};
+
+export function MenuNav({ categories }: Props) {
   return (
     <nav className="font-semibold uppercase">
       <ul className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm sm:text-base md:gap-x-8 md:gap-y-4 lg:gap-x-16 xl:gap-x-10">

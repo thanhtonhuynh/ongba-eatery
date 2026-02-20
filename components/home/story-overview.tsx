@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { OngbaWithLogo } from "../ongba-with-logo";
 import { Typography } from "../typography";
-import { DoubleBorderButton } from "../ui/button";
+import { AnimatedButton } from "../ui/button";
 
 export function StoryOverview() {
   return (
@@ -19,7 +18,7 @@ export function StoryOverview() {
           <OngbaWithLogo width={422} height={562} />
         </div>
 
-        <DoubleBorderButton nativeButton={false} render={<Link href={"/story"}>Read More</Link>} />
+        <AnimatedButton size="xl" href="/story" text="Read More" />
       </div>
 
       <PatternPanel position="bottom" />
