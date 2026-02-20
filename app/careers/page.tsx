@@ -2,8 +2,7 @@ import { teamMembers } from "@/_data/people";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { OrnamentLine } from "@/components/deco/ornament-line";
 import { Typography } from "@/components/typography";
-import { DoubleBorderButton } from "@/components/ui/button";
-import Link from "next/link";
+import { AnimatedButton } from "@/components/ui/button";
 import { PersonCard } from "./person-card";
 
 export default function CareersPage() {
@@ -36,12 +35,13 @@ export default function CareersPage() {
           </p>
         </div>
 
-        <DoubleBorderButton
+        {/* <DoubleBorderButton
           size={"lg"}
           className="font-titoli h-12 px-6 py-5 text-base tracking-wide uppercase sm:h-14 sm:px-8 sm:py-6 sm:text-xl"
         >
           <Link href="#">Apply Now</Link>
-        </DoubleBorderButton>
+        </DoubleBorderButton> */}
+        <AnimatedButton size="xl" href="#" text="Apply Now" />
       </section>
 
       <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
