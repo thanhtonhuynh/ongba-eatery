@@ -10,7 +10,13 @@ export function OrnamentLine({ size = "full" }: Props) {
   return (
     <div className="relative flex items-center justify-center gap-2">
       <DashedLine size={size} />
-      <Image src="/star-filled.svg" alt="Star" width={30} height={30} />
+      <Image
+        className="pointer-events-none"
+        src="/star-filled.svg"
+        alt="Star"
+        width={30}
+        height={30}
+      />
       <DashedLine size={size} />
     </div>
   );
