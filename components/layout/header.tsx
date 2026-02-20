@@ -21,13 +21,15 @@ export function Header() {
   return (
     <header
       className={cn(
-        "bg-wine fixed top-0 z-50 flex w-full items-center justify-between p-3 sm:px-6",
-        scrolled && "bg-transparent px-2 sm:px-3",
+        // "bg-wine fixed top-0 z-50 flex w-full items-center justify-between p-3 sm:px-6",
+        // scrolled && "bg-transparent px-2 sm:px-3",
+        "fixed top-0 z-50 flex w-full items-center justify-between bg-transparent p-3 sm:px-6",
+        scrolled && "px-2 sm:px-3",
       )}
     >
       <motion.div
         className={cn(
-          "flex w-full items-center justify-between rounded-lg",
+          "flex w-full items-center justify-between rounded-xl bg-transparent",
           scrolled && "border-gold/50 bg-dark-wine border px-2 sm:px-3",
         )}
         animate={{ height: scrolled ? 64 : 100 }}
