@@ -9,31 +9,51 @@ export function Reviews() {
       <div className="border-gold/50 flex flex-col gap-6 rounded-2xl border p-6 sm:gap-8 sm:p-12">
         <div>
           <Typography variant="body">
-            &quot;I was truly blown away by Ông Bà Eatery, every single dish captured the authentic
-            flavours of Vietnam with remarkable precision.&quot;
+            &quot;... Broth is rich and flavourful, and the interior is very cute as well. Recipes
+            are all passed down from the employees&apos; grandparents which is nice.&quot;
           </Typography>
           <Typography variant="body-sm" className="font-bold italic">
-            Helen Tran
+            Nicole Fung
           </Typography>
         </div>
 
         <div>
           <Typography variant="body">
-            &quot;This is one of my favourite places to eat when I&apos;m back in Vancouver. Try the
-            deep-fried enoki mushroom - it&apos;s crazy!&quot;
+            &quot;This is a place that is absolutely the BEST pho, love the environment, the food is
+            absolutely ridiculously AWESOME!! Always worth a visit.&quot;
           </Typography>
           <Typography variant="body-sm" className="font-bold italic">
-            Zack Enderson
+            Annie Gu
           </Typography>
         </div>
 
         <div>
           <Typography variant="body">
-            &quot;We happened to pass by a small restaurant simply decorated with patterned
-            tiles.&quot;
+            &quot;Love the food, the decor and the backstory of the restaurant. A true Canadian
+            origin story about a family&apos;s quest for a better life and what lengths people will
+            go to just to be Free!&quot;
           </Typography>
           <Typography variant="body-sm" className="font-bold italic">
-            Chloe Dang
+            RJ Sachs
+          </Typography>
+        </div>
+
+        <div>
+          <Typography variant="body">
+            &quot;Consistently great food and good prices, one of my favourite places to
+            eat...&quot;
+          </Typography>
+          <Typography variant="body-sm" className="font-bold italic">
+            Jonathan Leung
+          </Typography>
+        </div>
+
+        <div>
+          <Typography variant="body">
+            &quot;Food here is unique that I don&apos;t find any other Vietnamese restaurant.&quot;
+          </Typography>
+          <Typography variant="body-sm" className="font-bold italic">
+            Yuka s
           </Typography>
         </div>
       </div>
