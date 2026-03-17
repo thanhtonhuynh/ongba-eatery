@@ -1,20 +1,43 @@
+import { Container } from "@/components/container";
 import { OrnamentLine } from "@/components/deco/ornament-line";
+import { Typography } from "@/components/typography";
 import Image from "next/image";
 
 export function SectionThree() {
   return (
-    <section className="space-y-4 p-4 sm:space-y-6 sm:p-6">
+    <Container variant="section">
       <OrnamentLine size="half" />
 
-      <div className="p-4 sm:p-6">
-        <div className="mx-auto flex w-full max-w-xl flex-col gap-6 sm:gap-8">
-          <div className="space-y-4 text-sm sm:text-base">
-            <p>It took 75 days at sea.</p>
-            <p>We arrived with nothing but love, faith, and each other.</p>
-            <p>No country. No guarantees. Just a family, determined to live free.</p>
+      <Container variant="section">
+        <Container variant="story-inner-section">
+          <Typography variant="h3" className="normal-case">
+            Seventy-Five Days at Sea
+          </Typography>
+
+          <div className="space-y-2">
+            <Typography variant="body">
+              Our escape from Vietnam lasted seventy-five days at sea.
+            </Typography>
+            <Typography variant="body">
+              For many others, reaching Hong Kong took only a few days.
+            </Typography>
+            <Typography variant="body">
+              The ocean was relentless. More than once, it felt like the small sailboat would not
+              survive the waves.
+            </Typography>
+            <Typography variant="body">But somehow, we did.</Typography>
+            <Typography variant="body">
+              When we finally arrived at a refugee camp in Hong Kong, we had nothing.
+            </Typography>
+            <Typography variant="body">No country.</Typography>
+            <Typography variant="body">No certainty.</Typography>
+            <Typography variant="body">No guarantees.</Typography>
+            <Typography variant="body">
+              Only love, faith, and a family determined to survive together.
+            </Typography>
           </div>
 
-          <div className="border-gold/50 space-y-4 border p-2">
+          <div className="border-gold/50 space-y-3 border p-3">
             <div className="border-gold/50 relative h-56 border sm:h-72 md:h-90">
               <Image
                 src={"/story/ongba-children-1.png"}
@@ -34,29 +57,43 @@ export function SectionThree() {
             </div>
           </div>
 
-          <div className="space-y-4 text-sm sm:text-base">
-            <p>
-              Today, we honour Bố and Mẹ by sharing their story and their spirit through our food.
-              Every dish we serve is rooted in their journey. Every meal is a reminder that love,
-              family, and resilience can carry us through anything.
-            </p>
+          <Typography variant="h3" className="normal-case">
+            A Life of Paying It Forward
+          </Typography>
 
-            <p>
-              We named our restaurant Ông Bà not just to remember them, but to pass on their love
-              and sacrifice to the next generation.
-            </p>
+          <div className="space-y-2">
+            <Typography variant="body">
+              Eventually, Canada gave our family the chance to begin again.
+            </Typography>
+            <Typography variant="body">
+              Like many refugees, Bố and Mẹ arrived with almost nothing. They worked
+              tirelessly—often multiple jobs—doing whatever they could to rebuild their lives and
+              support their children.
+            </Typography>
+            <Typography variant="body">
+              But even during those difficult years, they never forgot others who were still
+              searching for hope.
+            </Typography>
+            <Typography variant="body">
+              Bố became a minister, dedicating his life to serving the community and helping
+              newcomers find their footing in a new country.
+            </Typography>
+            <Typography variant="body">
+              Together, Bố and Mẹ helped sponsor hundreds of refugee families to come to Canada,
+              giving them the same opportunity that had once been given to us.
+            </Typography>
+            <Typography variant="body">
+              Their home became a place of refuge for many newly arrived families who had nowhere
+              else to go.
+            </Typography>
+            <Typography variant="body">
+              Even when space was tight and resources were limited, they always opened their doors.
+            </Typography>
+            <Typography variant="body">To them, helping others was never a burden.</Typography>
+            <Typography variant="body">It was simply the right thing to do.</Typography>
           </div>
-
-          <div className="space-y-4">
-            <p>
-              We hope that everyone who walks through our doors feels the same warmth we did growing
-              up—like sitting down for a comforting meal at Grandma's house.
-            </p>
-
-            <p>Because to us, Ông Bà is more than a name. It's family. It's home.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </Container>
+      </Container>
+    </Container>
   );
 }

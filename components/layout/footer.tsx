@@ -1,7 +1,9 @@
 import { Mail01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
 import { OrnamentLine } from "../deco/ornament-line";
 import { Typography } from "../typography";
+import { Button } from "../ui/button";
 
 export function Footer() {
   return (
@@ -20,11 +22,11 @@ export function Footer() {
             </div>
 
             <div className="space-y-2">
-              <div>
+              {/* <div>
                 <h2 className="text-lg font-bold uppercase">Vancouver</h2>
                 <p>976 Denman St, Vancouver, BC V6G 2M1</p>
                 <a href="tel:+16046205595">+1 (604) 620-5595</a>
-              </div>
+              </div> */}
 
               <div>
                 <h2 className="text-lg font-bold uppercase">Coquitlam</h2>
@@ -36,7 +38,7 @@ export function Footer() {
 
           <div className="flex items-center gap-2">
             <HugeiconsIcon icon={Mail01Icon} className="size-4" />
-            <a href="mailto:ongbavietnamese@gmail.com">ongbavietnamese@gmail.com</a>
+            <a href="mailto:restaurant@ongbagroup.com">restaurant@ongbagroup.com</a>
           </div>
         </div>
       </section>
@@ -46,6 +48,20 @@ export function Footer() {
         <p className="text-xs uppercase">
           Copyright &copy; {new Date().getFullYear()}, Ongba Eatery. All rights reserved.
         </p>
+        <div className="flex items-center gap-1 text-xs uppercase">
+          <span>Developed by</span>
+          <Button
+            nativeButton={false}
+            variant={"link"}
+            size={"xs"}
+            className="px-0"
+            render={
+              <Link target="blank" href={"https://tonhuynh.ca"}>
+                Ton Huynh
+              </Link>
+            }
+          />
+        </div>
       </section>
     </footer>
   );

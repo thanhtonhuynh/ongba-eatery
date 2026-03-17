@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type Props = {
-  variant: "page-header" | "section" | "section-inner" | "card";
+  variant: "page-header" | "section" | "section-inner" | "card" | "story-inner-section";
   maxWidth?: "5xl" | "6xl" | "7xl";
 };
 
@@ -41,6 +41,12 @@ export function Container({
           )}
           {...props}
         >
+          {children}
+        </div>
+      );
+    case "story-inner-section":
+      return (
+        <div className={cn("mx-auto flex w-full max-w-2xl flex-col gap-6", className)} {...props}>
           {children}
         </div>
       );

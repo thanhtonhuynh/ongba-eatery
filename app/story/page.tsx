@@ -14,7 +14,8 @@ export default function StoryPage() {
       <div className="flex flex-col items-center gap-6 px-4 py-10 text-center sm:gap-8 sm:px-6 sm:py-16">
         <Typography variant="h1">Our Story</Typography>
         <Typography variant="body" className="italic">
-          Our parents&apos; love story is one of sacrifice, strength, and unbreakable faith.
+          Ông Bà was inspired by our parents&apos; extraordinary journey - a story of love, courage,
+          and sacrifice that continues through every meal we share.
         </Typography>
       </div>
 

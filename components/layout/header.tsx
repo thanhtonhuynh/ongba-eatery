@@ -43,8 +43,8 @@ export function Header() {
           <Button
             variant="link"
             className={cn(
-              "font-bricolage-grotesque p-0 text-3xl font-medium tracking-wider uppercase transition-all duration-700 hover:no-underline sm:text-4xl",
-              scrolled && "text-2xl sm:text-3xl",
+              "font-bricolage-grotesque p-0 text-2xl font-medium tracking-wider uppercase transition-all duration-700 hover:no-underline sm:text-3xl",
+              scrolled && "text-xl sm:text-2xl",
             )}
             nativeButton={false}
             render={<Link href="/">Ongba Eatery</Link>}

@@ -28,7 +28,7 @@ export function DoubleImageCarousel({ slides }: { slides: DoubleSlide[] }) {
     if (!api) {
       return;
     }
-    setCurrent(api.selectedScrollSnap() + 1);
+    queueMicrotask(() => setCurrent(api.selectedScrollSnap() + 1));
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });

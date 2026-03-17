@@ -12,16 +12,18 @@ type NavItem = {
 
 export const navItems: NavItem[] = [
   { title: "Our Story", href: "/story" },
-  {
-    title: "Menus",
-    href: "/menus",
-    children: [
-      { title: "Vancouver", href: "/menus/vancouver" },
-      { title: "Coquitlam", href: "/menus/coquitlam" },
-    ],
-  },
+  // {
+  //   title: "Menus",
+  //   href: "/menus",
+  //   children: [
+  //     { title: "Vancouver", href: "/menus/vancouver" },
+  //     { title: "Coquitlam", href: "/menus/coquitlam" },
+  //   ],
+  // },
+  { title: "Menu", href: "/menu" },
   { title: "Careers", href: "/careers" },
-  { title: "Locations", href: "/locations" },
+  // { title: "Locations", href: "/locations" },
+  { title: "Contact", href: "/contact" },
   { title: "Merchandise", href: "/merchandise" },
 ];
 

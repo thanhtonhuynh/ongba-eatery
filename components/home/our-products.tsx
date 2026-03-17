@@ -12,8 +12,8 @@ export function OurProducts() {
         <Typography variant="h1">Our Products</Typography>
 
         <Typography variant="body">
-          Experience our authentic homemade sauces and exclusive merchandise, made with care to
-          extend our restaurant&apos;s tradition beyond the table.
+          Discover our authentic house-made sauces and exclusive merchandise, crafted to bring the
+          flavours of Ông Bà beyond the table.
         </Typography>
 
         <div className="my-6 grid w-full max-w-3xl grid-cols-2 gap-3">

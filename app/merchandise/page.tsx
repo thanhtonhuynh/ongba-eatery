@@ -2,7 +2,7 @@ import { productCategories } from "@/_data/categories";
 import { productsByCategory } from "@/_data_access";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { Typography } from "@/components/typography";
-import { MenuSection } from "../menus/menu-section";
+import { MenuSection } from "../menu/menu-section";
 
 export default function MerchandisePage() {
   return (

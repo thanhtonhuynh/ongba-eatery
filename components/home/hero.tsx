@@ -9,13 +9,20 @@ import Image from "next/image";
 import type React from "react";
 
 const taglineLines: { text?: string; content?: React.ReactNode; className: string }[] = [
-  { text: "Honouring", className: "font-light" },
-  { text: "Vietnamese tradition", className: "font-bricolage-grotesque" },
+  {
+    content: (
+      <>
+        <span className="text-2xl font-light sm:text-3xl md:text-4xl">Honouring</span>{" "}
+        <span className="font-bricolage-grotesque">Vietnamese Traditions</span>
+      </>
+    ),
+    className: "",
+  },
   {
     content: (
       <>
         <span className="text-xl font-light sm:text-2xl md:text-3xl">with a</span>{" "}
-        <span className="font-bricolage-grotesque">modern twist</span>
+        <span className="font-bricolage-grotesque">Modern Twist</span>
       </>
     ),
     className: "",

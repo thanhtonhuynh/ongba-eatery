@@ -1,4 +1,6 @@
+import { Container } from "@/components/container";
 import { OrnamentLine } from "@/components/deco/ornament-line";
+import { Typography } from "@/components/typography";
 import { DoubleImageCarousel, DoubleSlide } from "./double-image-carousel";
 
 const slides: DoubleSlide[] = [
@@ -24,35 +26,76 @@ const slides: DoubleSlide[] = [
 
 export function SectionTwo() {
   return (
-    <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
+    <Container variant="section" className="bg-dark-wine">
       <OrnamentLine size="half" />
 
-      <div className="p-4 sm:p-6">
-        <div className="mx-auto flex w-full max-w-xl flex-col items-center gap-6 sm:gap-8">
-          <p className="text-sm sm:text-base">
-            When Bố was imprisoned for trying to help over 100 people escape by boat, Mẹ was left
-            alone with four young children. Every month, she traveled for days—sometimes without
-            food, sometimes walking for miles—to bring him supplies so he could survive. Prisons
-            didn't feed inmates, Bố survival depended on the devotion of family.
-          </p>
+      <Container variant="section">
+        <Container variant="story-inner-section">
+          <Typography variant="h3" className="normal-case">
+            Love Tested by War
+          </Typography>
+
+          <div className="space-y-2">
+            <Typography variant="body">
+              After the war ended, many people were trying to escape communist Vietnam. Bố risked
+              everything to organize a boat that would carry more than one hundred people toward
+              freedom. He believed deeply that everyone deserved the chance to live freely.
+            </Typography>
+            <Typography variant="body">But he was discovered.</Typography>
+            <Typography variant="body">
+              Bố was arrested and imprisoned, leaving Mẹ alone with four young children and an
+              uncertain future. In those years, prisoners were not provided food. If families did
+              not bring supplies, many inmates simply did not survive.
+            </Typography>
+            <Typography variant="body">
+              Every month, Mẹ made the long journey to the prison - sometimes traveling for days and
+              walking miles - just to bring Bố food and see him for a few brief moments.
+            </Typography>
+            <Typography variant="body">Four years passed.</Typography>
+            <Typography variant="body">Four years of uncertainty.</Typography>
+            <Typography variant="body">Four years of absence.</Typography>
+            <Typography variant="body">Four years of love that refused to break.</Typography>
+          </div>
 
           <div className="w-full px-2 sm:px-4">
             <DoubleImageCarousel slides={slides} />
           </div>
 
-          <p className="text-sm sm:text-base">
-            Years later, when hope seemed out of reach, a kind friend offered Mẹ a small sailboat to
-            help our family escape. In return, Mẹ gave him the sewing machine Bố had given her on
-            their wedding day—not out of obligation, but as a gesture of deep appreciation.
-          </p>
-          <p className="text-sm sm:text-base">
-            On the day of the escape, she rode her bicycle to the prison and waited near a hidden
-            spot. Bố, having earned the right to work outside the prison walls, made his move. He
-            ran, jumped on the bike, and they rode with everything they had—straight to the shore,
-            where we were waiting in the boat.
-          </p>
-        </div>
-      </div>
-    </section>
+          <Typography variant="h3" className="normal-case">
+            The Escape
+          </Typography>
+
+          <div className="space-y-2">
+            <Typography variant="body">Hope finally came through an act of kindness.</Typography>
+            <Typography variant="body">
+              A close friend offered Mẹ a small sailboat so our family could escape Vietnam.
+            </Typography>
+            <Typography variant="body">
+              In return, she gave him the sewing machine Bố had once given her - the most precious
+              thing she owned.
+            </Typography>
+            <Typography variant="body">
+              On the day of the escape, Mẹ rode her bicycle to the prison and waited near a hidden
+              meeting place. By then, Bố had earned the rare privilege of working outside the prison
+              walls.
+            </Typography>
+            <Typography variant="body">When the moment came, he ran.</Typography>
+            <Typography variant="body">
+              He jumped onto the back of the bicycle, and together they rode toward the shore, where
+              the boat - and the rest of the family - were waiting.
+            </Typography>
+            <Typography variant="body">That bicycle carried them toward freedom.</Typography>
+            <Typography variant="body">
+              At that moment, the bicycle and the sewing machine were everything my mother had.
+              Those two simple things helped carry our family into a new life.
+            </Typography>
+            <Typography variant="body">
+              Today, they live on symbolically in our restaurant - a reminder of where we came from
+              and the sacrifices that shaped our journey.
+            </Typography>
+          </div>
+        </Container>
+      </Container>
+    </Container>
   );
 }

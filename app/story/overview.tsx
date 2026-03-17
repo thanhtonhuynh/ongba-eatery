@@ -1,41 +1,40 @@
+import { Container } from "@/components/container";
 import { OrnamentLine } from "@/components/deco/ornament-line";
 import { OngbaWithLogo } from "@/components/ongba-with-logo";
+import { Typography } from "@/components/typography";
 
 export function Overview() {
   return (
-    <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
+    <Container variant="section" className="bg-dark-wine">
       <OrnamentLine />
 
       <div className="border-gold/50 flex flex-col items-center gap-6 border p-4 sm:gap-8 sm:p-6">
-        <h2 className="text-center text-lg font-semibold tracking-widest uppercase sm:text-xl">
+        <Typography variant="h3" className="text-center normal-case">
           Ông Bà Vietnamese Eatery
-        </h2>
+        </Typography>
 
         <div className="w-full max-w-[240px] sm:max-w-[281px]">
           <OngbaWithLogo width={281} height={374} />
         </div>
 
-        <div className="flex w-full max-w-xl flex-col gap-4 text-sm sm:gap-8 sm:text-base">
-          <p>
-            We named the restaurant Ông Bà — which means “grandparents” in Vietnamese — in honour of
-            our parents, Bố and Mẹ, whose love, faith, and courage built the foundation of our
-            family.
-          </p>
-          <p>
-            They crossed the ocean with nothing but hope and compassion, and spent their lives
-            helping others find safety, comfort, and belonging. Their home was always open, their
-            table always full, even when they had little to give.
-          </p>
-          <p>
-            By naming our restaurant Ông Bà, we hope to keep their spirit alive — a reminder for our
-            child, and for every generation to come, of the love and sacrifice that carried us here.
-          </p>
-          <p>
-            Ông Bà is more than a restaurant; it’s a continuation of their promise — a place where
-            love, food, and laughter are shared freely, and where everyone is treated like family.
-          </p>
-        </div>
+        <Container variant="story-inner-section">
+          <Typography variant="h3" className="normal-case">
+            A Legacy of Love, Courage, and Freedom
+          </Typography>
+
+          <div className="space-y-2">
+            <Typography variant="body">Some stories are too powerful to fade with time.</Typography>
+            <Typography variant="body">
+              They live on through the people who carry them, the sacrifices that shaped them, and
+              the generations that continue to tell them.
+            </Typography>
+            <Typography variant="body">
+              Ông Bà Vietnamese Eatery was born from one of those stories—a journey of love,
+              resilience, and compassion that began decades ago in Vietnam.
+            </Typography>
+          </div>
+        </Container>
       </div>
-    </section>
+    </Container>
   );
 }

@@ -40,7 +40,7 @@ export function MenuOverview() {
         <Typography variant="h1">Menu</Typography>
 
         <Typography variant="body">
-          Traditional flavour with modern twist - Food nourished for the soul
+          Traditional flavours with a modern twist - food that nourishes the soul
         </Typography>
 
         <div ref={mosaicRef} className="w-full max-w-5xl overflow-hidden p-3">
@@ -111,7 +111,8 @@ export function MenuOverview() {
           </div>
         </div>
 
-        <AnimatedButton size="xl" href="/menus" text="View Menu" />
+        {/* <AnimatedButton size="xl" href="/menus" text="View Menu" /> */}
+        <AnimatedButton size="xl" href="/menu" text="View Menu" />
       </div>
     </section>
   );

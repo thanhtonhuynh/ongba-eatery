@@ -7,11 +7,12 @@ export function StoryOverview() {
     <section className="bg-dark-wine grid min-h-screen grid-cols-1 md:grid-cols-[1fr_2fr_1fr]">
       <PatternPanel position="top" />
 
-      <div className="flex flex-col items-center justify-center gap-6 px-3 text-center sm:gap-8">
+      <div className="flex flex-col items-center justify-center gap-6 px-6 text-center sm:gap-8">
         <Typography variant="h1">Our Story</Typography>
 
-        <Typography variant="body">
-          Our parents&apos; love story is one of sacrifice, strength, and unbreakable faith.
+        <Typography variant="body" className="max-w-2xl">
+          Ông Bà was inspired by our parents&apos; extraordinary journey - a story of love, courage,
+          and sacrifice that continues through every meal we share.
         </Typography>
 
         <div className="mt-2 w-full max-w-[250px] sm:max-w-[350px] md:max-w-[422px]">

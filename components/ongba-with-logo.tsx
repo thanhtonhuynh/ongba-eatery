@@ -16,8 +16,8 @@ export function OngbaWithLogo({ width, height }: Props) {
       />
 
       <Image
-        src={"/story-overview.png"}
-        alt="Our Story"
+        src={"/ong-ba.png"}
+        alt="Ong Ba"
         width={width}
         height={height}
         className="border-gold w-full rounded-tl-[60px] rounded-br-[60px] border object-cover sm:rounded-tl-[80px] sm:rounded-br-[80px] md:rounded-tl-[100px] md:rounded-br-[100px]"
