@@ -20,11 +20,13 @@ export function SectionOne() {
 
             <div className="space-y-2">
               <Typography variant="body">
-                Bố was a captain of a supply boat from a small village in Hạ Long Bay.
+                Bố was a captain of a supply boat from a small village in{" "}
+                <span className="font-bricolage-grotesque font-bold">Hạ Long Bay</span>.
               </Typography>
               <Typography variant="body">
-                Mẹ was a young woman from Hải Phòng, working as a cook at the docks to help her
-                family survive during the war.
+                Mẹ was a young woman from{" "}
+                <span className="font-bricolage-grotesque font-bold">Hải Phòng</span>, working as a
+                cook at the docks to help her family survive during the war.
               </Typography>
             </div>
           </div>

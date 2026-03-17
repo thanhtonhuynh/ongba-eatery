@@ -16,7 +16,8 @@ export function SectionThree() {
 
           <div className="space-y-2">
             <Typography variant="body">
-              Our escape from Vietnam lasted seventy-five days at sea.
+              Our escape from Vietnam lasted{" "}
+              <span className="font-bricolage-grotesque font-bold">seventy-five days at sea</span>.
             </Typography>
             <Typography variant="body">
               For many others, reaching Hong Kong took only a few days.
@@ -79,8 +80,11 @@ export function SectionThree() {
               newcomers find their footing in a new country.
             </Typography>
             <Typography variant="body">
-              Together, Bố and Mẹ helped sponsor hundreds of refugee families to come to Canada,
-              giving them the same opportunity that had once been given to us.
+              Together, Bố and Mẹ helped{" "}
+              <span className="font-bricolage-grotesque font-bold">
+                sponsor hundreds of refugee families to come to Canada
+              </span>
+              , giving them the same opportunity that had once been given to us.
             </Typography>
             <Typography variant="body">
               Their home became a place of refuge for many newly arrived families who had nowhere

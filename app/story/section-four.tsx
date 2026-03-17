@@ -37,7 +37,8 @@ export function SectionFour() {
 
           <div className="space-y-2">
             <Typography variant="body">
-              Years later, their journey inspired us to open Ông Bà Vietnamese Eatery.
+              Years later, their journey inspired us to open{" "}
+              <span className="font-bricolage-grotesque font-bold">Ông Bà Vietnamese Eatery</span>.
             </Typography>
             <Typography variant="body">
               The restaurant was created to honor their story and the values they lived by - family,
@@ -48,9 +49,10 @@ export function SectionFour() {
             </Typography>
             <Typography variant="body">Every meal is a reminder of where we came from.</Typography>
             <Typography variant="body">
-              We named the restaurant Ông Bà because we want our children - and the generations that
-              come after them - to understand the love of their grandparents, the values they lived
-              by, and the sacrifices that shaped our family.
+              We named the restaurant{" "}
+              <span className="font-bricolage-grotesque font-bold">Ông Bà</span> because we want our
+              children - and the generations that come after them - to understand the love of their
+              grandparents, the values they lived by, and the sacrifices that shaped our family.
             </Typography>
             <Typography variant="body">
               It is our way of preserving their story and honoring the legacy they left behind.
