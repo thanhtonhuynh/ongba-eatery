@@ -7,7 +7,7 @@ export const banhMi: MenuItem[] = [
     title: "Traditional Ham",
     description: "Filled with pate, traditional cold cuts, pork sausage, fried pork sausage.",
     price: 14,
-    dietary: ["gluten", "pork"],
+    dietary: ["gluten"],
   },
   {
     id: "cq_grilled_chicken_banh_mi",
@@ -15,7 +15,7 @@ export const banhMi: MenuItem[] = [
     title: "Grilled Chicken",
     description: "Filled with pate and grilled lemongrass chicken.",
     price: 14,
-    dietary: ["gluten", "chicken"],
+    dietary: ["gluten"],
   },
   {
     id: "cq_tofu_banh_mi",

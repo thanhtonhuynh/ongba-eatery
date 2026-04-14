@@ -9,7 +9,7 @@ export const classicStarter: MenuItem[] = [
     description:
       "Meat or veggie (V). Served with fresh lettuce, herbs and pickle green papaya carrot. Choice of fish sauce or sweet chilli sauce.",
     price: 14,
-    dietary: ["gluten", "pork", "vegetarian"],
+    dietary: ["gluten", "vegetarian"],
   },
   {
     id: "cq_salad_roll",
@@ -19,7 +19,7 @@ export const classicStarter: MenuItem[] = [
     description:
       "2 rolls / order\nChicken | Shrimp | Tofu(V)\nRice paper wrap, lettuce, cucumber, basil, carrot, pickles, daikon carrot, cilantro, vermicelli.\nPeanut sauce | Sweet Thai chili | Fish sauce.\nAdd avocado $4",
     price: 14,
-    dietary: ["chicken", "seafood", "vegetarian", "peanut"],
+    dietary: ["seafood", "vegetarian", "peanut"],
   },
   {
     id: "cq_wok_fry_sate_vegetable",
@@ -38,6 +38,6 @@ export const classicStarter: MenuItem[] = [
     description:
       "Cucumber, grape tomato, julienne shallot, mint, basil, cilantro. Topped with crispy fried garlic, toasted peanut, and puffed rice paper.",
     price: 14,
-    dietary: ["pork", "peanut"],
+    dietary: ["peanut"],
   },
 ];

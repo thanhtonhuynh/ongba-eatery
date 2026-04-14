@@ -9,7 +9,7 @@ export const riceAndNoodle: MenuItem[] = [
     description:
       "Lemongrass honey garlic BBQ baby pork rib, sunny side up egg. Lettuce cucumber tomato salad, pickled daikon carrot. Topped with crispy onion and toasted peanut.\nChoice of rice or vermicelli.\nSauce: Bà's soy sauce (gluten) / fish sauce",
     price: 22,
-    dietary: ["pork", "peanut"],
+    dietary: ["peanut"],
   },
   {
     id: "cq_grilled_lemongrass_chicken",
@@ -19,7 +19,7 @@ export const riceAndNoodle: MenuItem[] = [
     description:
       "Grilled Lemongrass chicken, sunny side up egg. Lettuce cucumber tomato salad, pickled daikon carrot. Topped with crispy onion and toasted peanut.\nChoice of rice or vermicelli.\nSauce: Bà's soy sauce (gluten) / fish sauce",
     price: 20,
-    dietary: ["chicken", "peanut"],
+    dietary: ["peanut"],
   },
   {
     id: "cq_chicken_curry",
@@ -29,7 +29,7 @@ export const riceAndNoodle: MenuItem[] = [
     description:
       "Chicken curry, eggplants, potato, carrots, basil. Topped with cilantro, and toasted peanuts.",
     price: 20,
-    dietary: ["chicken", "peanut"],
+    dietary: ["peanut"],
   },
   {
     id: "cq_vegan_curry",

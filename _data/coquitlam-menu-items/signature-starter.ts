@@ -18,7 +18,7 @@ export const signatureStarter: MenuItem[] = [
     description:
       "AAA beef, fish sauce mixture, dijon mustard, shallot, garlic, mint, basil, Vietnamese coriander, crispy garlic, and peanut. Served with taro chips.",
     price: 18,
-    dietary: ["beef", "peanut"],
+    dietary: ["peanut"],
   },
   {
     id: "cq_coconut_curry_mussel",
@@ -36,7 +36,6 @@ export const signatureStarter: MenuItem[] = [
     subtitle: "Fish Sauce Glazed Chicken Wings",
     description: "Light battered deep fried wing covered with fish sauce glazed.",
     price: 15,
-    dietary: ["chicken"],
   },
   {
     id: "cq_cheesy_coconut_shrimp",

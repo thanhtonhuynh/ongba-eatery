@@ -9,7 +9,6 @@ export const classicNoodleSoup: MenuItem[] = [
     description:
       "12 hours beef broth, Wok-seared AAA beef, beef brisket. Green onion, cilantro, and grated ginger.",
     price: 19,
-    dietary: ["beef"],
   },
   {
     id: "cq_classic_beef_pho",
@@ -19,7 +18,6 @@ export const classicNoodleSoup: MenuItem[] = [
     description:
       "12-hour beef broth, AAA beef, beef brisket, beef ball. Green onions, cilantro and grated ginger.",
     price: 19,
-    dietary: ["beef"],
   },
   {
     id: "cq_traditional_chicken_soup",
@@ -28,7 +26,6 @@ export const classicNoodleSoup: MenuItem[] = [
     subtitle: "Traditional Chicken Soup",
     description: "Chicken simmered in broth, quail egg. Green onion and cilantro.",
     price: 18,
-    dietary: ["chicken"],
   },
   {
     id: "cq_soupless_chicken_pho",
@@ -38,7 +35,7 @@ export const classicNoodleSoup: MenuItem[] = [
     description:
       "Dry noodle in garlic oil and BA's soy sauce. Chicken simmered in broth, quail eggs. Mint, cilantro crispy garlic. Side chicken soup.",
     price: 18,
-    dietary: ["chicken", "gluten"],
+    dietary: ["gluten"],
   },
   {
     id: "cq_bun_bo_hue",
@@ -48,7 +45,7 @@ export const classicNoodleSoup: MenuItem[] = [
     description:
       "Spicy lemongrass beef broth, AAA beef, beef brisket, beef ball, pork sausage. Thick vermicelli. Green onions and cilantro.",
     price: 20,
-    dietary: ["beef", "pork", "spicy"],
+    dietary: ["spicy"],
   },
   {
     id: "cq_vegan_pho",
