@@ -35,8 +35,22 @@ export default function CoquitlamMenuPage() {
         />
       ))}
 
+      <Container variant="section" className="bg-dark-wine">
+        <Container variant="section-inner" maxWidth="5xl">
+          <Typography variant="body-sm" className="text-secondary text-center italic sm:text-base">
+            We may occasionally adjust ingredients to ensure the highest quality and freshness.
+          </Typography>
+          <Typography
+            variant="body-sm"
+            className="text-secondary mt-2 text-center italic sm:text-base"
+          >
+            Please inform our staff of any allergies.
+          </Typography>
+        </Container>
+      </Container>
+
       {/* Catering with Us Section */}
-      <div className="bg-dark-wine flex flex-col items-center p-4 py-10 sm:p-6 sm:py-12">
+      <div className="flex flex-col items-center p-4 py-20 sm:p-6 sm:py-30">
         <Typography variant="h1">Catering with Us</Typography>
 
         <div className="mt-4 space-y-3 text-center text-sm sm:mt-6 sm:text-base">
@@ -50,7 +64,7 @@ export default function CoquitlamMenuPage() {
         </div>
       </div>
 
-      <HorizontalPatternBand blurTop fromColor="from-dark-wine" toColor="to-darkest-wine/10" />
+      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }
