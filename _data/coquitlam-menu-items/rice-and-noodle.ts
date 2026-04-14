@@ -7,7 +7,7 @@ export const riceAndNoodle: MenuItem[] = [
     title: "Sườn Heo Nướng BBQ",
     subtitle: "BBQ Pork Rib",
     description:
-      "Lemongrass honey garlic BBQ baby pork rib, sunny side up egg. Lettuce cucumber tomato salad, pickled daikon carrot. Topped with crispy onion and toasted peanut.\nChoice of rice or vermicelli.\nSauce: Bà's soy sauce (gluten) / fish sauce",
+      "Sunny side up egg, cucumber tomato salad, pickled daikon and carrot, crispy onion, peanuts.\nSauce: Fish sauce / Bà's soy sauce (gluten)\nChoice of rice or vermicelli.",
     price: 22,
     dietary: ["peanut"],
   },
@@ -17,28 +17,18 @@ export const riceAndNoodle: MenuItem[] = [
     title: "Gà Xả Nướng",
     subtitle: "Grilled Lemongrass Chicken",
     description:
-      "Grilled Lemongrass chicken, sunny side up egg. Lettuce cucumber tomato salad, pickled daikon carrot. Topped with crispy onion and toasted peanut.\nChoice of rice or vermicelli.\nSauce: Bà's soy sauce (gluten) / fish sauce",
-    price: 20,
+      "Sunny side up egg, cucumber tomato salad, pickled daikon and carrot, crispy onion, peanuts.\nSauce: Fish sauce / Bà's soy sauce (gluten)\nChoice of rice or vermicelli.",
+    price: 21,
     dietary: ["peanut"],
   },
   {
-    id: "cq_chicken_curry",
+    id: "cq_coconut_curry",
     category: "cq_rice_and_noodle",
-    title: "Gà Curry",
-    subtitle: "Chicken Curry",
+    title: "Cà Ri Cốt Dừa",
+    subtitle: "Coconut Curry",
     description:
-      "Chicken curry, eggplants, potato, carrots, basil. Topped with cilantro, and toasted peanuts.",
-    price: 20,
+      "Choice of Chicken or Tofu (V).\nPotato, carrot, eggplant, lotus root, king oyster mushroom, basil, peanut.\nChoice of rice or vermicelli.",
+    price: 21,
     dietary: ["peanut"],
-  },
-  {
-    id: "cq_vegan_curry",
-    category: "cq_rice_and_noodle",
-    title: "Curry Chay",
-    subtitle: "Vegan Curry",
-    description:
-      "Tofu, carrot, eggplants, lotus roots, potato, king oyster mushroom, seasonal veggie, basil. Topped with cilantro, and toasted peanuts.",
-    price: 19,
-    dietary: ["vegetarian", "peanut"],
   },
 ];

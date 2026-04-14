@@ -6,25 +6,23 @@ export const classicNoodleSoup: MenuItem[] = [
     category: "cq_classic_noodle_soup",
     title: "Phở Tái Lăn",
     subtitle: "Wok Smokey Beef Pho",
-    description:
-      "12 hours beef broth, Wok-seared AAA beef, beef brisket. Green onion, cilantro, and grated ginger.",
-    price: 19,
+    description: "12 hours beef broth, Wok-seared AAA Chuck Eye, beef brisket, grated ginger.",
+    price: 20,
   },
   {
     id: "cq_classic_beef_pho",
     category: "cq_classic_noodle_soup",
     title: "Tái Nạm Bò Viên",
     subtitle: "Classic Beef Pho",
-    description:
-      "12-hour beef broth, AAA beef, beef brisket, beef ball. Green onions, cilantro and grated ginger.",
+    description: "12-hour beef broth, AAA Chuck Eye, brisket, beef ball, grated ginger.",
     price: 19,
   },
   {
     id: "cq_traditional_chicken_soup",
     category: "cq_classic_noodle_soup",
-    title: "Gà Truyền Thống",
-    subtitle: "Traditional Chicken Soup",
-    description: "Chicken simmered in broth, quail egg. Green onion and cilantro.",
+    title: "Phở Gà Truyền Thống",
+    subtitle: "Traditional Chicken Pho",
+    description: "Chicken broth, poached chicken, quail eggs.",
     price: 18,
   },
   {
@@ -33,17 +31,17 @@ export const classicNoodleSoup: MenuItem[] = [
     title: "Phở Gà Trộn",
     subtitle: "Soupless Chicken Pho",
     description:
-      "Dry noodle in garlic oil and BA's soy sauce. Chicken simmered in broth, quail eggs. Mint, cilantro crispy garlic. Side chicken soup.",
-    price: 18,
+      "Garlic oil noodles, Ba's soy sauce, chicken, quail eggs, herbs, crispy garlic.\nServed with side chicken broth.\nAdd Truffle Sauce: $3",
+    price: 19,
     dietary: ["gluten"],
   },
   {
     id: "cq_bun_bo_hue",
     category: "cq_classic_noodle_soup",
-    title: "Bun Bo Hue",
-    subtitle: "Hue's Beef Noodle Vermicelli",
+    title: "Bún Bò Huế",
+    subtitle: "Hue's Spicy Beef Vermicelli",
     description:
-      "Spicy lemongrass beef broth, AAA beef, beef brisket, beef ball, pork sausage. Thick vermicelli. Green onions and cilantro.",
+      "Spicy lemongrass broth, AAA chuck eye, brisket, beef ball, pork sausage, thick vermicelli.",
     price: 20,
     dietary: ["spicy"],
   },
@@ -52,9 +50,8 @@ export const classicNoodleSoup: MenuItem[] = [
     category: "cq_classic_noodle_soup",
     title: "Phở Chay",
     subtitle: "Vegan Pho",
-    description:
-      "Seasonal veggie stock, tofu, carrots, lotus roots, king oyster mushrooms, seasonal veggie. Topped with green onions, cilantro, and crispy onion.",
-    price: 18,
+    description: "Vegetable broth, tofu, lotus root, king oyster mushroom, seasonal vegetables.",
+    price: 19,
     dietary: ["vegetarian"],
   },
 ];

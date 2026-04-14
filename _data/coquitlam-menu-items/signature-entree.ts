@@ -2,22 +2,23 @@ import { MenuItem } from "@/_types";
 
 export const signatureEntree: MenuItem[] = [
   {
-    id: "cq_beef_rib_pho",
+    id: "cq_ba_pork_chop",
     category: "cq_signature_entree",
-    title: "Phở Sườn Bò",
-    subtitle: "Beef Rib Pho",
+    title: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
+    subtitle: "Ba's Caramelized Pork Tomahawk",
     description:
-      "Our signature AAA braised beef rib, AAA rare beef and brisket topped with green onion, cilantro, and grated ginger.\nSpice it up with Bun Bo Hue broth $2",
-    price: 30,
+      "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil.\nServed with pickled papaya carrot and sticky rice.",
+    price: 36,
+    dietary: ["gluten"],
   },
   {
     id: "cq_bun_cha_ha_noi",
     category: "cq_signature_entree",
-    title: "Bún Chả Hà Nội Hun Khói",
+    title: "Bún Chả Hà Nội Ủ Khói",
     subtitle: "Hà Nội Smoky Grilled Pork Vermicelli",
     description:
-      "Signature dish of Hanoi with smoke infused. Grilled pork jowl and grilled pork patty served with fresh herbs, vermicelli, pickle green papaya and nuoc cham fish sauce.",
-    price: 24,
+      "Smoked grilled pork jowl and pork patty, vermicelli, herbs, pickled papaya, umami fish sauce.",
+    price: 25,
   },
   {
     id: "cq_beef_ragu_pappardelle",
@@ -25,27 +26,27 @@ export const signatureEntree: MenuItem[] = [
     title: "Mì Trứng Sốt Bò Kho",
     subtitle: "Beef Ragu Pappardelle",
     description:
-      "Vietnamese five spices beef ragu, roasted grape tomato and pappardelle noodle. Topped with sous vide egg, parmesan cheese and cilantro.",
+      "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
     price: 26,
     dietary: ["gluten", "dairy"],
   },
   {
-    id: "cq_ba_pork_chop",
+    id: "cq_beef_rib_pho",
     category: "cq_signature_entree",
-    title: "Sườn Nướng Sốt Thịt Kho",
-    subtitle: "Ba's Grilled Caramelized Pork Chop",
+    title: "Phở Sườn Bò",
+    subtitle: "Beef Rib Pho",
     description:
-      "16oz Johnston's Farm Pork Tomahawk grilled to perfection in Thit Kho Sauce. Topped with scallion oil and micro cilantro. Served with rice.",
-    price: 42,
+      "Signature braised beef rib, AAA chuck eye, brisket, green onion, cilantro, ginger.\nSpice it up with Bun Bo Hue broth $2",
+    price: 30,
   },
   {
-    id: "cq_tomato_soft_shell_crab_hotpot",
+    id: "cq_tomato_soft_shell_crab_vermicelli",
     category: "cq_signature_entree",
-    title: "Lẩu Riêu Cua Lột",
-    subtitle: "Tomato Soft Shell Crab Hotpot (for 2)",
+    title: "Bún Riêu Cua Lột",
+    subtitle: "Tomato Soft Shell Crab Vermicelli",
     description:
-      "Sweet and Sour seafood tomato broth. Served with sweet water crab paste, AAA rare beef, fish ball ball, pork rib, fried tofu, assorted vegetable, mushroom, and thin vermicelli.\nExtra shoft shell crab $9",
-    price: 45,
+      "Sweet-sour tomato seafood broth, deep fry soft shell crab, field crab paste, AAA chuck eye, thin vermicelli.",
+    price: 26,
     dietary: ["seafood"],
   },
 ];
