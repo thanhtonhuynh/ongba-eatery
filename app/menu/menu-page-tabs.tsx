@@ -44,6 +44,7 @@ export function MenuPageTabs() {
             index={index}
             title={category.title}
             description={category.description}
+            note={category.note}
             items={coquitlamItemsByCategory[category.key] ?? []}
             addOns={category.addOns}
           />
@@ -58,7 +59,13 @@ export function MenuPageTabs() {
         <div className="border-gold/40 border p-3 sm:p-6">
           <MenuNav categories={dessertsDrinksNavCategories} />
         </div>
-        <MenuSection id="cq_sub_desserts" index={0} title="Desserts" items={coquitlamDesserts} />
+        <MenuSection
+          id="cq_sub_desserts"
+          index={0}
+          title="Desserts"
+          note="Dine-in only"
+          items={coquitlamDesserts}
+        />
         <MenuSection id="cq_sub_drinks" index={1} title="Drinks" items={coquitlamDrinks} />
       </TabsContent>
     </Tabs>

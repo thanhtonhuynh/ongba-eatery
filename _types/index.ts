@@ -83,6 +83,8 @@ export type CoquitlamMenuCategory = {
   key: CoquitlamMenuCategoryKey;
   title: string;
   description?: string;
+  /** Short availability constraint shown as a chip near the title (e.g. "Dine-in only", "Lunch only"). */
+  note?: string;
   addOns?: AddOnItem[];
 };
 

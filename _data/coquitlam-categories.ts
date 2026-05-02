@@ -1,7 +1,7 @@
 import { CoquitlamMenuCategory } from "@/_types";
 
 export const coquitlamCategories: CoquitlamMenuCategory[] = [
-  { key: "cq_signature_starter", title: "Signature Starter" },
+  { key: "cq_signature_starter", title: "Signature Starter", note: "Dine-in only" },
   {
     key: "cq_classic_starter",
     title: "Classic Starter",
@@ -9,6 +9,7 @@ export const coquitlamCategories: CoquitlamMenuCategory[] = [
   {
     key: "cq_signature_entree",
     title: "Signature Entrée",
+    note: "Dine-in only",
   },
   {
     key: "cq_classic_noodle_soup",
@@ -34,7 +35,8 @@ export const coquitlamCategories: CoquitlamMenuCategory[] = [
   },
   {
     key: "cq_banh_mi",
-    title: "In House Fresh Baked Banh Mi (Lunch Only)",
+    title: "In House Fresh Baked Banh Mi",
+    note: "Lunch only",
     description:
       "Fresh baked daily. Cucumber, cilantro, pickled daikon, and carrot.\nRegular Mayo or Curry Mayo",
     addOns: [

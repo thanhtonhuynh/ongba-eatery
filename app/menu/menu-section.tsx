@@ -11,8 +11,19 @@ type MenuSectionFrameProps = {
   isFeatured?: boolean;
   title?: string;
   description?: string;
+  /** Short availability chip shown next to the title (e.g. "Dine-in only"). */
+  note?: string;
   children: React.ReactNode;
 };
+
+/** Small uppercase pill rendered next to a section title (e.g. dine-in / lunch only). */
+export function SectionNoteChip({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="font-bricolage-grotesque border-gold/40 bg-wine/40 text-light-gold inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.22em] uppercase">
+      {children}
+    </span>
+  );
+}
 
 export function MenuSectionFrame({
   id,
@@ -20,6 +31,7 @@ export function MenuSectionFrame({
   isFeatured,
   title,
   description,
+  note,
   children,
 }: MenuSectionFrameProps) {
   return (
@@ -38,12 +50,15 @@ export function MenuSectionFrame({
         {(title || description) && (
           <div className="space-y-3 sm:space-y-6">
             {title && (
-              <Typography
-                variant="h2"
-                className="font-bricolage-grotesque text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
-              >
-                {title}
-              </Typography>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <Typography
+                  variant="h2"
+                  className="font-bricolage-grotesque text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
+                >
+                  {title}
+                </Typography>
+                {note && <SectionNoteChip>{note}</SectionNoteChip>}
+              </div>
             )}
             {description && (
               <Typography variant="body-sm" className="text-secondary whitespace-pre-line">
@@ -65,11 +80,21 @@ type Props = {
   index?: number;
   title: string;
   description?: string;
+  note?: string;
   items: MenuItem[] | Product[];
   addOns?: AddOnItem[];
 };
 
-export function MenuSection({ id, isFeatured, index, title, description, items, addOns }: Props) {
+export function MenuSection({
+  id,
+  isFeatured,
+  index,
+  title,
+  description,
+  note,
+  items,
+  addOns,
+}: Props) {
   if (items.length === 0) {
     return null;
   }
@@ -81,6 +106,7 @@ export function MenuSection({ id, isFeatured, index, title, description, items, 
       isFeatured={isFeatured}
       title={title}
       description={description}
+      note={note}
     >
       {/* Add-ons */}
       {addOns && addOns.length > 0 && (
