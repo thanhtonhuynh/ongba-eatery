@@ -88,24 +88,40 @@ export function AnimatedButton({
   text,
   size = "default",
   variant = "default",
-}: VariantProps<typeof buttonVariants> & { href: string; text: string }) {
+  color = "gold",
+}: VariantProps<typeof buttonVariants> & { href: string; text: string; color?: "gold" | "wine" }) {
   return (
-    <div className="border-gold inline-flex items-center justify-center rounded-full border p-px">
+    <div
+      className={cn(
+        "inline-flex items-center justify-center rounded-full border p-px",
+        color === "gold" ? "border-gold" : "border-wine",
+      )}
+    >
       <Button
         nativeButton={false}
         className={cn(
           buttonVariants({ size, variant }),
-          "font-bricolage-grotesque group bg-gold hover:border-gold hover:bg-wine rounded-full tracking-wide uppercase shadow-lg transition delay-[0.1s] duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]",
+          "font-bricolage-grotesque group rounded-full tracking-wide uppercase shadow-lg transition delay-[0.1s] duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]",
+          color === "gold" && "bg-gold hover:border-gold hover:bg-wine",
+          color === "wine" && "bg-wine hover:border-wine hover:bg-gold",
         )}
         render={
           <Link href={href}>
             <div className="relative overflow-hidden">
-              <p className="text-wine flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-[-20px]">
+              <p
+                className={cn(
+                  "flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-[-20px]",
+                  color === "gold" ? "text-wine" : "text-gold",
+                )}
+              >
                 {text}
               </p>
               <p
                 aria-hidden
-                className="text-gold absolute top-5 left-0 flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:top-0"
+                className={cn(
+                  "absolute top-5 left-0 flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:top-0",
+                  color === "gold" ? "text-gold" : "text-wine",
+                )}
               >
                 {text}
               </p>

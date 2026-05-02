@@ -3,33 +3,41 @@ import Image from "next/image";
 
 type Props = {
   size?: "full" | "half";
+  starSrc?: string;
+  color?: "gold" | "wine";
 };
 
 /** Decorative line with a star in the center */
-export function OrnamentLine({ size = "full" }: Props) {
+export function OrnamentLine({
+  size = "full",
+  starSrc = "/star-filled.svg",
+  color = "gold",
+}: Props) {
   return (
     <div className="relative flex items-center justify-center gap-2">
-      <DashedLine size={size} />
+      <DashedLine size={size} color={color} />
       <Image
         className="pointer-events-none select-none"
-        src="/star-filled.svg"
+        src={starSrc}
         alt="Star"
         width={20}
         height={20}
       />
-      <DashedLine size={size} />
+      <DashedLine size={size} color={color} />
     </div>
   );
 }
 
 /** Dashed line */
-function DashedLine({ size }: Props) {
+function DashedLine({ size, color }: Props) {
   return (
     <div
       className={cn(
-        "border-gold/40 h-px border-t",
+        "h-px border-t",
         size === "full" && "flex-1",
         size === "half" && "w-1/4",
+        color === "gold" && "border-gold/40",
+        color === "wine" && "border-wine/40",
       )}
     />
   );
