@@ -1,12 +1,14 @@
+import type { DietaryTag } from "@/_types";
+
 export type FamilySetDish = {
   titleVi: string;
   titleEn: string;
   description?: string;
-  note?: string;
+  dietary?: DietaryTag[];
 };
 
 export const familySetDisclaimer =
-  "Our set menu is thoughtfully curated to be enjoyed as a complete experience. We may be unable to accommodate modifications or substitutions. Please inform our team of any allergies or dietary restrictions in advance.";
+  "Our set menu is thoughtfully curated to be enjoyed as a complete experience.\nWe may be unable to accommodate modifications or substitutions.\nPlease inform our team of any allergies or dietary restrictions in advance.";
 
 export const familySetFor2 = {
   heading: "Family Style Set",
@@ -18,7 +20,7 @@ export const familySetFor2 = {
         titleVi: "Tôm Bơ Tỏi Phô Mai",
         titleEn: "Cheesy Coconut Garlic Shrimp",
         description: "Garlic coconut sauce, mozzarella, toasted bánh mì.",
-        note: "Contains dairy.",
+        dietary: ["seafood", "dairy"],
       },
       {
         titleVi: "Cánh Gà Chiên Mắm",
@@ -35,14 +37,14 @@ export const familySetFor2 = {
         titleEn: "Butter Beef Tartare",
         description:
           "AAA beef, fish sauce dressing, Dijon, shallot, garlic, mint, basil, Vietnamese coriander, crispy garlic, peanuts. Served with taro chips.",
-        note: "Contains peanut.",
+        dietary: ["peanut"],
       },
       {
         titleVi: "Salat Cà Chua Burrata",
         titleEn: "Ông's Garden Burrata Salad",
         description:
           "Tomato, cucumber, shallot, burrata cheese, Vietnamese dầu giấm vinaigrette, peanut.",
-        note: "Contains peanut.",
+        dietary: ["peanut", "dairy"],
       },
     ] satisfies FamilySetDish[],
   },
@@ -53,6 +55,7 @@ export const familySetFor2 = {
       titleEn: "Ba's Grilled Caramelized Pork Chop",
       description:
         "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil. Served with pickle papaya carrot and sticky rice.",
+      dietary: ["gluten"],
     } satisfies FamilySetDish,
     oneOfLabel: "And one of:",
     oneOf: [
@@ -61,7 +64,7 @@ export const familySetFor2 = {
         titleEn: "Tomato Soft Shell Crab Vermicelli",
         description:
           "Sweet-sour tomato seafood broth, deep fry soft shell crab, field crab paste, AAA chuck eye, thin vermicelli.",
-        note: "Contains shellfish.",
+        dietary: ["seafood"],
       },
       {
         titleVi: "Bún Chả Hà Nội Ủ Khói",
@@ -74,7 +77,7 @@ export const familySetFor2 = {
         titleEn: "Beef Ragu Pappardelle",
         description:
           "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
-        note: "Contains gluten.",
+        dietary: ["gluten", "dairy"],
       },
     ] satisfies FamilySetDish[],
   },
@@ -89,14 +92,14 @@ export const familySetFor4 = {
       titleVi: "Pate Nấm Truffle",
       titleEn: "Truffle Duck Pate",
       description: "Duck and truffle pâté, ô-mai prune compote, toasted bánh mì.",
-      note: "Contains gluten.",
+      dietary: ["gluten"],
     },
     {
       titleVi: "Bò Tái Chanh Tartare",
       titleEn: "Butter Beef Tartare",
       description:
         "AAA beef, fish sauce dressing, Dijon, shallot, garlic, mint, basil, Vietnamese coriander, crispy garlic, peanuts. Served with taro chips.",
-      note: "Contains peanut.",
+      dietary: ["peanut"],
     },
     {
       titleVi: "Cánh Gà Chiên Mắm",
@@ -108,18 +111,21 @@ export const familySetFor4 = {
       titleEn: "Ông's Garden Burrata Salad",
       description:
         "Tomato, cucumber, shallot, burrata cheese, Vietnamese dầu giấm vinaigrette, peanut.",
-      note: "Contains peanut.",
+      dietary: ["peanut", "dairy"],
     },
     {
       titleVi: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
       titleEn: "Ba's Grilled Caramelized Pork Chop",
       description:
         "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil. Served with pickle papaya carrot and sticky rice.",
+      dietary: ["gluten"],
     },
     {
       titleVi: "Vẹm Xanh Sốt Cà Ri Cốt Dừa",
       titleEn: "Coconut Curry Mussel with Fries",
-      description: "Mussels in coconut curry broth, fresh herbs, pickled jalapeño. Served with fries.",
+      description:
+        "Mussels in coconut curry broth, fresh herbs, pickled jalapeño. Served with fries.",
+      dietary: ["seafood"],
     },
   ] satisfies FamilySetDish[],
   noodleSoupIntro: "Wok Smokey Beef Pho or any Classic Noodle Soup from our menu:",
@@ -130,7 +136,7 @@ export const familySetFor4 = {
       titleEn: "Tomato Soft Shell Crab Vermicelli",
       description:
         "Sweet-sour tomato seafood broth, deep fry soft shell crab, field crab paste, AAA chuck eye, thin vermicelli.",
-      note: "Contains shellfish.",
+      dietary: ["seafood"],
     },
     {
       titleVi: "Bún Chả Hà Nội Ủ Khói",
@@ -143,7 +149,7 @@ export const familySetFor4 = {
       titleEn: "Beef Ragu Pappardelle",
       description:
         "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
-      note: "Contains gluten.",
+      dietary: ["gluten", "dairy"],
     },
   ] satisfies FamilySetDish[],
   dessertLine: "Choice of 2 desserts",
