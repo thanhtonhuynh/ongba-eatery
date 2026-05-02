@@ -1,15 +1,14 @@
 import { Mail01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
-import { OrnamentLine } from "../deco/ornament-line";
 import { Typography } from "../typography";
 import { Button } from "../ui/button";
 
 export function Footer() {
   return (
     <footer>
-      <section className="bg-dark-wine flex flex-col space-y-4 p-4 sm:space-y-6 sm:p-6">
-        <OrnamentLine />
+      <section className="bg-secondary text-wine flex flex-col space-y-4 p-4 sm:space-y-6 sm:p-6">
+        {/* <OrnamentLine starSrc="/star-filled-wine.svg" color="wine" /> */}
 
         <div className="flex flex-col gap-6 p-6 lg:px-18">
           <Typography variant="h1">Find Us</Typography>
@@ -43,18 +42,18 @@ export function Footer() {
         </div>
       </section>
 
-      <section className="bg-dark-night flex flex-col items-center gap-2 p-6 text-center text-sm sm:text-base">
+      <section className="bg-dark-night text-secondary/80 flex flex-col items-center gap-2 p-6 text-center text-sm sm:text-base">
         <p>Crafted from the freshest ingredients and rooted in family values to feed the soul.</p>
         <p className="text-xs uppercase">
           Copyright &copy; {new Date().getFullYear()}, Ongba Eatery. All rights reserved.
         </p>
-        <div className="flex items-center gap-1 text-xs uppercase">
+        <div className="flex items-center gap-1 text-xs">
           <span>Developed by</span>
           <Button
             nativeButton={false}
             variant={"link"}
             size={"xs"}
-            className="px-0"
+            className="text-secondary/80 px-0"
             render={
               <Link target="blank" href={"https://tonhuynh.ca"}>
                 Ton Huynh
