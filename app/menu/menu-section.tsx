@@ -5,6 +5,53 @@ import { Typography } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
 
+type MenuSectionFrameProps = {
+  id: string;
+  index?: number;
+  isFeatured?: boolean;
+  title?: string;
+  description?: string;
+  children: React.ReactNode;
+};
+
+export function MenuSectionFrame({
+  id,
+  index,
+  isFeatured,
+  title,
+  description,
+  children,
+}: MenuSectionFrameProps) {
+  return (
+    <Container
+      variant="section"
+      id={id}
+      className={cn(
+        "scroll-mt-20",
+        index !== undefined && index % 2 === 0 && "bg-dark-wine",
+        isFeatured && "bg-wine",
+      )}
+    >
+      <OrnamentLine />
+
+      <Container variant="section-inner" maxWidth="7xl">
+        {(title || description) && (
+          <div className="space-y-3 sm:space-y-6">
+            {title && <Typography variant="h2">{title}</Typography>}
+            {description && (
+              <Typography variant="body-sm" className="text-secondary whitespace-pre-line">
+                {description}
+              </Typography>
+            )}
+          </div>
+        )}
+
+        <div className={cn((title || description) && "mt-6", "space-y-6")}>{children}</div>
+      </Container>
+    </Container>
+  );
+}
+
 type Props = {
   id: string;
   isFeatured?: boolean;
@@ -21,52 +68,35 @@ export function MenuSection({ id, isFeatured, index, title, description, items, 
   }
 
   return (
-    <Container
-      variant="section"
+    <MenuSectionFrame
       id={id}
-      className={cn(
-        "scroll-mt-20",
-        index !== undefined && index % 2 === 0 && "bg-dark-wine",
-        isFeatured && "bg-wine",
-      )}
+      index={index}
+      isFeatured={isFeatured}
+      title={title}
+      description={description}
     >
-      <OrnamentLine />
-
-      <Container variant="section-inner" maxWidth="7xl">
-        {/* Title & description */}
-        <div className="space-y-3 sm:space-y-6">
-          <Typography variant="h2">{title}</Typography>
-          {description && (
-            <Typography variant="body-sm" className="text-secondary">
-              {description}
-            </Typography>
-          )}
+      {/* Add-ons */}
+      {addOns && addOns.length > 0 && (
+        <div className="mb-6 space-y-1">
+          <Typography variant="h3">Add-Ons</Typography>
+          <ul className="space-y-2">
+            {addOns.map((addOn, idx) => (
+              <li key={idx}>
+                <Typography variant="body-sm">
+                  {addOn.title} +{addOn.price}
+                </Typography>
+              </li>
+            ))}
+          </ul>
         </div>
+      )}
 
-        {/* Add-ons */}
-        {addOns && addOns.length > 0 && (
-          <div className="mb-6 space-y-1">
-            {/* <h3 className="text-sm font-bold uppercase sm:text-base">Add-Ons</h3> */}
-            <Typography variant="h3">Add-Ons</Typography>
-            <ul className="space-y-2">
-              {addOns.map((addOn, idx) => (
-                <li key={idx}>
-                  <Typography variant="body-sm">
-                    {addOn.title} +{addOn.price}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* Items */}
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-x-15">
-          {items.map((item) => (
-            <ItemCard key={item.id} item={item} />
-          ))}
-        </div>
-      </Container>
-    </Container>
+      {/* Items */}
+      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-x-15">
+        {items.map((item) => (
+          <ItemCard key={item.id} item={item} />
+        ))}
+      </div>
+    </MenuSectionFrame>
   );
 }

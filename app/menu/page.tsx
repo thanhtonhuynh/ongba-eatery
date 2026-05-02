@@ -1,11 +1,8 @@
-import { coquitlamCategories } from "@/_data/coquitlam-categories";
-import { coquitlamItemsByCategory } from "@/_data_access/coquitlam";
 import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { Typography } from "@/components/typography";
 import { AnimatedButton } from "@/components/ui/button";
-import { MenuNav } from "./menu-nav";
-import { MenuSection } from "./menu-section";
+import { MenuPageTabs } from "./menu-page-tabs";
 
 export default function CoquitlamMenuPage() {
   return (
@@ -17,23 +14,7 @@ export default function CoquitlamMenuPage() {
         <AnimatedButton size="xl" href="#" text="Reserve a table" />
       </Container>
 
-      {/* Menu Nav */}
-      <div className="border-gold/50 border p-3 sm:p-6">
-        <MenuNav categories={coquitlamCategories} />
-      </div>
-
-      {/* Menu Sections */}
-      {coquitlamCategories.map((category, index) => (
-        <MenuSection
-          key={category.key}
-          id={category.key}
-          index={index}
-          title={category.title}
-          description={category.description}
-          items={coquitlamItemsByCategory[category.key] ?? []}
-          addOns={category.addOns}
-        />
-      ))}
+      <MenuPageTabs />
 
       <Container variant="section" className="bg-dark-wine">
         <Container variant="section-inner" maxWidth="5xl">
