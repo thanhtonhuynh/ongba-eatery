@@ -9,6 +9,7 @@ import {
 } from "@/_data/coquitlam-family-set";
 import { classicNoodleSoup } from "@/_data/coquitlam-menu-items/classic-noodle-soup";
 import { DIETARY_META, type DietaryTag, type MenuItem } from "@/_types";
+import { MinimalOrnament } from "@/components/deco/ornament-line";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -44,8 +45,8 @@ function FamilySetPillNav() {
 
 type NormalizedDish = {
   key: string;
-  titleEn: string;
-  titleVi?: string;
+  titleEn?: string;
+  titleVi: string;
   description?: string;
   dietary?: DietaryTag[];
 };
@@ -64,7 +65,7 @@ function normalizeMenuItem(item: MenuItem): NormalizedDish {
   return {
     key: item.id,
     titleEn: item.subtitle ?? item.title,
-    titleVi: item.subtitle ? item.title : undefined,
+    titleVi: item.title,
     description: item.description,
     dietary: item.dietary,
   };
@@ -84,8 +85,8 @@ function DietaryIcons({ tags }: { tags: DietaryTag[] }) {
             <Image
               src={meta.iconSrc}
               alt={meta.label}
-              width={16}
-              height={16}
+              width={14}
+              height={14}
               className="opacity-60"
             />
             <span className="sr-only">Contains {meta.label}</span>
@@ -100,10 +101,12 @@ function DishBlock({ dish, compact = false }: { dish: NormalizedDish; compact?: 
   return (
     <div className={cn(compact ? "space-y-1" : "space-y-1.5")}>
       <p className="font-bricolage-grotesque text-base font-bold tracking-tight uppercase sm:text-lg">
-        {dish.titleEn}
+        {dish.titleVi}
       </p>
-      {dish.titleVi && (
-        <p className="font-bricolage-grotesque text-secondary text-sm italic">{dish.titleVi}</p>
+      {dish.titleEn && (
+        <p className="font-bricolage-grotesque text-secondary text-sm font-semibold italic">
+          {dish.titleEn}
+        </p>
       )}
       {dish.description && (
         <p className="text-secondary text-sm leading-relaxed">{dish.description}</p>
@@ -135,7 +138,7 @@ function NumberedList({ items, columns = 2 }: { items: NormalizedDish[]; columns
     >
       {items.map((dish, i) => (
         <li key={dish.key} className="flex gap-4">
-          <span className="font-bricolage-grotesque text-gold/60 pt-1 text-xs font-semibold tabular-nums">
+          <span className="font-bricolage-grotesque text-gold/70 pt-1 text-xs font-semibold tabular-nums">
             {String(i + 1).padStart(2, "0")}
           </span>
           <div className="border-gold/30 flex-1 border-l pl-4">
@@ -185,28 +188,11 @@ function DessertSection({ count }: { count: 1 | 2 }) {
   );
 }
 
-/** Booklet ornament — minimal hairline rules + small star */
-function BookletOrnament() {
-  return (
-    <div className="flex items-center justify-center gap-3" aria-hidden="true">
-      <span className="bg-gold/40 h-px w-12" />
-      <svg width="14" height="14" viewBox="0 0 30 30">
-        <path
-          d="M15 0 L17 13 L30 15 L17 17 L15 30 L13 17 L0 15 L13 13 Z"
-          className="fill-gold"
-          opacity="0.7"
-        />
-      </svg>
-      <span className="bg-gold/40 h-px w-12" />
-    </div>
-  );
-}
-
 function BookletCover({ heading, priceLine }: { heading: string; priceLine: string }) {
   const [forX, perPerson] = priceLine.split(" — ");
   return (
     <header className="px-6 pt-12 pb-10 text-center sm:px-12 sm:pt-16 sm:pb-14">
-      <BookletOrnament />
+      <MinimalOrnament />
       <h2 className="font-bricolage-grotesque text-light-gold mt-6 text-3xl font-bold tracking-[0.16em] uppercase sm:text-4xl md:text-5xl">
         {heading}
       </h2>
@@ -223,7 +209,7 @@ function BookletCover({ heading, priceLine }: { heading: string; priceLine: stri
 function BookletDisclaimer() {
   return (
     <footer className="border-gold/30 border-t px-6 pt-8 pb-10 sm:px-12">
-      <BookletOrnament />
+      <MinimalOrnament />
       <p className="text-secondary mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed whitespace-pre-line italic">
         {familySetDisclaimer}
       </p>
@@ -320,11 +306,11 @@ function For4Booklet() {
 export function FamilySetContent() {
   return (
     <>
-      <div className="px-3 pt-8 pb-2 sm:px-6 sm:pt-10">
+      <div className="px-3 sm:px-6">
         <FamilySetPillNav />
       </div>
 
-      <div className="px-3 pt-2 pb-12 sm:px-6">
+      <div className="px-3 sm:px-6">
         <For2Booklet />
         <For4Booklet />
       </div>

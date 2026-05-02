@@ -1,6 +1,6 @@
 import { AddOnItem, MenuItem, Product } from "@/_types";
 import { Container } from "@/components/container";
-import { OrnamentLine } from "@/components/deco/ornament-line";
+import { MinimalOrnament } from "@/components/deco/ornament-line";
 import { Typography } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
@@ -27,17 +27,24 @@ export function MenuSectionFrame({
       variant="section"
       id={id}
       className={cn(
-        "scroll-mt-20",
+        "scroll-mt-20 py-4",
         index !== undefined && index % 2 === 0 && "bg-dark-wine",
         isFeatured && "bg-wine",
       )}
     >
-      <OrnamentLine />
+      <MinimalOrnament />
 
-      <Container variant="section-inner" maxWidth="7xl">
+      <Container variant="section-inner" maxWidth="7xl" className="mt-6 px-3 sm:px-6">
         {(title || description) && (
           <div className="space-y-3 sm:space-y-6">
-            {title && <Typography variant="h2">{title}</Typography>}
+            {title && (
+              <Typography
+                variant="h2"
+                className="font-bricolage-grotesque text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
+              >
+                {title}
+              </Typography>
+            )}
             {description && (
               <Typography variant="body-sm" className="text-secondary whitespace-pre-line">
                 {description}
@@ -46,7 +53,7 @@ export function MenuSectionFrame({
           </div>
         )}
 
-        <div className={cn((title || description) && "mt-6", "space-y-6")}>{children}</div>
+        <div className={cn((title || description) && "mt-4", "space-y-6")}>{children}</div>
       </Container>
     </Container>
   );

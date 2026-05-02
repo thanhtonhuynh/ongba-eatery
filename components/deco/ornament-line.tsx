@@ -11,11 +11,11 @@ export function OrnamentLine({ size = "full" }: Props) {
     <div className="relative flex items-center justify-center gap-2">
       <DashedLine size={size} />
       <Image
-        className="pointer-events-none"
+        className="pointer-events-none select-none"
         src="/star-filled.svg"
         alt="Star"
-        width={30}
-        height={30}
+        width={20}
+        height={20}
       />
       <DashedLine size={size} />
     </div>
@@ -27,10 +27,27 @@ function DashedLine({ size }: Props) {
   return (
     <div
       className={cn(
-        "border-gold/50 h-px border-t border-dashed",
+        "border-gold/40 h-px border-t",
         size === "full" && "flex-1",
         size === "half" && "w-1/4",
       )}
     />
+  );
+}
+
+/** Minimal ornament — minimal hairline rules + small star */
+export function MinimalOrnament() {
+  return (
+    <div className="flex items-center justify-center gap-3" aria-hidden="true">
+      <span className="bg-gold/40 h-px w-12" />
+      <svg width="14" height="14" viewBox="0 0 30 30">
+        <path
+          d="M15 0 L17 13 L30 15 L17 17 L15 30 L13 17 L0 15 L13 13 Z"
+          className="fill-gold"
+          opacity="0.7"
+        />
+      </svg>
+      <span className="bg-gold/40 h-px w-12" />
+    </div>
   );
 }

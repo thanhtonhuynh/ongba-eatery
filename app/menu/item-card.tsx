@@ -42,8 +42,12 @@ export function ItemCard({ item }: Props) {
           className="font-bricolage-grotesque flex items-start justify-between gap-1 font-bold tracking-tight uppercase"
         >
           <div className="flex flex-col gap-0.5 tracking-tight uppercase sm:gap-1">
-            <span>{item.title}</span>
-            {"subtitle" in item && item.subtitle && <span>{item.subtitle}</span>}
+            <span className="text-base sm:text-lg">{item.title}</span>
+            {"subtitle" in item && item.subtitle && (
+              <span className="text-secondary font-semibold normal-case italic">
+                {item.subtitle}
+              </span>
+            )}
           </div>
           <span>{item.price}</span>
         </Typography>
@@ -63,7 +67,13 @@ export function ItemCard({ item }: Props) {
 
               return (
                 <div key={tag} className="flex items-center gap-1">
-                  <Image src={meta.iconSrc} alt={meta.label} width={16} height={16} />
+                  <Image
+                    src={meta.iconSrc}
+                    alt={meta.label}
+                    width={14}
+                    height={14}
+                    className="opacity-60"
+                  />
                   <span className="sr-only">{meta.label}</span>
                 </div>
               );

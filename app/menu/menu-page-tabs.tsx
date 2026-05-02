@@ -33,8 +33,8 @@ export function MenuPageTabs() {
         </TabsTrigger>
       </TabsList>
 
-      <TabsContent value="all-day" className="mt-0 outline-none">
-        <div className="border-gold/50 border p-3 sm:p-6">
+      <TabsContent value="all-day" className="mt-8 space-y-8 outline-none sm:mt-10">
+        <div className="border-gold/40 border p-3 sm:p-6">
           <MenuNav categories={coquitlamCategories} />
         </div>
         {coquitlamCategories.map((category, index) => (
@@ -50,12 +50,12 @@ export function MenuPageTabs() {
         ))}
       </TabsContent>
 
-      <TabsContent value="family-set" className="mt-0 outline-none">
+      <TabsContent value="family-set" className="mt-8 space-y-8 outline-none sm:mt-10">
         <FamilySetContent />
       </TabsContent>
 
-      <TabsContent value="desserts-drinks" className="mt-0 outline-none">
-        <div className="border-gold/50 border p-3 sm:p-6">
+      <TabsContent value="desserts-drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
+        <div className="border-gold/40 border p-3 sm:p-6">
           <MenuNav categories={dessertsDrinksNavCategories} />
         </div>
         <MenuSection id="cq_sub_desserts" index={0} title="Desserts" items={coquitlamDesserts} />
