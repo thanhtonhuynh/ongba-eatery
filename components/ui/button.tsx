@@ -27,7 +27,7 @@ const buttonVariants = cva(
           "h-9 gap-1.5 px-3 has-data-[icon=inline-end]:pr-2.5 has-data-[icon=inline-start]:pl-2.5",
         xs: "h-6 gap-1 px-2.5 text-xs has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3",
         sm: "h-8 gap-1 px-3 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        lg: "h-10 gap-1.5 px-4 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
+        lg: "h-10 gap-1.5 px-5 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3",
         xl: "h-12 gap-1.5 px-5 has-data-[icon=inline-end]:pr-4 has-data-[icon=inline-start]:pl-4 text-md",
         icon: "size-9",
         "icon-xs": "size-6 [&_svg:not([class*='size-'])]:size-3",
@@ -130,6 +130,49 @@ export function AnimatedButton({
         }
       />
     </div>
+  );
+}
+
+export function AnimatedSingleBorderButton({
+  href,
+  text,
+  size = "default",
+  variant = "default",
+  color = "gold",
+}: VariantProps<typeof buttonVariants> & { href: string; text: string; color?: "gold" | "wine" }) {
+  return (
+    <Button
+      nativeButton={false}
+      className={cn(
+        buttonVariants({ size, variant }),
+        "font-bricolage-grotesque group rounded-full tracking-wide uppercase shadow-lg transition delay-[0.1s] duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]",
+        color === "gold" && "bg-gold hover:border-gold hover:bg-wine",
+        color === "wine" && "bg-wine hover:border-wine hover:bg-gold",
+      )}
+      render={
+        <Link href={href}>
+          <div className="relative overflow-hidden">
+            <p
+              className={cn(
+                "flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-[-20px]",
+                color === "gold" ? "text-wine" : "text-gold",
+              )}
+            >
+              {text}
+            </p>
+            <p
+              aria-hidden
+              className={cn(
+                "absolute top-5 left-0 flex items-center gap-2 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:top-0",
+                color === "gold" ? "text-gold" : "text-wine",
+              )}
+            >
+              {text}
+            </p>
+          </div>
+        </Link>
+      }
+    />
   );
 }
 
