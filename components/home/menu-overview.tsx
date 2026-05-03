@@ -98,8 +98,36 @@ export function MenuOverview() {
   const total = slides.length;
   const [idx, setIdx] = useState(0);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const dragStartX = useRef<number | null>(null);
+  const didSwipeRef = useRef(false);
 
   const go = (n: number) => setIdx(((n % total) + total) % total);
+
+  // Pointer-based swipe nav so touch users can flip through arches without
+  // tapping each one. Pointer events unify mouse + touch; the `didSwipeRef`
+  // flag suppresses the click that would otherwise fire on whichever arch
+  // the finger lands on at the end of a swipe.
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    didSwipeRef.current = false;
+    dragStartX.current = e.clientX;
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+    if (Math.abs(e.clientX - dragStartX.current) > 8) {
+      didSwipeRef.current = true;
+    }
+  };
+
+  const onPointerEnd = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStartX.current === null) return;
+    const dx = e.clientX - dragStartX.current;
+    dragStartX.current = null;
+    const SWIPE_THRESHOLD = 30;
+    if (dx > SWIPE_THRESHOLD) go(idx - 1);
+    else if (dx < -SWIPE_THRESHOLD) go(idx + 1);
+  };
 
   // Center the active arch via a CSS translateX on the track so the centering
   // animation rides on the same transition system (timing + easing) as each
@@ -172,8 +200,16 @@ export function MenuOverview() {
       {/* Arch strip — full-bleed colonnade.
           Wrapper height is fixed so the arches can scale up/down freely
           without nudging the controls below during the active swap.
-          Centering is driven by translateX on the track (see effect above). */}
-      <div className="relative h-[572px] w-full overflow-hidden sm:h-[692px]">
+          Centering is driven by translateX on the track (see effect above).
+          Pointer handlers add swipe-to-navigate; `touch-pan-y` keeps the
+          page scrollable vertically while we own horizontal gestures. */}
+      <div
+        className="relative h-[512px] w-full touch-pan-y overflow-hidden select-none sm:h-[650px]"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerEnd}
+        // onPointerCancel={onPointerEnd}
+      >
         <div
           ref={trackRef}
           className="absolute inset-y-0 left-0 flex h-full items-center gap-5 transition-transform duration-800 ease-[cubic-bezier(0.22,0.61,0.36,1)] will-change-transform sm:gap-7"
@@ -185,15 +221,18 @@ export function MenuOverview() {
               <button
                 key={s.src}
                 type="button"
-                onClick={() => go(i)}
+                onClick={() => {
+                  if (didSwipeRef.current) return;
+                  go(i);
+                }}
                 aria-label={`View ${s.nameEn}`}
                 aria-current={active ? "true" : undefined}
                 className={cn(
                   "relative shrink-0 overflow-hidden transition-all duration-800 ease-[cubic-bezier(0.22,0.61,0.36,1)]",
                   orient,
                   active
-                    ? "h-[440px] w-[280px] shadow-[0_0_50px_rgba(247,206,131,0.24)] sm:h-[560px] sm:w-[360px]"
-                    : "h-[320px] w-[200px] opacity-70 hover:opacity-90 sm:h-[420px] sm:w-[260px]",
+                    ? "h-[420px] w-[280px] shadow-[0_0_40px_rgba(247,206,131,0.24)] sm:h-[560px] sm:w-[360px]"
+                    : "h-[300px] w-[200px] opacity-70 hover:opacity-90 sm:h-[420px] sm:w-[260px]",
                 )}
               >
                 <Image
