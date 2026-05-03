@@ -140,7 +140,7 @@ export function MenuOverview() {
       </div>
 
       {/* Heading + active dish meta */}
-      <div className="mx-auto mb-14 grid max-w-6xl grid-cols-1 items-end gap-10 px-8 md:grid-cols-[1.4fr_1fr]">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-10 px-8 md:grid-cols-[1.4fr_1fr]">
         <h2 className="font-titoli text-gold text-[clamp(3rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-tight">
           Traditional
           <br />
@@ -240,7 +240,7 @@ export function MenuOverview() {
       </div>
 
       {/* Bottom controls */}
-      <div className="mx-auto mt-4 flex max-w-6xl flex-col items-center gap-6 px-8 sm:flex-row sm:justify-between sm:gap-8">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-8 sm:flex-row sm:justify-between sm:gap-8">
         <div className="flex items-center gap-5">
           <ArrowButton dir="left" onClick={() => go(idx - 1)} label="Previous dish" />
           <ArrowButton dir="right" onClick={() => go(idx + 1)} label="Next dish" />
