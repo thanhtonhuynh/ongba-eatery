@@ -1,20 +1,18 @@
 import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indicator";
 import { Footer, Header } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-
-const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
 
 const bricolage_grotesque = Bricolage_Grotesque({
   subsets: ["vietnamese"],
   variable: "--font-bricolage-grotesque",
 });
 
-const titoli = localFont({
-  src: "../public/titoliDiTesta.woff2",
-  variable: "--font-titoli",
+const kasepi_sans = localFont({
+  src: "../public/kasepi-sans.ttf",
+  variable: "--font-kasepi-sans",
 });
 
 export const metadata: Metadata = {
@@ -36,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${titoli.variable} ${bricolage_grotesque.variable} scroll-smooth`}
+      className={`${bricolage_grotesque.variable} ${kasepi_sans.variable} scroll-smooth`}
     >
-      <body className="overflow-x-hidden antialiased">
+      <body className="font-bricolage-grotesque overflow-x-hidden antialiased">
         <div className="relative mx-auto flex min-h-screen w-full max-w-full flex-col scroll-smooth">
           <Header />
           {/* <HeaderSpacer /> */}

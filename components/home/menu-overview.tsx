@@ -169,7 +169,7 @@ export function MenuOverview() {
 
       {/* Heading + active dish meta */}
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-10 px-8 md:grid-cols-[1.4fr_1fr]">
-        <h2 className="font-titoli text-gold text-[clamp(3rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-tight">
+        <h2 className="font-kasepi-sans text-gold text-[clamp(3rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-tight">
           Traditional
           <br />
           <em className="text-light-gold/90 font-light italic">flavours,</em>{" "}

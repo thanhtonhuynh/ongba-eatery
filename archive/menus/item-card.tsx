@@ -25,7 +25,9 @@ export function ItemCard({ item }: Props) {
               <span className="sr-only">{BADGE_META[item.badge].sr}</span>
             </>
           ) : (
-            <span className="font-titoli font-bold uppercase">{BADGE_META[item.badge].label}</span>
+            <span className="font-kasepi-sans font-bold uppercase">
+              {BADGE_META[item.badge].label}
+            </span>
           )}
         </div>
       )}

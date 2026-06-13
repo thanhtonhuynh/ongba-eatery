@@ -5,8 +5,8 @@
 /* @custom-variant dark (&:is(.dark *)); */
 
 @theme inline {
-  --font-titoli: var(--font-titoli);
   --font-bricolage-grotesque: var(--font-bricolage-grotesque);
+  --font-kasepi-sans: var(--font-kasepi-sans);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

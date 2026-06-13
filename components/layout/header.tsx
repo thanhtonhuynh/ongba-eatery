@@ -43,11 +43,11 @@ export function Header() {
           <Button
             variant="link"
             className={cn(
-              "font-bricolage-grotesque p-0 text-2xl font-medium tracking-wider uppercase transition-all duration-700 hover:no-underline sm:text-3xl",
+              "font-kasepi-sans p-0 text-2xl font-semibold tracking-wider uppercase transition-all duration-700 hover:no-underline sm:text-3xl",
               scrolled && "text-xl sm:text-2xl",
             )}
             nativeButton={false}
-            render={<Link href="/">Ongba Eatery</Link>}
+            render={<Link href="/">Ông Bà Eatery</Link>}
           />
           <DesktopNav scrolled={scrolled} />
           <MobileNav />
