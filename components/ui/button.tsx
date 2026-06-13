@@ -75,7 +75,7 @@ function DoubleBorderButton({
         data-slot="button"
         className={cn(
           buttonVariants({ variant, size, className }),
-          "font-titoli h-10 rounded-full px-6 py-4 text-base tracking-wide uppercase sm:h-12 sm:px-8 sm:py-5 sm:text-lg",
+          "font-kasepi-sans h-10 rounded-full px-6 py-4 text-base tracking-wide uppercase sm:h-12 sm:px-8 sm:py-5 sm:text-lg",
         )}
         {...props}
       />

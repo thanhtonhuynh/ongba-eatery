@@ -42,7 +42,7 @@ Use `_data/coquitlam-family-set.ts` for set data and `_data/coquitlam-desserts-d
 
 - Set name: `"Family Style Set"` (`familySetForX.heading`).
 - Price line: `"For 2 — $50 per person"` / `"For 4 — $50 per person"` (`familySetForX.priceLine`).
-- The header should feel like a **price card / banner**, distinct from the section title `H2`. It should communicate *one price, one experience* at a glance.
+- The header should feel like a **price card / banner**, distinct from the section title `H2`. It should communicate _one price, one experience_ at a glance.
 
 ### 3.2 For 2 — course-by-course
 
@@ -55,7 +55,7 @@ Render exactly three courses, then dessert:
 3. **3rd course** (`thirdCourse`)
    - Always-included **fixed** dish: Ba's Grilled Caramelized Pork Chop (`thirdCourse.fixed`).
    - **AND** one of three options (`thirdCourse.oneOf`): Tomato Soft Shell Crab Vermicelli, Hà Nội Smoky Grilled Pork Vermicelli, Beef Ragu Pappardelle.
-   - The `AND one of` mechanic must be visually obvious (the diner gets the pork chop *plus* exactly one of the three).
+   - The `AND one of` mechanic must be visually obvious (the diner gets the pork chop _plus_ exactly one of the three).
 4. **Dessert** — `dessertLine` is `"Choice of 1 dessert"`. Render the actual dessert options (see §3.4).
 
 ### 3.3 For 4 — group-style
@@ -117,7 +117,7 @@ Tailwind has these mapped via the `@theme inline` block (e.g. `bg-dark-wine`, `t
 ### 4.2 Typography
 
 - `font-bricolage-grotesque` — display, course eyebrows, set name banner.
-- `font-titoli` — reserved for h1-style brand moments (use sparingly, e.g. set name on the price banner, max once per set).
+- `font-kasepi-sans` — reserved for h1-style brand moments (use sparingly, e.g. set name on the price banner, max once per set).
 - Default body uses the Geist sans stack from layout.
 - Use existing `Typography` component (`components/typography.tsx`) where possible; tailwind classes are fine for inline tweaks.
 
@@ -137,18 +137,18 @@ There is no icon library beyond hugeicons. If using icons (e.g. small dot, slash
 
 Create the following in `app/menu/family-set/` (new folder, co-located with `family-set-content.tsx`). Do NOT redefine these inline — every block should be a named export.
 
-| Component | Purpose | Notes |
-|---|---|---|
-| `FamilySetHeader` | Set name + price banner. | Variants: `for-2`, `for-4`. Single source of truth for the price line. |
-| `FamilySetCourse` | Wrapper around a single course (eyebrow label + body slot). | Replaces the current `FamilySetCourseCard`. Should accept `step` (1, 2, 3, …), `label`, `helper` (e.g. `"choose one"`), and `children`. |
-| `DishBlock` | Normalized dish renderer. | Props: `{ titleEn, titleVi, description?, note?, dietary?, price?, showPrice? }`. Used for set dishes, noodle soup rows, dessert options. |
-| `OrChoiceList` | Vertical OR group. | Renders `DishBlock` items separated by an `OrDivider`. Accept a `as="ul"` for semantic lists. |
-| `AndOneOf` | Composition for the For 2 third course: one fixed dish + an OR group beneath. | Visualize the relationship clearly (e.g. plus mark, vertical connector, indented sub-card). |
-| `LiveNoodleSoupList` | For 4 only. Pulls live data from `classicNoodleSoup`. | Shows price aligned right (this is one of the few places to show a price — to help compare). |
-| `IncludedList` | For 4 only. Sequence list of always-included dishes. | Compact dividers, no OR. |
-| `DessertPicker` | New. Lists `coquitlamDesserts`. | Accepts `count: 1 \| 2` to render the correct heading and any subtle indicator. No prices. |
-| `OrDivider` | Tiny right- or center-aligned `or` rule. | Already exists; refine, don't fork. |
-| `FamilySetDisclaimer` | Italic centered note at the end of the tab. | Pulls from `familySetDisclaimer`. |
+| Component             | Purpose                                                                       | Notes                                                                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `FamilySetHeader`     | Set name + price banner.                                                      | Variants: `for-2`, `for-4`. Single source of truth for the price line.                                                                    |
+| `FamilySetCourse`     | Wrapper around a single course (eyebrow label + body slot).                   | Replaces the current `FamilySetCourseCard`. Should accept `step` (1, 2, 3, …), `label`, `helper` (e.g. `"choose one"`), and `children`.   |
+| `DishBlock`           | Normalized dish renderer.                                                     | Props: `{ titleEn, titleVi, description?, note?, dietary?, price?, showPrice? }`. Used for set dishes, noodle soup rows, dessert options. |
+| `OrChoiceList`        | Vertical OR group.                                                            | Renders `DishBlock` items separated by an `OrDivider`. Accept a `as="ul"` for semantic lists.                                             |
+| `AndOneOf`            | Composition for the For 2 third course: one fixed dish + an OR group beneath. | Visualize the relationship clearly (e.g. plus mark, vertical connector, indented sub-card).                                               |
+| `LiveNoodleSoupList`  | For 4 only. Pulls live data from `classicNoodleSoup`.                         | Shows price aligned right (this is one of the few places to show a price — to help compare).                                              |
+| `IncludedList`        | For 4 only. Sequence list of always-included dishes.                          | Compact dividers, no OR.                                                                                                                  |
+| `DessertPicker`       | New. Lists `coquitlamDesserts`.                                               | Accepts `count: 1 \| 2` to render the correct heading and any subtle indicator. No prices.                                                |
+| `OrDivider`           | Tiny right- or center-aligned `or` rule.                                      | Already exists; refine, don't fork.                                                                                                       |
+| `FamilySetDisclaimer` | Italic centered note at the end of the tab.                                   | Pulls from `familySetDisclaimer`.                                                                                                         |
 
 Component constraints:
 

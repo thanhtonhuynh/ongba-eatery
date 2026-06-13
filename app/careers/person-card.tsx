@@ -20,7 +20,7 @@ export function PersonCard({ person }: Props) {
       </div>
 
       <div className="mt-2 text-center sm:mt-3">
-        <h3 className="font-titoli text-lg font-bold tracking-wider uppercase sm:text-xl md:text-2xl">
+        <h3 className="font-kasepi-sans text-lg font-bold tracking-wider uppercase sm:text-xl md:text-2xl">
           {person.name}
         </h3>
         <p className="text-sm italic sm:text-base">{person.role}</p>

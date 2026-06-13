@@ -37,7 +37,7 @@ export default function CareersPage() {
 
         {/* <DoubleBorderButton
           size={"lg"}
-          className="font-titoli h-12 px-6 py-5 text-base tracking-wide uppercase sm:h-14 sm:px-8 sm:py-6 sm:text-xl"
+          className="font-kasepi-sans h-12 px-6 py-5 text-base tracking-wide uppercase sm:h-14 sm:px-8 sm:py-6 sm:text-xl"
         >
           <Link href="#">Apply Now</Link>
         </DoubleBorderButton> */}
@@ -47,7 +47,7 @@ export default function CareersPage() {
       <section className="bg-dark-wine space-y-4 p-4 sm:space-y-6 sm:p-6">
         <OrnamentLine />
 
-        <h2 className="font-titoli text-center text-2xl font-semibold tracking-widest uppercase sm:text-3xl md:text-4xl">
+        <h2 className="font-kasepi-sans text-center text-2xl font-semibold tracking-widest uppercase sm:text-3xl md:text-4xl">
           Our Ongba Family
         </h2>
 

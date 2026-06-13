@@ -15,7 +15,7 @@ export default function MerchandisePage() {
 
         {/* <DoubleBorderButton
           size={"lg"}
-          className={"font-titoli h-14 px-8 py-6 text-xl tracking-wide uppercase"}
+          className={"font-kasepi-sans h-14 px-8 py-6 text-xl tracking-wide uppercase"}
         >
           Shop Now
         </DoubleBorderButton> */}

@@ -53,7 +53,7 @@ export function MenuSectionFrame({
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                 <Typography
                   variant="h2"
-                  className="font-bricolage-grotesque text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
+                  className="font-kasepi-sans text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
                 >
                   {title}
                 </Typography>

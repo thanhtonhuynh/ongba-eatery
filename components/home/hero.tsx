@@ -13,7 +13,7 @@ const taglineLines: { text?: string; content?: React.ReactNode; className: strin
     content: (
       <>
         <span className="text-2xl font-light sm:text-3xl md:text-4xl">Honouring</span>{" "}
-        <span className="font-bricolage-grotesque">Vietnamese Traditions</span>
+        <span className="font-kasepi-sans">Vietnamese Traditions</span>
       </>
     ),
     className: "",
@@ -22,7 +22,7 @@ const taglineLines: { text?: string; content?: React.ReactNode; className: strin
     content: (
       <>
         <span className="text-xl font-light sm:text-2xl md:text-3xl">with a</span>{" "}
-        <span className="font-bricolage-grotesque">Modern Twist</span>
+        <span className="font-kasepi-sans">Modern Twist</span>
       </>
     ),
     className: "",
