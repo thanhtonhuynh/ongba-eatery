@@ -1,17 +1,17 @@
 import type { DietaryTag } from "@/_types";
 
-export type FamilySetDish = {
+export type SignatureSetDish = {
   titleVi: string;
   titleEn: string;
   description?: string;
   dietary?: DietaryTag[];
 };
 
-export const familySetDisclaimer =
+export const signatureSetDisclaimer =
   "Our set menu is thoughtfully curated to be enjoyed as a complete experience.\nWe may be unable to accommodate modifications or substitutions.\nPlease inform our team of any allergies or dietary restrictions in advance.";
 
-export const familySetFor2 = {
-  heading: "Family Style Set",
+export const signatureSetFor2 = {
+  heading: "Signature Set",
   priceLine: "For 2 — $50 per person",
   firstCourse: {
     label: "1st course — choice of one",
@@ -27,7 +27,7 @@ export const familySetFor2 = {
         titleEn: "Fish Sauce Glazed Chicken Wings",
         description: "Lightly battered wings, fish sauce glaze.",
       },
-    ] satisfies FamilySetDish[],
+    ] satisfies SignatureSetDish[],
   },
   secondCourse: {
     label: "2nd course — choice of one",
@@ -46,7 +46,7 @@ export const familySetFor2 = {
           "Tomato, cucumber, shallot, burrata cheese, Vietnamese dầu giấm vinaigrette, peanut.",
         dietary: ["peanut", "dairy"],
       },
-    ] satisfies FamilySetDish[],
+    ] satisfies SignatureSetDish[],
   },
   thirdCourse: {
     label: "3rd course",
@@ -56,7 +56,7 @@ export const familySetFor2 = {
       description:
         "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil. Served with pickle papaya carrot and sticky rice.",
       dietary: ["gluten"],
-    } satisfies FamilySetDish,
+    } satisfies SignatureSetDish,
     oneOfLabel: "And one of:",
     oneOf: [
       {
@@ -79,13 +79,13 @@ export const familySetFor2 = {
           "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
         dietary: ["gluten", "dairy"],
       },
-    ] satisfies FamilySetDish[],
+    ] satisfies SignatureSetDish[],
   },
   dessertLine: "Choice of 1 dessert",
 };
 
-export const familySetFor4 = {
-  heading: "Family Style Set",
+export const signatureSetFor4 = {
+  heading: "Signature Set",
   priceLine: "For 4 — $50 per person",
   included: [
     {
@@ -127,7 +127,7 @@ export const familySetFor4 = {
         "Mussels in coconut curry broth, fresh herbs, pickled jalapeño. Served with fries.",
       dietary: ["seafood"],
     },
-  ] satisfies FamilySetDish[],
+  ] satisfies SignatureSetDish[],
   noodleSoupIntro: "Wok Smokey Beef Pho or any Classic Noodle Soup from our menu:",
   entreeChoiceIntro: "One of:",
   entreeChoices: [
@@ -151,6 +151,6 @@ export const familySetFor4 = {
         "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
       dietary: ["gluten", "dairy"],
     },
-  ] satisfies FamilySetDish[],
+  ] satisfies SignatureSetDish[],
   dessertLine: "Choice of 2 desserts",
 };
