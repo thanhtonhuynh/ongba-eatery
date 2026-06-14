@@ -12,19 +12,10 @@ type NavItem = {
 
 export const navItems: NavItem[] = [
   { title: "Our Story", href: "/story" },
-  // {
-  //   title: "Menus",
-  //   href: "/menus",
-  //   children: [
-  //     { title: "Vancouver", href: "/menus/vancouver" },
-  //     { title: "Coquitlam", href: "/menus/coquitlam" },
-  //   ],
-  // },
   { title: "Menu", href: "/menu" },
-  { title: "Careers", href: "/careers" },
-  // { title: "Locations", href: "/locations" },
-  { title: "Contact", href: "/contact" },
   { title: "Gift Cards", href: "/gift-card" },
+  { title: "Contact", href: "/contact" },
+  { title: "Careers", href: "/careers" },
 ];
 
 export function DesktopNav({ scrolled }: { scrolled: boolean }) {
