@@ -17,7 +17,7 @@ export function JoinOurTeam() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="bg-secondary text-wine relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
+    <section className="bg-darkest-wine text-gold relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 md:grid-cols-12 md:gap-16">
         {/* Copy */}
         <motion.div
@@ -27,17 +27,19 @@ export function JoinOurTeam() {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          <h2 className="font-kasepi-sans text-wine text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-medium tracking-tight text-balance">
+          <h2 className="font-kasepi-sans text-gold text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] font-medium tracking-tight text-balance">
             More than a kitchen, a{" "}
-            <em className="inline-block pb-1 leading-[1.1] font-light italic">family</em>
+            <em className="text-light-gold/90 inline-block pb-1 leading-[1.1] font-light italic">
+              family
+            </em>
           </h2>
 
           <HairlineStar />
 
-          <div className="text-wine/80 max-w-md space-y-4 text-base leading-relaxed lg:text-lg">
+          <div className="max-w-md space-y-4 text-base leading-relaxed lg:text-lg">
             <p>
-              At Ông Bà, food is more than what&apos;s on the plate. It is connection, tradition, and
-              moments that feed the soul.
+              At Ông Bà, food is more than what&apos;s on the plate. It is connection, tradition,
+              and moments that feed the soul.
             </p>
             <p>
               We are always looking for dedicated, warm-hearted people to join our growing family.
@@ -46,7 +48,7 @@ export function JoinOurTeam() {
           </div>
 
           <div className="pt-2">
-            <AnimatedButton size="xl" href="/careers" text="Join Our Team" color="wine" />
+            <AnimatedButton size="xl" href="/careers" text="Join Our Team" color="gold" />
           </div>
         </motion.div>
 
@@ -98,9 +100,9 @@ function TiltFrame({ reduce }: { reduce: boolean }) {
       {/* Main frame, lifted toward the viewer */}
       <div
         style={{ transform: "translateZ(35px)" }}
-        className="border-wine relative rounded-tl-[110px] rounded-tr-2xl rounded-br-[110px] rounded-bl-2xl border p-2 shadow-[0_18px_40px_rgba(58,22,28,0.18)] transition-shadow duration-500 group-hover:shadow-[0_34px_70px_rgba(58,22,28,0.34)]"
+        className="border-gold relative rounded-tl-[110px] rounded-tr-2xl rounded-br-[110px] rounded-bl-2xl border p-2 shadow-[0_18px_40px_rgba(247,206,131,0.1)] transition-shadow duration-500 group-hover:shadow-[0_34px_70px_rgba(247,206,131,0.22)]"
       >
-        <div className="border-wine/30 relative aspect-16/11 overflow-hidden rounded-tl-[100px] rounded-tr-xl rounded-br-[100px] rounded-bl-xl border">
+        <div className="border-gold/30 relative aspect-16/11 overflow-hidden rounded-tl-[100px] rounded-tr-xl rounded-br-[100px] rounded-bl-xl border">
           <Image
             src="/interiors/dining-1.png"
             alt="Warm, golden-lit dining room at Ông Bà with bar seating and gilded wall panels."
@@ -123,9 +125,9 @@ function TiltFrame({ reduce }: { reduce: boolean }) {
 function HairlineStar() {
   return (
     <div className="flex items-center gap-3" aria-hidden>
-      <span className="bg-wine/40 h-px w-16" />
-      <Image src="/star-filled-wine.svg" alt="" width={16} height={16} />
-      <span className="bg-wine/40 h-px w-16" />
+      <span className="bg-gold/40 h-px w-16" />
+      <Image src="/star-filled.svg" alt="" width={16} height={16} />
+      <span className="bg-gold/40 h-px w-16" />
     </div>
   );
 }
