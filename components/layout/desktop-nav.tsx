@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
   { title: "Careers", href: "/careers" },
   // { title: "Locations", href: "/locations" },
   { title: "Contact", href: "/contact" },
-  { title: "Merchandise", href: "/merchandise" },
+  { title: "Gift Cards", href: "/gift-card" },
 ];
 
 export function DesktopNav({ scrolled }: { scrolled: boolean }) {

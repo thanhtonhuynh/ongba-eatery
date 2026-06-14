@@ -1,8 +1,8 @@
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
+import { GiftCardCallout } from "@/components/home/gift-card-callout";
 import { Hero } from "@/components/home/hero";
 import { JoinOurTeam } from "@/components/home/join-our-team";
 import { MenuOverview } from "@/components/home/menu-overview";
-import { OurProducts } from "@/components/home/our-products";
 import { Reviews } from "@/components/home/reviews";
 import { StoryOverview } from "@/components/home/story-overview";
 
@@ -12,7 +12,7 @@ export default function Page() {
       <Hero />
       <StoryOverview />
       <MenuOverview />
-      <OurProducts />
+      <GiftCardCallout />
       <JoinOurTeam />
       {/* <Locations /> */}
       <Reviews />
