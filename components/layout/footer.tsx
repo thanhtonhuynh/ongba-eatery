@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="bg-wine text-gold relative overflow-hidden">
-      <div className="relative mx-auto w-full max-w-6xl px-6 pt-12 pb-16 sm:pt-16 sm:pb-20">
+      <div className="relative mx-auto w-full max-w-7xl px-6 pt-12 pb-16 sm:pt-16 sm:pb-20">
         <OrnamentLine />
 
         <div className="mt-14 grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-12 md:gap-10">
@@ -63,7 +63,7 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-gold/15 relative border-t">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-2 px-6 py-6 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-2 px-6 py-6 text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-left">
           <p className="text-gold/60 text-xs tracking-wide uppercase">
             Copyright &copy; {year}, Ông Bà Eatery. All rights reserved.
           </p>
