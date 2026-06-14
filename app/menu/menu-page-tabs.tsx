@@ -4,7 +4,7 @@ import { coquitlamCategories } from "@/_data/coquitlam-categories";
 import { coquitlamDesserts, coquitlamDrinks } from "@/_data/coquitlam-desserts-drinks";
 import { coquitlamItemsByCategory } from "@/_data_access/coquitlam";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FamilySetContent } from "./family-set-content";
+import { SignatureSetContent } from "./signature-set-content";
 import { MenuNav } from "./menu-nav";
 import { MenuSection } from "./menu-section";
 
@@ -25,8 +25,8 @@ export function MenuPageTabs() {
         <TabsTrigger value="all-day" className={outerTabTriggerClass}>
           All-day
         </TabsTrigger>
-        <TabsTrigger value="family-set" className={outerTabTriggerClass}>
-          Family Set
+        <TabsTrigger value="signature-set" className={outerTabTriggerClass}>
+          Signature Set
         </TabsTrigger>
         <TabsTrigger value="desserts-drinks" className={outerTabTriggerClass}>
           Desserts &amp; Drinks
@@ -51,8 +51,8 @@ export function MenuPageTabs() {
         ))}
       </TabsContent>
 
-      <TabsContent value="family-set" className="mt-8 space-y-8 outline-none sm:mt-10">
-        <FamilySetContent />
+      <TabsContent value="signature-set" className="mt-8 space-y-8 outline-none sm:mt-10">
+        <SignatureSetContent />
       </TabsContent>
 
       <TabsContent value="desserts-drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
