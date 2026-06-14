@@ -13,7 +13,7 @@ export function GiftCardPlate({ className }: { className?: string }) {
         className,
       )}
     >
-      <div className="border-gold/50 from-dark-wine to-darkest-wine relative flex aspect-[1.6/1] flex-col items-center justify-center gap-4 overflow-hidden rounded-tl-[74px] rounded-tr-xl rounded-br-[74px] rounded-bl-xl border bg-linear-to-br sm:rounded-tl-[104px] sm:rounded-br-[104px]">
+      <div className="border-gold/50 bg-wine relative flex aspect-[1.6/1] flex-col items-center justify-center gap-4 overflow-hidden rounded-tl-[74px] rounded-tr-xl rounded-br-[74px] rounded-bl-xl border sm:rounded-tl-[104px] sm:rounded-br-[104px]">
         <div className="absolute inset-0 bg-[url('/pattern-lightgold.svg')] bg-size-[260px] bg-center opacity-[0.12]" />
         <div className="pointer-events-none absolute inset-0 bg-radial from-transparent to-black/30" />
 
