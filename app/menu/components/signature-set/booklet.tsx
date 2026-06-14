@@ -8,18 +8,30 @@ type BookletCoverProps = {
 
 function BookletCover({ heading, priceLine }: BookletCoverProps) {
   const [forX, perPerson] = priceLine.split(" — ");
+  const [amount, ...unitParts] = perPerson.split(" ");
+  const unit = unitParts.join(" ");
   return (
-    <header className="px-6 pt-12 pb-10 text-center sm:px-12 sm:pt-16 sm:pb-14">
-      <MinimalOrnament />
-      <h2 className="font-bricolage-grotesque text-light-gold mt-6 text-3xl font-bold tracking-[0.16em] uppercase sm:text-4xl md:text-5xl">
+    <header className="px-6 pt-16 pb-14 text-center sm:px-12 sm:pt-20 sm:pb-16">
+      {/* title — the hero */}
+      <h2 className="font-kasepi-sans text-light-gold mt-5 text-3xl font-bold tracking-widest uppercase sm:text-4xl md:text-5xl">
         {heading}
       </h2>
-      <div className="font-bricolage-grotesque border-gold/40 bg-wine/30 divide-gold/30 mx-auto mt-6 inline-flex items-center divide-x rounded-sm border">
-        <div className="text-light-gold px-5 py-3 text-base font-bold tracking-[0.22em] uppercase sm:text-lg">
-          {forX}
-        </div>
-        <div className="text-secondary px-5 py-3 text-sm sm:text-base">{perPerson}</div>
+
+      {/* serving — quiet eyebrow */}
+      <p className="font-kasepi-sans text-light-gold mt-8 text-lg font-semibold tracking-wide uppercase sm:text-xl">
+        {forX}
+      </p>
+
+      {/* single delicate flourish */}
+      <div className="mt-8">
+        <MinimalOrnament />
       </div>
+
+      {/* price — understated */}
+      <p className="font-kasepi-sans text-light-gold mt-8 flex items-baseline justify-center gap-2.5">
+        <span className="text-xl font-bold tracking-tight sm:text-2xl">{amount}</span>
+        <span className="text-secondary text-sm font-medium tracking-wide">{unit}</span>
+      </p>
     </header>
   );
 }

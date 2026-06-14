@@ -4,6 +4,7 @@ export type SignatureSetDish = {
   titleVi: string;
   titleEn: string;
   description?: string;
+  note?: string;
   dietary?: DietaryTag[];
 };
 
@@ -40,7 +41,7 @@ export const signatureSetFor2 = {
         dietary: ["peanut"],
       },
       {
-        titleVi: "Salat Cà Chua Burrata",
+        titleVi: "Salad Cà Chua Burrata",
         titleEn: "Ông's Garden Burrata Salad",
         description:
           "Tomato, cucumber, shallot, burrata cheese, Vietnamese dầu giấm vinaigrette, peanut.",
@@ -67,7 +68,7 @@ export const signatureSetFor2 = {
         dietary: ["seafood"],
       },
       {
-        titleVi: "Bún Chả Hà Nội Ủ Khói",
+        titleVi: "Bún Chả Hà Nội Hun Khói",
         titleEn: "Hà Nội Smoky Grilled Pork Vermicelli",
         description:
           "Smoked grilled pork jowl and pork patty, vermicelli, herbs, pickled papaya, umami fish sauce.",
@@ -87,7 +88,7 @@ export const signatureSetFor2 = {
 export const signatureSetFor4 = {
   heading: "Signature Set",
   priceLine: "For 4 — $50 per person",
-  included: [
+  firstCourse: [
     {
       titleVi: "Pate Nấm Truffle",
       titleEn: "Truffle Duck Pate",
@@ -107,18 +108,11 @@ export const signatureSetFor4 = {
       description: "Lightly battered wings, fish sauce glaze.",
     },
     {
-      titleVi: "Salat Cà Chua Burrata",
+      titleVi: "Salad Cà Chua Burrata",
       titleEn: "Ông's Garden Burrata Salad",
       description:
         "Tomato, cucumber, shallot, burrata cheese, Vietnamese dầu giấm vinaigrette, peanut.",
       dietary: ["peanut", "dairy"],
-    },
-    {
-      titleVi: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
-      titleEn: "Ba's Grilled Caramelized Pork Chop",
-      description:
-        "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil. Served with pickle papaya carrot and sticky rice.",
-      dietary: ["gluten"],
     },
     {
       titleVi: "Vẹm Xanh Sốt Cà Ri Cốt Dừa",
@@ -128,9 +122,22 @@ export const signatureSetFor4 = {
       dietary: ["seafood"],
     },
   ] satisfies SignatureSetDish[],
-  noodleSoupIntro: "Wok Smokey Beef Pho or any Classic Noodle Soup from our menu:",
-  entreeChoiceIntro: "One of:",
-  entreeChoices: [
+  secondCourse: [
+    {
+      titleVi: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
+      titleEn: "Ba's Grilled Caramelized Pork Chop",
+      description:
+        "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil. Served with pickle papaya carrot and sticky rice.",
+      dietary: ["gluten"],
+    },
+    {
+      titleVi: "Phở Tái Lăn",
+      titleEn: "Wok Smokey Beef Pho",
+      description: "12 hours beef broth, Wok-seared AAA Chuck Eye, beef brisket, grated ginger.",
+      note: "Can be replaced by any Classic Noodle Soup from our menu.",
+    },
+  ] satisfies SignatureSetDish[],
+  thirdCourse: [
     {
       titleVi: "Bún Riêu Cua Lột",
       titleEn: "Tomato Soft Shell Crab Vermicelli",
@@ -139,7 +146,7 @@ export const signatureSetFor4 = {
       dietary: ["seafood"],
     },
     {
-      titleVi: "Bún Chả Hà Nội Ủ Khói",
+      titleVi: "Bún Chả Hà Nội Hun Khói",
       titleEn: "Hà Nội Smoky Grilled Pork Vermicelli",
       description:
         "Smoked grilled pork jowl and pork patty, vermicelli, herbs, pickled papaya, umami fish sauce.",
@@ -152,5 +159,4 @@ export const signatureSetFor4 = {
       dietary: ["gluten", "dairy"],
     },
   ] satisfies SignatureSetDish[],
-  dessertLine: "Choice of 2 desserts",
 };

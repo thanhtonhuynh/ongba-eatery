@@ -12,7 +12,7 @@ export const coquitlamDesserts: MenuItem[] = [
   {
     id: "cq_pandan_basque_cheesecake",
     category: "cq_desserts",
-    title: "Bánh phômai lá dứa",
+    title: "Bánh phô mai lá dứa",
     subtitle: "Coconut Pandan Basque Cheesecake",
     description: "Served with coconut biscoff crumble and coconut white chocolate sauce.",
     price: 10,
