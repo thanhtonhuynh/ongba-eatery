@@ -6,6 +6,7 @@ export type NormalizedDish = {
   titleEn?: string;
   titleVi: string;
   description?: string;
+  note?: string;
   dietary?: DietaryTag[];
 };
 
@@ -15,6 +16,7 @@ export function normalizeSignatureDish(dish: SignatureSetDish): NormalizedDish {
     titleEn: dish.titleEn,
     titleVi: dish.titleVi,
     description: dish.description,
+    note: dish.note,
     dietary: dish.dietary,
   };
 }

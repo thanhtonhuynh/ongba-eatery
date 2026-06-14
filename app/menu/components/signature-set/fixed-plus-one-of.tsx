@@ -1,6 +1,6 @@
 import { type SignatureSetDish } from "@/_data/coquitlam-signature-set";
+import { ChoiceList } from "./choice-list";
 import { DishBlock } from "./dish-block";
-import { NumberedList } from "./numbered-list";
 import { normalizeSignatureDish } from "./types";
 
 type Props = {
@@ -23,16 +23,9 @@ export function FixedPlusOneOf({ fixed, options }: Props) {
         </div>
       </div>
 
-      {/* Connector */}
-      <div className="flex items-center gap-3 px-1">
-        <span className="bg-gold/25 h-px flex-1" />
-        <span className="font-bricolage-grotesque border-gold/40 bg-darkest-wine text-light-gold rounded-full border px-3 py-1 text-[11px] font-semibold tracking-[0.22em] uppercase">
-          + Choose 1
-        </span>
-        <span className="bg-gold/25 h-px flex-1" />
-      </div>
+      <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />
 
-      <NumberedList items={options.map(normalizeSignatureDish)} columns={3} />
+      <ChoiceList items={options.map(normalizeSignatureDish)} />
     </div>
   );
 }

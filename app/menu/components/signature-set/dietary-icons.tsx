@@ -1,13 +1,17 @@
 import { DIETARY_META, type DietaryTag } from "@/_types";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 type Props = {
   tags: DietaryTag[];
+  align?: "start" | "center";
 };
 
-export function DietaryIcons({ tags }: Props) {
+export function DietaryIcons({ tags, align = "start" }: Props) {
   return (
-    <div className="flex flex-wrap items-center gap-2 pt-1">
+    <div
+      className={cn("flex flex-wrap items-center gap-2 pt-1", align === "center" && "justify-center")}
+    >
       {tags.map((tag) => {
         const meta = DIETARY_META[tag];
         return (
