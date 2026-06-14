@@ -41,7 +41,6 @@ export default function RootLayout({
           <Header />
           {/* <HeaderSpacer /> */}
           <main className="flex flex-1 flex-col">{children}</main>
-          <div className="bg-wine h-16"></div>
           <Footer />
         </div>
         <TailwindScreenSizeIndicator />
