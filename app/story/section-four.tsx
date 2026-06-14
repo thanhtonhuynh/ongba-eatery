@@ -1,77 +1,57 @@
-import { Container } from "@/components/container";
-import { OrnamentLine } from "@/components/deco/ornament-line";
-import { Typography } from "@/components/typography";
-import { DoubleImageCarousel, DoubleSlide } from "./double-image-carousel";
+import { ArchCarousel, type ArchSlide } from "@/components/arch-carousel";
+import { ChapterHeading, HairlineStar, Prose, Reveal, Term } from "./_ui";
 
-const slides: DoubleSlide[] = [
-  {
-    leftSrc: "/story/ba-2.png",
-    leftAlt: "Ba's Photo 2",
-    rightSrc: "/story/ba-3.png",
-    rightAlt: "Ba's Photo 3",
-  },
-  {
-    leftSrc: "/story/ba-4.png",
-    leftAlt: "Ba's Photo 4",
-    rightSrc: "/story/ongba7.png",
-    rightAlt: "Ongba Photo 7",
-  },
-  {
-    leftSrc: "/story/ongba8.png",
-    leftAlt: "Ongba Photo 8",
-    rightSrc: "/story/ba-5.png",
-    rightAlt: "Ba's Photo 5",
-  },
+const slides: ArchSlide[] = [
+  { src: "/story/ba-2.png", alt: "Ông Bà family photo" },
+  { src: "/story/ba-3.png", alt: "Ông Bà family photo" },
+  { src: "/story/ba-4.png", alt: "Ông Bà family photo" },
+  { src: "/story/ongba7.png", alt: "Ông Bà family photo" },
+  { src: "/story/ongba8.png", alt: "Ông Bà family photo" },
+  { src: "/story/ba-5.png", alt: "Ông Bà family photo" },
 ];
 
 export function SectionFour() {
   return (
-    <Container variant="section" className="bg-dark-wine">
-      <OrnamentLine size="half" />
+    <section className="bg-dark-wine overflow-hidden py-20 sm:py-28">
+      <div className="flex flex-col gap-12 sm:gap-16">
+        <Reveal className="flex flex-col items-center gap-5 px-4 sm:px-6">
+          <ChapterHeading>The Legacy of Ông Bà</ChapterHeading>
+          <HairlineStar />
+        </Reveal>
 
-      <Container variant="section">
-        <Container variant="story-inner-section">
-          <Typography variant="h3" className="normal-case">
-            The Legacy of Ông Bà
-          </Typography>
-
-          <div className="space-y-2">
-            <Typography variant="body">
+        <Reveal>
+          <Prose>
+            <p>
               Years later, their journey inspired us to open{" "}
-              <span className="font-bricolage-grotesque font-bold">Ông Bà Vietnamese Eatery</span>.
-            </Typography>
-            <Typography variant="body">
-              The restaurant was created to honor their story and the values they lived by - family,
+              <Term>Ông Bà Vietnamese Eatery</Term>.
+            </p>
+            <p>
+              The restaurant was created to honor their story and the values they lived by: family,
               generosity, resilience, and love.
-            </Typography>
-            <Typography variant="body">
-              Every dish we serve carries a piece of that journey.
-            </Typography>
-            <Typography variant="body">Every meal is a reminder of where we came from.</Typography>
-            <Typography variant="body">
-              We named the restaurant{" "}
-              <span className="font-bricolage-grotesque font-bold">Ông Bà</span> because we want our
-              children - and the generations that come after them - to understand the love of their
-              grandparents, the values they lived by, and the sacrifices that shaped our family.
-            </Typography>
-            <Typography variant="body">
-              It is our way of preserving their story and honoring the legacy they left behind.
-            </Typography>
-            <Typography variant="body">
+            </p>
+            <p>Every dish we serve carries a piece of that journey.</p>
+            <p>Every meal is a reminder of where we came from.</p>
+            <p>
+              We named the restaurant <Term>Ông Bà</Term> because we want our children, and the
+              generations that come after them, to understand the love of their grandparents, the
+              values they lived by, and the sacrifices that shaped our family.
+            </p>
+            <p>It is our way of preserving their story and honoring the legacy they left behind.</p>
+            <p>
               Our hope is that everyone who walks through our doors feels the same warmth we felt
-              growing up - like gathering around the table for a comforting meal with family.
-            </Typography>
-            <Typography variant="body">Because to us, Ông Bà is more than a name.</Typography>
-            <Typography variant="body">It is family.</Typography>
-            <Typography variant="body">It is memory.</Typography>
-            <Typography variant="body">It is love passed down through generations.</Typography>
-          </div>
+              growing up, like gathering around the table for a comforting meal with family.
+            </p>
+            <p>Because to us, Ông Bà is more than a name.</p>
+            <p>It is family.</p>
+            <p>It is memory.</p>
+            <p>It is love passed down through generations.</p>
+          </Prose>
+        </Reveal>
 
-          <div className="w-full px-2 sm:px-4">
-            <DoubleImageCarousel slides={slides} />
-          </div>
-        </Container>
-      </Container>
-    </Container>
+        <Reveal>
+          <ArchCarousel slides={slides} />
+        </Reveal>
+      </div>
+    </section>
   );
 }
