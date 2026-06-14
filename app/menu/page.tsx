@@ -11,7 +11,21 @@ export default function CoquitlamMenuPage() {
 
       <Container variant="page-header">
         <Typography variant="h1">Menu</Typography>
-        <AnimatedButton size="xl" href="#" text="Reserve a table" />
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <AnimatedButton
+            size="xl"
+            href="https://www.opentable.ca/r/ongba-vietnamese-eatery-reservations-vancouver?restref=1489390&lang=en-CA&ot_source=Restaurant%20website"
+            text="Reserve now"
+            newTab
+          />
+          <AnimatedButton
+            size="xl"
+            color="outline"
+            href="https://order.toasttab.com/online/ongba-vietnamese-eatery-new-location-1045-1163-pinetree-way"
+            text="Order for Pickup"
+            newTab
+          />
+        </div>
       </Container>
 
       <MenuPageTabs />
@@ -40,7 +54,7 @@ export default function CoquitlamMenuPage() {
             Email: <a href="mailto:restaurant@ongbagroup.com">restaurant@ongbagroup.com</a>
           </p>
           <p>
-            Phone: <a href="tel:+16046205595">+1 (604) 620-5595</a>
+            Phone: <a href="tel:+16045541166">+1 (604) 554-1166</a>
           </p>
         </div>
       </div>

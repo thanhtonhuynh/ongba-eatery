@@ -16,8 +16,7 @@ export function Footer() {
           <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:gap-32">
             <div className="text-sm sm:text-base">
               <p className="uppercase">Open 7 days a week</p>
-              <p>Sun - Thu: 11:00 AM to 9:00 PM</p>
-              <p>Fri &amp; Sat: 11:00 AM to 10:00 PM</p>
+              <p>11:00 AM to 10:00 PM</p>
             </div>
 
             <div className="space-y-2">
@@ -29,8 +28,8 @@ export function Footer() {
 
               <div>
                 <h2 className="text-lg font-bold uppercase">Coquitlam</h2>
-                <p>1163 Pinetree Wy Unit 1045, Coquitlam, BC V3B 7Z3</p>
-                <a href="tel:+16046205595">+1 (604) 620-5595</a>
+                <p>1045 - 1163 Pinetree Way, Coquitlam, BC V3B 7Z3</p>
+                <a href="tel:+16045541166">+1 (604) 554-1166</a>
               </div>
             </div>
           </div>

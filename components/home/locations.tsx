@@ -27,8 +27,8 @@ export function Locations() {
           <div className="space-y-2">
             <Typography variant="h3">Coquitlam</Typography>
             <Typography variant="body-sm">
-              <div>1163 Pinetree Wy Unit 1045, Coquitlam, BC V3B 7Z3</div>
-              <div>(+1) 604-620-5595</div>
+              <div>1045 - 1163 Pinetree Way, Coquitlam, BC V3B 7Z3</div>
+              <div>(+1) 604 554 1166</div>
             </Typography>
           </div>
         </div>
