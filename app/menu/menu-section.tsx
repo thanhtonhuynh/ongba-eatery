@@ -1,6 +1,7 @@
 import { AddOnItem, MenuItem, Product } from "@/_types";
 import { Container } from "@/components/container";
 import { MinimalOrnament } from "@/components/deco/ornament-line";
+import { Reveal } from "@/components/reveal";
 import { Typography } from "@/components/typography";
 import { cn } from "@/lib/utils";
 import { ItemCard } from "./item-card";
@@ -44,32 +45,34 @@ export function MenuSectionFrame({
         isFeatured && "bg-wine",
       )}
     >
-      <MinimalOrnament />
+      <Reveal>
+        <MinimalOrnament />
 
-      <Container variant="section-inner" maxWidth="7xl" className="mt-6 px-3 sm:px-6">
-        {(title || description) && (
-          <div className="space-y-3 sm:space-y-6">
-            {title && (
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                <Typography
-                  variant="h2"
-                  className="font-kasepi-sans text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
-                >
-                  {title}
+        <Container variant="section-inner" maxWidth="7xl" className="mt-6 px-3 sm:px-6">
+          {(title || description) && (
+            <div className="space-y-3 sm:space-y-6">
+              {title && (
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <Typography
+                    variant="h2"
+                    className="font-kasepi-sans text-light-gold text-xl font-bold tracking-[0.18em] uppercase sm:text-2xl"
+                  >
+                    {title}
+                  </Typography>
+                  {note && <SectionNoteChip>{note}</SectionNoteChip>}
+                </div>
+              )}
+              {description && (
+                <Typography variant="body-sm" className="text-secondary whitespace-pre-line">
+                  {description}
                 </Typography>
-                {note && <SectionNoteChip>{note}</SectionNoteChip>}
-              </div>
-            )}
-            {description && (
-              <Typography variant="body-sm" className="text-secondary whitespace-pre-line">
-                {description}
-              </Typography>
-            )}
-          </div>
-        )}
+              )}
+            </div>
+          )}
 
-        <div className={cn((title || description) && "mt-4", "space-y-6")}>{children}</div>
-      </Container>
+          <div className={cn((title || description) && "mt-4", "space-y-6")}>{children}</div>
+        </Container>
+      </Reveal>
     </Container>
   );
 }
