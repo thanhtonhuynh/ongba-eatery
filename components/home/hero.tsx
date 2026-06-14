@@ -140,7 +140,21 @@ export function Hero() {
               ease: "easeOut",
             }}
           >
-            <AnimatedButton size="xl" href="#" text="Reserve a table" />
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <AnimatedButton
+                size="xl"
+                href="https://www.opentable.ca/r/ongba-vietnamese-eatery-reservations-vancouver?restref=1489390&lang=en-CA&ot_source=Restaurant%20website"
+                text="Reserve now"
+                newTab
+              />
+              <AnimatedButton
+                size="xl"
+                color="outline"
+                href="https://order.toasttab.com/online/ongba-vietnamese-eatery-new-location-1045-1163-pinetree-way"
+                text="Order for Pickup"
+                newTab
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
