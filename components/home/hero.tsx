@@ -81,8 +81,8 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col place-content-center px-4">
-      <Image src={"/hero-2.png"} alt="Hero" fill className="object-cover" priority />
-      <div className="absolute inset-0 bg-black/70" />
+      <Image src={"/interiors/dining-4.png"} alt="Hero" fill className="object-cover" priority />
+      <div className="bg-dark-night/60 absolute inset-0" />
 
       <HeroStars />
 

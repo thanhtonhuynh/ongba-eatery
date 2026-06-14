@@ -104,7 +104,7 @@ export function Reviews() {
             <div className="border-gold rounded-t-[150px] rounded-b-2xl border p-1.5 transition-shadow duration-500 group-hover:shadow-[0_0_36px_rgba(247,206,131,0.18)] sm:rounded-t-[200px]">
               <div className="border-gold/50 relative aspect-3/4 overflow-hidden rounded-t-[142px] rounded-b-xl border sm:rounded-t-[192px]">
                 <Image
-                  src="/interior.jpg"
+                  src="/interiors/dining-5.png"
                   alt="Guests dining inside the Ông Bà Vietnamese Eatery at dusk, beneath warm hanging lights."
                   fill
                   sizes="(min-width: 768px) 40vw, 80vw"
