@@ -4,12 +4,13 @@ import { teamMembers } from "@/_data/people";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { AnimatedButton } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { CareerSection } from "./components/career-section";
 import { useReducedMotion } from "motion/react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-const APPLY = "mailto:restaurant@ongbagroup.com?subject=Careers%20at%20%C3%94ng%20B%C3%A0";
+const APPLY = "#apply";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const SECTION = "text-gold relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32";
@@ -134,7 +135,9 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
+      <CareerSection />
+
+      <HorizontalPatternBand blurTop fromColor="from-dark-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }
