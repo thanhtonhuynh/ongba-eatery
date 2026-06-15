@@ -1,7 +1,9 @@
 "use client";
 
+import { HairlineStar } from "@/components/deco/hairline-star";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { AnimatedButton } from "@/components/ui/button";
+import { ReservationSection } from "./components/reservation-section";
 import { Call02Icon, Clock01Icon, Location01Icon, Mail01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useReducedMotion } from "motion/react";
@@ -137,8 +139,11 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* ── Plan your gathering ────────────────────────────────────── */}
+      <ReservationSection />
+
       {/* ── Find your way here ─────────────────────────────────────── */}
-      <section className="bg-dark-wine relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
+      <section className="bg-darkest-wine relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
         <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-12">
           <motion.header
             className="flex flex-col items-start gap-5"
@@ -178,7 +183,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <HorizontalPatternBand blurTop fromColor="from-dark-wine" toColor="to-darkest-wine/10" />
+      <HorizontalPatternBand blurTop fromColor="from-darkest-wine" toColor="to-darkest-wine/10" />
     </>
   );
 }
@@ -199,16 +204,6 @@ function Detail({
         <span className="sr-only">{label}</span>
         <div className="text-gold/90 text-base leading-relaxed lg:text-lg">{children}</div>
       </div>
-    </div>
-  );
-}
-
-function HairlineStar() {
-  return (
-    <div className="flex items-center gap-3" aria-hidden>
-      <span className="bg-gold/45 h-px w-16" />
-      <Image src="/star-filled.svg" alt="" width={16} height={16} />
-      <span className="bg-gold/45 h-px w-16" />
     </div>
   );
 }
