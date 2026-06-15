@@ -2,7 +2,7 @@
 
 import { FieldError, RequiredMark, TextAreaField, TextField } from "@/components/form";
 import { Button } from "@/components/ui/button";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { CheckmarkCircle02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useReducedMotion } from "motion/react";
@@ -35,7 +35,7 @@ export function CareerForm() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<CareerApplicationInput>({
-    resolver: zodResolver(careerApplicationSchema),
+    resolver: standardSchemaResolver(careerApplicationSchema),
     mode: "onBlur",
     defaultValues: {
       firstName: "",
