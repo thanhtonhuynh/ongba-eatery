@@ -35,7 +35,7 @@ export default function CoquitlamMenuPage() {
 
       <MenuPageTabs />
 
-      <Container variant="section" className="bg-dark-wine">
+      <Container variant="section" className="bg-wine">
         <Reveal>
           <Container variant="section-inner" maxWidth="5xl">
             <Typography

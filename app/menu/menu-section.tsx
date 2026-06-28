@@ -128,7 +128,7 @@ export function MenuSection({
       )}
 
       {/* Items */}
-      <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-x-15">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-x-15">
         {items.map((item) => (
           <ItemCard key={item.id} item={item} />
         ))}

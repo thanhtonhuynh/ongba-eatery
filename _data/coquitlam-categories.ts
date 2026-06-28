@@ -46,4 +46,9 @@ export const coquitlamCategories: CoquitlamMenuCategory[] = [
       { title: "Fried Egg", price: 4 },
     ],
   },
+  {
+    key: "cq_desserts",
+    title: "Desserts",
+    note: "Dine-in only",
+  },
 ];

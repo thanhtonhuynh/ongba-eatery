@@ -1,4 +1,4 @@
-import { coquitlamDesserts } from "@/_data/coquitlam-desserts-drinks";
+import { coquitlamDesserts } from "@/_data/coquitlam-menu-items/desserts";
 import { DishList } from "./dish-list";
 import { SectionHeader } from "./section-header";
 import { normalizeMenuItem } from "./types";
