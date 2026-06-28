@@ -5,10 +5,12 @@ import { JoinOurTeam } from "@/components/home/join-our-team";
 import { MenuOverview } from "@/components/home/menu-overview";
 import { Reviews } from "@/components/home/reviews";
 import { StoryOverview } from "@/components/home/story-overview";
+import { WelcomePopup } from "@/components/home/welcome-popup";
 
 export default function Page() {
   return (
     <>
+      <WelcomePopup />
       <Hero />
       <StoryOverview />
       <MenuOverview />

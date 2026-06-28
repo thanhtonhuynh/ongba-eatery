@@ -90,16 +90,21 @@ export function AnimatedButton({
   variant = "default",
   color = "gold",
   newTab = false,
+  onClick,
+  fullWidth = false,
 }: VariantProps<typeof buttonVariants> & {
   href: string;
   text: string;
   color?: "gold" | "wine" | "outline";
   newTab?: boolean;
+  onClick?: () => void;
+  fullWidth?: boolean;
 }) {
   return (
     <div
       className={cn(
         "inline-flex items-center justify-center rounded-full border p-px",
+        fullWidth && "flex w-full",
         color === "wine" && "border-wine",
         color === "gold" && "border-gold",
         color === "outline" && "border-transparent",
@@ -110,12 +115,17 @@ export function AnimatedButton({
         className={cn(
           buttonVariants({ size, variant }),
           "font-bricolage-grotesque group rounded-full tracking-wide uppercase shadow-lg transition delay-[0.1s] duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]",
+          fullWidth && "w-full",
           color === "gold" && "bg-gold hover:border-gold hover:bg-wine",
           color === "wine" && "bg-wine hover:border-wine hover:bg-gold",
           color === "outline" && "border-gold hover:bg-gold bg-transparent",
         )}
         render={
-          <Link href={href} {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}>
+          <Link
+            href={href}
+            onClick={onClick}
+            {...(newTab && { target: "_blank", rel: "noopener noreferrer" })}
+          >
             <div className="relative overflow-hidden">
               <p
                 className={cn(
