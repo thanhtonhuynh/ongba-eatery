@@ -34,6 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${bricolage_grotesque.variable} ${kasepi_sans.variable} scroll-smooth`}
     >
       <body className="font-bricolage-grotesque overflow-x-hidden antialiased">

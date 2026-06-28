@@ -91,7 +91,7 @@ export function ReservationForm() {
         tabIndex={-1}
         autoComplete="off"
         aria-hidden
-        className="absolute -left-[9999px] h-px w-px opacity-0"
+        className="absolute left-[-9999px] h-px w-px opacity-0"
         {...register("company")}
       />
 

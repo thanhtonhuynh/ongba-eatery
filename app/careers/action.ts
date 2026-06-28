@@ -1,18 +1,17 @@
 "use server";
 
-import { Resend } from "resend";
+import { renderCareerApplicationEmail } from "@/components/emails/career-application-email";
+import { getMailTransporter, MAIL_FROM } from "@/lib/mailer";
 import {
   careerApplicationSchema,
-  MAX_FILES,
   MAX_FILE_MB,
+  MAX_FILES,
   type CareerApplicationPayload,
   type CareerApplicationState,
 } from "./types";
 
-// Applications land in the hiring inbox. Display name kept ASCII to avoid
-// header encoding edge cases; the body carries full diacritics.
+// Applications land in the hiring inbox.
 const TO_EMAIL = "ongba.hiring@gmail.com";
-const FROM_EMAIL = process.env.CAREERS_FROM_EMAIL ?? "Ong Ba Eatery <ongbavietnamese@gmail.com>";
 
 const MAX_FILE_BYTES = MAX_FILE_MB * 1024 * 1024;
 
@@ -55,48 +54,30 @@ export async function submitApplication(
     coverNote,
   } = parsed.data;
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  const transporter = getMailTransporter();
+  if (!transporter) {
     return {
       status: "error",
       message: "Applications are temporarily unavailable. Please email ongba.hiring@gmail.com.",
     };
   }
 
-  const resend = new Resend(apiKey);
-
-  const rows: Array<[string, string]> = [
-    ["Name", `${firstName} ${lastName}`],
-    ["Email", email],
-    ["Phone", phone],
-    ["Eligible to work in Canada", eligibleCanada],
-    ["Visa expiration", visaExpiry || "Not provided"],
-    ["Earliest start date", startDate],
-    ["Experience in this position", hasExperience],
-    ["About them", coverNote],
-    ["Attachments", attachments.length ? attachments.map((a) => a.filename).join(", ") : "None"],
-  ];
-
-  const text = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
-  const html = `
-    <div style="font-family: ui-sans-serif, system-ui, sans-serif; color: #1a1a1a; line-height: 1.6;">
-      <h2 style="margin: 0 0 16px;">New job application</h2>
-      <table style="border-collapse: collapse;">
-        ${rows
-          .map(
-            ([label, value]) =>
-              `<tr>
-                 <td style="padding: 6px 16px 6px 0; vertical-align: top; font-weight: 600; white-space: nowrap;">${label}</td>
-                 <td style="padding: 6px 0; vertical-align: top; white-space: pre-wrap;">${escapeHtml(value)}</td>
-               </tr>`,
-          )
-          .join("")}
-      </table>
-    </div>`;
+  const { html, text } = await renderCareerApplicationEmail({
+    firstName,
+    lastName,
+    email,
+    phone,
+    eligibleCanada,
+    visaExpiry,
+    startDate,
+    hasExperience,
+    coverNote,
+    attachmentNames: attachments.map((file) => file.filename),
+  });
 
   try {
-    const { error } = await resend.emails.send({
-      from: FROM_EMAIL,
+    await transporter.sendMail({
+      from: MAIL_FROM,
       to: TO_EMAIL,
       replyTo: email,
       subject: `New job application from ${firstName} ${lastName}`,
@@ -108,26 +89,12 @@ export async function submitApplication(
       })),
     });
 
-    if (error) {
-      return {
-        status: "error",
-        message: "Something went wrong sending your application. Please try again or email us.",
-      };
-    }
-
     return { status: "success" };
   } catch {
     return {
       status: "error",
-      message: "Something went wrong sending your application. Please try again or email us.",
+      message:
+        "Something went wrong sending your application. Please try again or email us at ongba.hiring@gmail.com.",
     };
   }
-}
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
 }
