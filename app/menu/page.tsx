@@ -37,7 +37,7 @@ export default function CoquitlamMenuPage() {
 
       <Container variant="section" className="bg-wine">
         <Reveal>
-          <Container variant="section-inner" maxWidth="5xl">
+          <Container variant="section-inner" maxWidth="5xl" className="py-4 lg:space-y-3">
             <Typography
               variant="body-sm"
               className="text-secondary text-center italic sm:text-base"
@@ -46,7 +46,7 @@ export default function CoquitlamMenuPage() {
             </Typography>
             <Typography
               variant="body-sm"
-              className="text-secondary mt-2 text-center italic sm:text-base"
+              className="text-secondary text-center italic sm:text-base"
             >
               Please inform our staff of any allergies.
             </Typography>
