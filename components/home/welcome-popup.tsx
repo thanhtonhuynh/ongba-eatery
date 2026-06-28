@@ -49,11 +49,14 @@ export function WelcomePopup() {
         showCloseButton={false}
         overlayClassName="duration-300"
         className={cn(
-          "max-h-[92dvh] rounded-none border-0 bg-transparent p-0 shadow-none ring-0 md:max-w-5xl",
+          // Center against the dynamic viewport (dvh) so iOS Safari's bottom address bar
+          // doesn't clip the popup. A percentage `top` resolves against the full layout
+          // viewport (behind the toolbar) and pushes the card down out of the visible area.
+          "top-[50dvh] max-h-[92dvh] rounded-none border-0 bg-transparent p-0 shadow-none ring-0 md:max-w-5xl",
           "data-open:slide-in-from-bottom-4 duration-300 motion-reduce:animate-none",
         )}
       >
-        <div className="from-dark-wine to-darkest-wine border-gold/70 relative overflow-hidden rounded-tl-[44px] rounded-br-[44px] border bg-linear-to-br shadow-2xl">
+        <div className="from-dark-wine to-darkest-wine border-gold/70 relative max-h-[92dvh] overflow-y-auto rounded-tl-[44px] rounded-br-[44px] border bg-linear-to-br shadow-2xl">
           {/* Framed-invitation inner hairline (brand double-border idiom) */}
           <div
             aria-hidden
@@ -101,11 +104,11 @@ export function WelcomePopup() {
                 <MinimalOrnament />
               </div>
 
-              <DialogDescription className="text-gold/70 mt-2 max-w-[42ch] text-base leading-relaxed">
+              <DialogDescription className="text-gold/70 max-w-[42ch] text-base leading-relaxed md:mt-2">
                 Pull up a chair for slow-simmered phở, bright herbs, and plates made to share.
               </DialogDescription>
 
-              <div className="mt-4 flex flex-col gap-4">
+              <div className="mt-2 flex flex-col gap-4 md:mt-4">
                 <AnimatedButton
                   size="xl"
                   href={RESERVE_URL}
