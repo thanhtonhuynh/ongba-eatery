@@ -1,12 +1,11 @@
 "use server";
 
-import { Resend } from "resend";
+import { renderReservationRequestEmail } from "@/components/emails/reservation-request-email";
+import { getMailTransporter, MAIL_FROM } from "@/lib/mailer";
 import { reservationSchema, type ReservationInput, type ReservationState } from "./types";
 
-// Sends to the restaurant inbox. Display name kept ASCII to avoid header
-// encoding edge cases; the body carries full diacritics.
+// Reservation requests land in the restaurant inbox.
 const TO_EMAIL = "restaurant@ongbagroup.com";
-const FROM_EMAIL = process.env.RESERVATION_FROM_EMAIL ?? "Ong Ba Eatery <reservations@ongbagroup.com>";
 
 export async function submitReservation(input: ReservationInput): Promise<ReservationState> {
   // Honeypot: real guests never fill this hidden field.
@@ -25,46 +24,27 @@ export async function submitReservation(input: ReservationInput): Promise<Reserv
 
   const { inquiryType, fullName, email, phone, date, eventDetail, specialRequest } = parsed.data;
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
+  const transporter = getMailTransporter();
+  if (!transporter) {
     return {
       status: "error",
       message: "Reservations are temporarily unavailable. Please call us at +1 (604) 554-1166.",
     };
   }
 
-  const resend = new Resend(apiKey);
-
-  const rows: Array<[string, string]> = [
-    ["Request", inquiryType],
-    ["Name", fullName],
-    ["Email", email],
-    ["Phone", phone],
-    ["Preferred date", date],
-    ["Event details", eventDetail],
-    ["Special requests", specialRequest || "None"],
-  ];
-
-  const text = rows.map(([label, value]) => `${label}: ${value}`).join("\n");
-  const html = `
-    <div style="font-family: ui-sans-serif, system-ui, sans-serif; color: #1a1a1a; line-height: 1.6;">
-      <h2 style="margin: 0 0 16px;">New reservation request</h2>
-      <table style="border-collapse: collapse;">
-        ${rows
-          .map(
-            ([label, value]) =>
-              `<tr>
-                 <td style="padding: 6px 16px 6px 0; vertical-align: top; font-weight: 600; white-space: nowrap;">${label}</td>
-                 <td style="padding: 6px 0; vertical-align: top; white-space: pre-wrap;">${escapeHtml(value)}</td>
-               </tr>`,
-          )
-          .join("")}
-      </table>
-    </div>`;
+  const { html, text } = await renderReservationRequestEmail({
+    inquiryType,
+    fullName,
+    email,
+    phone,
+    date,
+    eventDetail,
+    specialRequest,
+  });
 
   try {
-    const { error } = await resend.emails.send({
-      from: FROM_EMAIL,
+    await transporter.sendMail({
+      from: MAIL_FROM,
       to: TO_EMAIL,
       replyTo: email,
       subject: `New reservation request (${inquiryType}) from ${fullName}`,
@@ -72,26 +52,12 @@ export async function submitReservation(input: ReservationInput): Promise<Reserv
       html,
     });
 
-    if (error) {
-      return {
-        status: "error",
-        message: "Something went wrong sending your request. Please try again or call us.",
-      };
-    }
-
     return { status: "success" };
   } catch {
     return {
       status: "error",
-      message: "Something went wrong sending your request. Please try again or call us.",
+      message:
+        "Something went wrong sending your request. Please try again or call us at +1 (604) 554-1166.",
     };
   }
-}
-
-function escapeHtml(value: string) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
 }
