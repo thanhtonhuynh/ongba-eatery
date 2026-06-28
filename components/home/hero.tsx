@@ -106,7 +106,12 @@ export function Hero() {
               ease: "easeOut",
             }}
           >
-            <Image src={LogoGold} alt="Ongba's Logo" className="h-auto w-35 sm:w-50 md:w-55" />
+            <Image
+              src={LogoGold}
+              alt="Ongba's Logo"
+              className="h-auto w-35 sm:w-50 md:w-55"
+              loading="eager"
+            />
           </motion.div>
 
           <div className="flex flex-col gap-2">

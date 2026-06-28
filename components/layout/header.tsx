@@ -43,7 +43,7 @@ export function Header() {
           <Button
             variant="link"
             className={cn(
-              "font-kasepi-sans p-0 text-2xl font-semibold tracking-wider uppercase transition-all duration-700 hover:no-underline sm:text-3xl",
+              "font-kasepi-sans p-0 text-2xl font-semibold tracking-tight uppercase transition-all duration-700 hover:no-underline sm:text-3xl",
               scrolled && "text-xl sm:text-2xl",
             )}
             nativeButton={false}

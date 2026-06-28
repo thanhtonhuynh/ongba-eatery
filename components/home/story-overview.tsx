@@ -65,7 +65,7 @@ export function StoryOverview() {
           </motion.div>
 
           <motion.p
-            className="text-gold/90 max-w-md text-base leading-relaxed lg:text-lg"
+            className="text-gold/90 max-w-lg text-left text-base leading-relaxed lg:text-lg"
             {...reveal(0.16)}
           >
             Ông Bà Eatery was born from our parents&apos; extraordinary journey, a story of love,
@@ -85,7 +85,7 @@ export function StoryOverview() {
           </motion.div>
         </motion.div>
 
-        <motion.div {...reveal(0.34)}>
+        <motion.div {...reveal(0.34)} className="mt-2">
           <AnimatedButton size="xl" href="/story" text="Read More" />
         </motion.div>
       </div>

@@ -58,7 +58,11 @@ export function MobileNav() {
   return (
     <div className="relative lg:hidden">
       <motion.nav
-        initial={false}
+        // Render the tree at the "closed" variant on mount (the menu always starts closed, so this
+        // is visually identical to initial={false}) — but unlike initial={false} it commits a
+        // parseable clip-path baseline, so Motion never animates clipPath from an unparseable
+        // value. Fixes the "circle(NaNpx ...) is not animatable" console warnings.
+        initial="closed"
         animate={isOpen ? "open" : "closed"}
         custom={{ origin }}
         ref={containerRef}
