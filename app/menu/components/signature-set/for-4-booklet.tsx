@@ -11,18 +11,21 @@ export function For4Booklet() {
   return (
     <Booklet id="cq_signature_for_4" heading={d.heading} priceLine={d.priceLine}>
       <section>
-        <SectionHeader title="First Course" helper="All included" />
-        <DishList items={d.firstCourse.map(normalizeSignatureDish)} />
+        <SectionHeader title="Starter" />
+        <div className="space-y-7">
+          <DishList items={d.firstCourse.included.map(normalizeSignatureDish)} />
+          <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />
+          <ChoiceList items={d.firstCourse.choice.map(normalizeSignatureDish)} />
+        </div>
       </section>
 
       <section>
-        <SectionHeader title="Second Course" helper="All included" />
-        <DishList items={d.secondCourse.map(normalizeSignatureDish)} />
-      </section>
-
-      <section>
-        <SectionHeader title="Third Course" />
-        <ChoiceList items={d.thirdCourse.map(normalizeSignatureDish)} />
+        <SectionHeader title="Entrée" />
+        <div className="space-y-7">
+          <DishList items={d.secondCourse.map(normalizeSignatureDish)} />
+          <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />
+          <ChoiceList items={d.thirdCourse.map(normalizeSignatureDish)} />
+        </div>
       </section>
 
       <DessertSection />

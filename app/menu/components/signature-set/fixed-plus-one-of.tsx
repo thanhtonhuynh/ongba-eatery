@@ -12,15 +12,8 @@ export function FixedPlusOneOf({ fixed, options }: Props) {
   return (
     <div className="space-y-7">
       {/* Anchor: fixed dish */}
-      <div className="flex gap-4">
-        <div className="pt-1">
-          <span className="font-bricolage-grotesque border-gold/40 bg-darkest-wine text-light-gold inline-flex items-center rounded-sm border px-2 py-0.5 text-[10px] font-semibold tracking-[0.22em] uppercase">
-            Included
-          </span>
-        </div>
-        <div className="border-gold/30 flex-1 border-l pl-4">
-          <DishBlock dish={normalizeSignatureDish(fixed)} compact />
-        </div>
+      <div className="border-gold/30 border-l pl-4">
+        <DishBlock dish={normalizeSignatureDish(fixed)} compact />
       </div>
 
       <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />

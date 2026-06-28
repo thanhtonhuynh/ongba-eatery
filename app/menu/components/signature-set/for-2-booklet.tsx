@@ -11,21 +11,20 @@ export function For2Booklet() {
   return (
     <Booklet id="cq_signature_for_2" heading={d.heading} priceLine={d.priceLine}>
       <section>
-        <SectionHeader title="First Course" />
-        <ChoiceList items={d.firstCourse.options.map(normalizeSignatureDish)} />
+        <SectionHeader title="Starter" />
+        <div className="space-y-7">
+          <ChoiceList items={d.firstCourse.options.map(normalizeSignatureDish)} />
+          <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />
+          <ChoiceList items={d.secondCourse.options.map(normalizeSignatureDish)} />
+        </div>
       </section>
 
       <section>
-        <SectionHeader title="Second Course" />
-        <ChoiceList items={d.secondCourse.options.map(normalizeSignatureDish)} />
-      </section>
-
-      <section>
-        <SectionHeader title="Third Course" />
+        <SectionHeader title="Entrée" />
         <FixedPlusOneOf fixed={d.thirdCourse.fixed} options={d.thirdCourse.oneOf} />
       </section>
 
-      <DessertSection />
+      <DessertSection choice />
     </Booklet>
   );
 }
