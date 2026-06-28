@@ -11,7 +11,7 @@ function OrSeparator() {
   return (
     <div
       aria-hidden="true"
-      className="flex items-center justify-center gap-3 lg:flex-col lg:self-stretch lg:px-2"
+      className="flex w-1/2 items-center justify-center gap-3 self-center lg:w-auto lg:flex-col lg:self-stretch lg:px-2"
     >
       <span className="bg-gold/25 h-px flex-1 lg:h-auto lg:w-px" />
       <span className="font-bricolage-grotesque text-light-gold border-gold/40 bg-darkest-wine flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[10px] font-semibold tracking-[0.15em] uppercase">

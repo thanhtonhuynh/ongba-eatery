@@ -1,25 +1,5 @@
 import { MenuItem } from "@/_types";
 
-export const coquitlamDesserts: MenuItem[] = [
-  {
-    id: "cq_vietnamese_coffee_flan",
-    category: "cq_desserts",
-    title: "Caramen Cà Phê",
-    subtitle: "Vietnamese Coffee Flan",
-    description: "Vietnamese flan, robusta dark coffee sauce.",
-    price: 8,
-  },
-  {
-    id: "cq_pandan_basque_cheesecake",
-    category: "cq_desserts",
-    title: "Bánh phô mai lá dứa",
-    subtitle: "Coconut Pandan Basque Cheesecake",
-    description: "Served with coconut biscoff crumble and coconut white chocolate sauce.",
-    price: 10,
-    dietary: ["dairy"],
-  },
-];
-
 export const coquitlamDrinks: MenuItem[] = [
   {
     id: "cq_tea_pot_set",

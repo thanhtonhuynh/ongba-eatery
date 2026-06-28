@@ -4,22 +4,22 @@ export const classicStarter: MenuItem[] = [
   {
     id: "cq_spring_roll",
     category: "cq_classic_starter",
-    title: "Chả Nem",
-    subtitle: "Spring Roll",
+    title: "Mẹt Chả Nem",
+    subtitle: "Spring Roll Basket",
     description:
-      "Pork or veggie (V).\nLettuce, herbs, pickled daikon and carrot.\nSauce: fish sauce / sweet chili.",
-    price: 14,
+      "Choice of: pork or veggie\nSauce: fish sauce or sweet chili.\nLettuce, herbs, pickled daikon, and carrot.",
+    price: 15,
     dietary: ["vegetarian"],
   },
   {
-    id: "cq_salad_roll",
+    id: "cq_mini_banh_xeo",
     category: "cq_classic_starter",
-    title: "Gỏi Cuốn",
-    subtitle: "Salad Roll",
+    title: "Mẹt Mini Bánh Xèo",
+    subtitle: "Mini Bánh Xèo Basket",
     description:
-      "Chicken / Shrimp / Tofu (V)\nRice paper, lettuce, cucumber, herbs, vermicelli, pickles daikon and carrot.\nSauce: peanut sauce (peanut) / sweet Thai chili / fish sauce.\nAdd Avocado: $4",
+      "Served with fresh lettuce.\nGolden crispy shrimp pancakes, Vietnamese herbs, and house-made fish sauce.",
     price: 15,
-    dietary: ["seafood", "vegetarian", "peanut"],
+    dietary: ["seafood"],
   },
   {
     id: "cq_fish_sauce_wings",
@@ -28,5 +28,15 @@ export const classicStarter: MenuItem[] = [
     subtitle: "Fish Sauce Glazed Chicken Wings",
     description: "Lightly battered wings, fish sauce glaze.",
     price: 16,
+  },
+  {
+    id: "cq_salad_roll",
+    category: "cq_classic_starter",
+    title: "Gỏi Cuốn",
+    subtitle: "Salad Roll",
+    description:
+      "Choice of: chicken or tofu (V)\nSauce: peanut sauce / sweet chili / fish sauce\nAvocado $4\nRice paper, lettuce, cucumber, herbs, vermicelli, pickles daikon and carrot.",
+    price: 16,
+    dietary: ["peanut"],
   },
 ];

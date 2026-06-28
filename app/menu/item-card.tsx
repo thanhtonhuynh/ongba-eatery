@@ -44,9 +44,9 @@ export function ItemCard({ item }: Props) {
           className="font-bricolage-grotesque flex items-start justify-between gap-1 font-bold tracking-tight uppercase"
         >
           <div className="flex flex-col gap-0.5 tracking-tight uppercase sm:gap-1">
-            <span className="text-base sm:text-lg">{item.title}</span>
+            <span className="text-base sm:text-lg lg:text-xl">{item.title}</span>
             {"subtitle" in item && item.subtitle && (
-              <span className="text-secondary font-semibold normal-case italic">
+              <span className="text-secondary font-semibold normal-case italic sm:text-base lg:text-lg">
                 {item.subtitle}
               </span>
             )}
@@ -56,7 +56,7 @@ export function ItemCard({ item }: Props) {
 
         {/* Dish description */}
         {item.description && (
-          <Typography variant="body-sm" className="text-secondary">
+          <Typography variant="body-sm" className="text-secondary lg:max-w-md">
             {item.description}
           </Typography>
         )}
