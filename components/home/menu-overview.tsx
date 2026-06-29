@@ -1,10 +1,7 @@
 "use client";
 
-import * as motion from "motion/react-client";
 import { useState } from "react";
-import { ArchCarousel } from "../arch-carousel";
 import { Star } from "../deco/star";
-import { AnimatedSingleBorderButton } from "../ui/button";
 
 type Slide = {
   src: string;
@@ -89,7 +86,7 @@ export function MenuOverview() {
           <span className="text-light-gold/90 font-light italic">soul.</span>
         </h2>
 
-        <div className="flex flex-col gap-3 md:items-end md:text-right">
+        {/* <div className="flex flex-col gap-3 md:items-end md:text-right">
           <span className="font-bricolage-grotesque text-secondary text-[10px] font-semibold tracking-[0.4em] uppercase tabular-nums">
             Now showing · {String(idx + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
@@ -106,14 +103,14 @@ export function MenuOverview() {
               {current.nameEn}
             </p>
           </motion.div>
-        </div>
+        </div> */}
       </div>
 
-      <ArchCarousel
+      {/* <ArchCarousel
         slides={slides.map((s) => ({ src: s.src, alt: `${s.name} — ${s.nameEn}` }))}
         onActiveChange={setIdx}
         action={<AnimatedSingleBorderButton size="lg" href="/menu" text="View Menu" />}
-      />
+      /> */}
     </section>
   );
 }

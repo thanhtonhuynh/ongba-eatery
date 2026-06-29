@@ -1,7 +1,6 @@
 "use client";
 
 import { coquitlamCategories } from "@/_data/coquitlam-categories";
-import { coquitlamDrinks } from "@/_data/coquitlam-drinks";
 import { coquitlamItemsByCategory } from "@/_data_access/coquitlam";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MenuNav } from "./menu-nav";
@@ -25,9 +24,9 @@ export function MenuPageTabs() {
         <TabsTrigger value="signature-set" className={outerTabTriggerClass}>
           Signature Set
         </TabsTrigger>
-        <TabsTrigger value="drinks" className={outerTabTriggerClass}>
+        {/* <TabsTrigger value="drinks" className={outerTabTriggerClass}>
           Drinks
-        </TabsTrigger>
+        </TabsTrigger> */}
       </TabsList>
 
       <TabsContent value="all-day" className="mt-8 space-y-8 outline-none sm:mt-10">
@@ -52,12 +51,12 @@ export function MenuPageTabs() {
         <SignatureSetContent />
       </TabsContent>
 
-      <TabsContent value="drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
-        {/* <div className="border-gold/40 border p-3 sm:p-6">
+      {/* <TabsContent value="drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
+        <div className="border-gold/40 border p-3 sm:p-6">
           <MenuNav categories={drinksNavCategories} />
-        </div> */}
+        </div>
         <MenuSection id="cq_sub_drinks" index={0} title="Drinks" items={coquitlamDrinks} />
-      </TabsContent>
+      </TabsContent> */}
     </Tabs>
   );
 }

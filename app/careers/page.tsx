@@ -1,14 +1,13 @@
 "use client";
 
-import { teamMembers } from "@/_data/people";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { AnimatedButton } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { CareerSection } from "./components/career-section";
 import { useReducedMotion } from "motion/react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { CareerSection } from "./components/career-section";
 
 const APPLY = "#apply";
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -118,7 +117,7 @@ export default function CareersPage() {
       </section>
 
       {/* Our Ông Bà family */}
-      <section className={cn("bg-darkest-wine", SECTION)}>
+      {/* <section className={cn("bg-darkest-wine", SECTION)}>
         <div className="mx-auto flex max-w-7xl flex-col gap-16">
           <motion.header className="flex flex-col items-center gap-5 text-center" {...reveal(0)}>
             <h2 className={H2_CLASS}>
@@ -133,7 +132,7 @@ export default function CareersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <CareerSection />
 
