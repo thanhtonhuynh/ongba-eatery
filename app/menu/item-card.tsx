@@ -9,7 +9,7 @@ type Props = {
 
 export function ItemCard({ item }: Props) {
   return (
-    <Container variant="card" className="flex-row lg:py-3">
+    <Container variant="card" className="flex-row p-0 lg:p-0">
       {/* Badge */}
       {"badge" in item && item.badge && (
         <div className="absolute top-1 left-1">
@@ -41,22 +41,22 @@ export function ItemCard({ item }: Props) {
       <div className="flex-1 space-y-2 xl:space-y-3">
         <Typography
           variant="body-sm"
-          className="font-bricolage-grotesque flex items-start justify-between gap-1 font-bold tracking-tight uppercase"
+          className="font-bricolage-grotesque flex items-start justify-between gap-1 font-semibold tracking-wider uppercase"
         >
-          <div className="flex flex-col gap-0.5 tracking-tight uppercase sm:gap-1">
-            <span className="text-base sm:text-lg lg:text-xl">{item.title}</span>
+          <div className="flex flex-col gap-0.5 tracking-wider uppercase">
+            <span className="text-base sm:text-lg">{item.title}</span>
             {"subtitle" in item && item.subtitle && (
-              <span className="text-secondary font-semibold normal-case italic sm:text-base lg:text-lg">
+              <span className="text-secondary font-medium normal-case italic sm:text-base">
                 {item.subtitle}
               </span>
             )}
           </div>
-          <span>{item.price}</span>
+          <span className="text-sm font-normal tabular-nums">{item.price}</span>
         </Typography>
 
         {/* Dish description */}
         {item.description && (
-          <Typography variant="body-sm" className="text-secondary lg:max-w-md">
+          <Typography variant="body-sm" className="text-secondary md:text-sm lg:max-w-md">
             {item.description}
           </Typography>
         )}
