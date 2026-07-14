@@ -41,7 +41,7 @@ export function MenuSectionFrame({
       id={id}
       className={cn(
         "scroll-mt-20 py-4",
-        index !== undefined && index % 2 === 0 && "bg-dark-wine",
+        index !== undefined && index % 2 === 0 && "bg-dark-wine py-12 lg:py-12",
         isFeatured && "bg-wine",
       )}
     >
@@ -128,7 +128,7 @@ export function MenuSection({
       )}
 
       {/* Items */}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-x-15">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-15">
         {items.map((item) => (
           <ItemCard key={item.id} item={item} />
         ))}

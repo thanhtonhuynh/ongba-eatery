@@ -3,6 +3,7 @@
 import { coquitlamCategories } from "@/_data/coquitlam-categories";
 import { coquitlamItemsByCategory } from "@/_data_access/coquitlam";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { DrinksContent } from "./drinks-content";
 import { MenuNav } from "./menu-nav";
 import { MenuSection } from "./menu-section";
 import { SignatureSetContent } from "./signature-set-content";
@@ -11,8 +12,6 @@ const outerTabListClass =
   "bg-wine w-full justify-center gap-3 border-b border-gold/20 px-2 py-4 sm:gap-6 md:gap-10";
 const outerTabTriggerClass =
   "text-secondary hover:text-light-gold data-active:text-light-gold rounded-none px-1 py-2 text-sm font-semibold uppercase tracking-wide after:bg-gold sm:px-3 sm:text-base md:text-base";
-
-// const drinksNavCategories = [{ key: "cq_sub_drinks", title: "Drinks" }];
 
 export function MenuPageTabs() {
   return (
@@ -24,9 +23,9 @@ export function MenuPageTabs() {
         <TabsTrigger value="signature-set" className={outerTabTriggerClass}>
           Signature Set
         </TabsTrigger>
-        {/* <TabsTrigger value="drinks" className={outerTabTriggerClass}>
-          Drinks
-        </TabsTrigger> */}
+        <TabsTrigger value="drinks" className={outerTabTriggerClass}>
+          Drink
+        </TabsTrigger>
       </TabsList>
 
       <TabsContent value="all-day" className="mt-8 space-y-8 outline-none sm:mt-10">
@@ -51,12 +50,9 @@ export function MenuPageTabs() {
         <SignatureSetContent />
       </TabsContent>
 
-      {/* <TabsContent value="drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
-        <div className="border-gold/40 border p-3 sm:p-6">
-          <MenuNav categories={drinksNavCategories} />
-        </div>
-        <MenuSection id="cq_sub_drinks" index={0} title="Drinks" items={coquitlamDrinks} />
-      </TabsContent> */}
+      <TabsContent value="drinks" className="mt-8 space-y-8 outline-none sm:mt-10">
+        <DrinksContent />
+      </TabsContent>
     </Tabs>
   );
 }
