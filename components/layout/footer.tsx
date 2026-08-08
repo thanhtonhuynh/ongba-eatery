@@ -1,3 +1,4 @@
+import { addressLines, restaurant, serviceHours } from "@/_data/restaurant";
 import LogoGold from "@/assets/logo-gold.png";
 import { Call02Icon, Clock01Icon, Location01Icon, Mail01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -27,23 +28,26 @@ export function Footer() {
           <div className="flex flex-col gap-5 sm:col-span-1 md:col-span-3">
             <FooterHeading>Visit Us</FooterHeading>
             <DetailRow icon={Location01Icon}>
-              <p>1045 - 1163 Pinetree Way</p>
-              <p>Coquitlam, BC V3B 7Z3</p>
+              {addressLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </DetailRow>
             <DetailRow icon={Clock01Icon}>
-              <p>Open 7 days a week</p>
-              <p>11:00 AM to 10:00 PM</p>
+              <p>{restaurant.hours.note}</p>
+              {serviceHours.map((hours) => (
+                <p key={hours}>{hours}</p>
+              ))}
             </DetailRow>
           </div>
 
           {/* Contact */}
           <div className="flex flex-col gap-5 sm:col-span-1 md:col-span-3">
             <FooterHeading>Contact</FooterHeading>
-            <DetailLink icon={Call02Icon} href="tel:+16045541166">
-              +1 (604) 554-1166
+            <DetailLink icon={Call02Icon} href={restaurant.phone.href}>
+              {restaurant.phone.display}
             </DetailLink>
-            <DetailLink icon={Mail01Icon} href="mailto:restaurant@ongbagroup.com">
-              <span className="break-all">restaurant@ongbagroup.com</span>
+            <DetailLink icon={Mail01Icon} href={`mailto:${restaurant.email}`}>
+              <span className="break-all">{restaurant.email}</span>
             </DetailLink>
           </div>
 

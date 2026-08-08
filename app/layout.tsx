@@ -1,5 +1,6 @@
+import { restaurant } from "@/_data/restaurant";
 import { TailwindScreenSizeIndicator } from "@/components/dev/tw-screensize-indicator";
-import { Footer, Header } from "@/components/layout";
+import { Footer, Header, RestaurantJsonLd } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
@@ -16,6 +17,7 @@ const kasepi_sans = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(restaurant.url),
   title: "Ongba Eatery",
   description: "Honouring Vietnamese tradition with a modern twist.",
 };
@@ -45,6 +47,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <TailwindScreenSizeIndicator />
+        <RestaurantJsonLd />
       </body>
     </html>
   );

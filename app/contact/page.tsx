@@ -1,5 +1,6 @@
 "use client";
 
+import { addressLines, restaurant, serviceHours } from "@/_data/restaurant";
 import { HairlineStar } from "@/components/deco/hairline-star";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { AnimatedButton } from "@/components/ui/button";
@@ -11,8 +12,7 @@ import * as motion from "motion/react-client";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-const RESERVE =
-  "https://www.opentable.ca/r/ongba-vietnamese-eatery-reservations-vancouver?restref=1489390&lang=en-CA&ot_source=Restaurant%20website";
+const RESERVE = restaurant.reserveUrl;
 const ORDER_PICKUP =
   "https://order.toasttab.com/online/ongba-vietnamese-eatery-new-location-1045-1163-pinetree-way";
 const MAP_EMBED =
@@ -102,24 +102,30 @@ export default function ContactPage() {
               {/* Stepped hairline ledger — no card boxes. */}
               <div className="flex flex-col">
                 <Detail icon={Location01Icon} label="Address">
-                  <p>1045 - 1163 Pinetree Way</p>
-                  <p>Coquitlam, BC V3B 7Z3</p>
+                  {addressLines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
                 </Detail>
                 <Detail icon={Clock01Icon} label="Hours">
-                  <p>Open 7 days a week</p>
-                  <p>11:00 AM to 10:00 PM</p>
+                  <p>{restaurant.hours.note}</p>
+                  {serviceHours.map((hours) => (
+                    <p key={hours}>{hours}</p>
+                  ))}
                 </Detail>
                 <Detail icon={Call02Icon} label="Phone">
-                  <a href="tel:+16045541166" className="hover:text-light-gold transition-colors">
-                    +1 (604) 554-1166
+                  <a
+                    href={restaurant.phone.href}
+                    className="hover:text-light-gold transition-colors"
+                  >
+                    {restaurant.phone.display}
                   </a>
                 </Detail>
                 <Detail icon={Mail01Icon} label="Email">
                   <a
-                    href="mailto:restaurant@ongbagroup.com"
+                    href={`mailto:${restaurant.email}`}
                     className="hover:text-light-gold transition-colors"
                   >
-                    restaurant@ongbagroup.com
+                    {restaurant.email}
                   </a>
                 </Detail>
               </div>
