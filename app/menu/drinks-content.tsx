@@ -1,6 +1,5 @@
 import {
-  coffeeAndTea,
-  nonAlcohol,
+  mocktailsAndCoffee,
   signatureCocktailNote,
   signatureCocktails,
 } from "@/_data/coquitlam-drink-items";
@@ -13,8 +12,7 @@ const drinksNavCategories = [
   { key: "cq_drink_cocktail", title: "Signature Cocktail" },
   { key: "cq_drink_wines", title: "Wines" },
   { key: "cq_drink_beers", title: "Beers" },
-  { key: "cq_drink_non_alcohol", title: "Non-Alcohol" },
-  { key: "cq_drink_coffee_tea", title: "Coffee & Tea" },
+  { key: "cq_drink_mocktails_coffee", title: "Mocktails & Coffee" },
 ];
 
 export function DrinksContent() {
@@ -36,9 +34,12 @@ export function DrinksContent() {
 
       <BeerSection index={2} />
 
-      <DrinkSection id="cq_drink_non_alcohol" index={3} title="Non-Alcohol" items={nonAlcohol} />
-
-      <DrinkSection id="cq_drink_coffee_tea" index={4} title="Coffee & Tea" items={coffeeAndTea} />
+      <DrinkSection
+        id="cq_drink_mocktails_coffee"
+        index={3}
+        title="Mocktails & Coffee"
+        items={mocktailsAndCoffee}
+      />
     </>
   );
 }

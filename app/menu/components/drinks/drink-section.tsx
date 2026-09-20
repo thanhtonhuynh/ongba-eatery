@@ -1,6 +1,6 @@
-import { MenuItem } from "@/_types";
-import { ItemCard } from "../../item-card";
+import { DrinkItem } from "@/_data/coquitlam-drink-items";
 import { MenuSectionFrame } from "../../menu-section";
+import { DrinkItemCard } from "./drink-item-card";
 
 type Props = {
   id: string;
@@ -8,7 +8,7 @@ type Props = {
   title: string;
   description?: string;
   note?: string;
-  items: MenuItem[];
+  items: DrinkItem[];
 };
 
 /** Like MenuSection, but lays the item cards out in a single column. */
@@ -21,7 +21,7 @@ export function DrinkSection({ id, index, title, description, note, items }: Pro
     <MenuSectionFrame id={id} index={index} title={title} description={description} note={note}>
       <div className="space-y-8">
         {items.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          <DrinkItemCard key={item.id} item={item} />
         ))}
       </div>
     </MenuSectionFrame>
