@@ -1,17 +1,26 @@
+export type DrinkItem = {
+  id: string;
+  title: string;
+  /** Vietnamese name, shown in italics under the title. */
+  subtitle?: string;
+  /** Ingredients, e.g. "Avocado · Pandan · Coconut Milk". */
+  description?: string;
+  /** Tasting notes, e.g. "Creamy · Tropical · Fragrant". */
+  notes?: string;
+  /** Upsell line, e.g. "Add Stealth Vodka or Beefeater Gin shot +$6". */
+  addOn?: string;
+  price: number;
+};
+
 export type WineItem = {
   id: string;
   name: string;
-  region: string;
-  varietal: string;
-  /** By-the-glass (6oz) price. Omitted when the wine is bottle-only. */
+  /** Appellation, omitted for house pours. */
+  region?: string;
+  /** By-the-glass (6oz) price. */
   glass?: number;
-  /** Bottle price. */
-  bottle: number;
-};
-
-export type WineGroup = {
-  label: string;
-  items: WineItem[];
+  /** Bottle price. Omitted when the wine is glass-only. */
+  bottle?: number;
 };
 
 export type BeerItem = {

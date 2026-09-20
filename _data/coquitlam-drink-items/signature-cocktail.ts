@@ -1,56 +1,67 @@
-import { MenuItem } from "@/_types";
+import { DrinkItem } from "./types";
 
-export const signatureCocktails: MenuItem[] = [
+export const signatureCocktails: DrinkItem[] = [
   {
-    id: "cq_cocktail_coffee_martini",
-    category: "cq_drinks",
-    title: "Vietnamese Coffee Martini (2oz)",
-    subtitle: "Nguyễn Hữu Huân Martini",
-    description: "Espresso Vodka, Galliano Ristretto, robusta, white cacao.",
-    price: 16,
+    id: "cq_cocktail_espresso_martini",
+    title: "Vietnamese Espresso Martini",
+    description: "Vietnamese Coffee-Infused Stealth Vodka · Kahlúa · Condensed Milk · Salted Foam",
+    notes: "Rich · Roasted · Creamy · Sweet & Salty",
+    price: 19,
   },
   {
-    id: "cq_cocktail_lemongrass_gimlet",
-    category: "cq_drinks",
-    title: "Lemongrass Gimlet (1.5oz)",
-    subtitle: "Hương Việt",
-    description: "Pandan infused gin, Demerara, lime, lemongrass, foamer.",
-    price: 14,
+    id: "cq_cocktail_vietnam_75",
+    title: "Vietnam 75",
+    description: "Pandan-Infused Arbutus & Beefeater Gin · Prosecco · Ginger Pea Tea · Lemon",
+    notes: "Floral · Citrusy · Aromatic · Crisp · Sparkling",
+    price: 17,
   },
   {
-    id: "cq_cocktail_passion_hanoi",
-    category: "cq_drinks",
-    title: "Passion of Ha Noi (2oz)",
-    subtitle: "Nồng Nàn Hà Nội",
-    description: "Passion fruit infused cognac, cachaca, Madagascar vanilla, foamer.",
-    price: 16,
-  },
-  {
-    id: "cq_cocktail_love_in_bloom",
-    category: "cq_drinks",
-    title: "Love in Bloom (1.5oz)",
-    subtitle: "Chớm Thương",
-    description: "Sakura gin, white peach, rose & passion fruit syrup, prosecco.",
-    price: 16,
-  },
-  {
-    id: "cq_cocktail_can_tho_mojito",
-    category: "cq_drinks",
-    title: "Can Tho Mojito (2oz)",
-    subtitle: "Thơm Thơ Cần Thơ",
+    id: "cq_cocktail_smoked_popcorn_old_fashioned",
+    title: "Smoked Popcorn Old Fashioned",
     description:
-      "Pineapple & basil infused rum, lemongrass Demerara, Fleur D'Orange, kiwi, calamansi, mint, soda.",
-    price: 16,
+      "Hennessy VS · Crown Royal · Planteray Jamaican Dark Rum · Popcorn · Caramel Fish Sauce · Corn Demerara · Angostura Bitters",
+    notes: "Smoky · Toasted · Caramelized · Spirit-Forward · Savoury",
+    price: 22,
   },
   {
-    id: "cq_cocktail_ben_tre_colada",
-    category: "cq_drinks",
-    title: "Ben Tre Colada (1.5oz)",
-    subtitle: "Bến Tre Miền Dừa",
-    description: "Coconut Infused Rum, Orgeat, coconut milk, pineapple, sesame.",
-    price: 15,
+    id: "cq_cocktail_salted_lemon_mojito",
+    title: "Salted Lemon Mojito",
+    description:
+      "Stealth Vodka · Salted Lemon · Lime · Calamansi · Pandan Jasmine Tea · Soda · Mint",
+    notes: "Refreshing · Citrusy · Floral · Salty · Effervescent",
+    price: 17,
+  },
+  {
+    id: "cq_cocktail_spicy_firecracker_margarita",
+    title: "Spicy Firecracker Margarita",
+    description:
+      "Espolòn Tequila · Triple Sec · Jalapeño · Calamansi · Pink Guava Purée · Lime · Tajín · Ô Mai Plum Salt",
+    notes: "Bright · Tropical · Tart · Spicy · Salty",
+    price: 20,
+  },
+  {
+    id: "cq_cocktail_tamarind_whisky_sour",
+    title: "Tamarind Whisky Sour",
+    description:
+      "Lot 40 Rye Whisky · Disaronno · Tamarind · Lemon · Egg White · Caramel Fish Sauce",
+    notes: "Tangy · Nutty · Silky · Sweet & Sour · Savoury",
+    price: 18,
+  },
+  {
+    id: "cq_cocktail_o_mai_negroni",
+    title: "Ô Mai Negroni",
+    description:
+      "Saigon Baigur · Beefeater Gin · Woods Amaro · Cocchi Vermouth di Torino · Campari · Ô Mai Plum",
+    notes: "Bitter · Herbal · Spiced · Fruity · Spirit-Forward",
+    price: 21,
+  },
+  {
+    id: "cq_cocktail_pandan_gimlet_sour",
+    title: "Pandan Gimlet Sour",
+    description: "Pandan-Infused Arbutus & Beefeater Gin · Pandan Jasmine Tea · Lime · Egg White",
+    notes: "Floral · Fragrant · Tart · Silky · Refreshing",
+    price: 18,
   },
 ];
 
-export const signatureCocktailNote =
-  "Seasonal & Classic Cocktails available. Ask your server about our bartender's recommendations.";
+export const signatureCocktailNote = "Classic Cocktails available upon request.";

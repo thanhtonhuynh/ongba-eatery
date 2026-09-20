@@ -15,8 +15,7 @@ export type CoquitlamMenuCategoryKey =
   | "cq_signature_entree"
   | "cq_classic_noodle_soup"
   | "cq_rice_and_noodle"
-  | "cq_desserts"
-  | "cq_drinks";
+  | "cq_desserts";
 
 export type AllMenuCategoryKey = MenuCategoryKey | CoquitlamMenuCategoryKey;
 
