@@ -4,8 +4,8 @@ import { renderReservationRequestEmail } from "@/components/emails/reservation-r
 import { getMailTransporter, MAIL_FROM } from "@/lib/mailer";
 import { reservationSchema, type ReservationInput, type ReservationState } from "./types";
 
-// Reservation requests land in the restaurant inbox.
-const TO_EMAIL = "restaurant@ongbagroup.com";
+// Reservation requests land in the reservations inbox.
+const TO_EMAIL = "reservations@ongbagroup.com";
 
 export async function submitReservation(input: ReservationInput): Promise<ReservationState> {
   // Honeypot: real guests never fill this hidden field.
