@@ -13,151 +13,108 @@ export const signatureSetDisclaimer =
 
 export const signatureSetFor2 = {
   heading: "Signature Set",
-  priceLine: "For 2 — $50 per person",
-  firstCourse: {
-    label: "1st course — choice of one",
-    options: [
+  priceLine: "For 2 — $60 per person",
+  /** Each row is a "choose one" pair. */
+  starterChoices: [
+    [
       {
-        titleVi: "Ba Chỉ Bóp Sả Tắc",
-        titleEn: "Ông's Favourite Pork Belly",
-        description: "Crispy pork belly in lemongrass kumquat fish sauce glaze, crispy wonton chip.",
-        dietary: ["gluten"],
-      },
-      {
-        titleVi: "Cánh Gà Chiên Mắm",
-        titleEn: "Fish Sauce Glazed Chicken Wings",
-        description: "Lightly battered wings, fish sauce glaze.",
-      },
-    ] satisfies SignatureSetDish[],
-  },
-  secondCourse: {
-    label: "2nd course — choice of one",
-    options: [
-      {
-        titleVi: "Bò Tái Chanh Tartare",
-        titleEn: "Wagyu Butter Beef Tartare",
+        titleVi: "Gỏi Tôm",
+        titleEn: "Shrimp Ceviche Stack",
         description:
-          "Tajima wagyu beef, garlic fish sauce dressing, Dijon, shallot, mint, basil, Vietnamese coriander, toasted peanuts.\nServed with lotus chips.",
-        dietary: ["peanut"],
-      },
-      {
-        titleVi: "Nộm Xoài Đu Đủ Mực Nướng Sa tế",
-        titleEn: "Charred Sate Squid Papaya Salad",
-        description:
-          "Papaya, mango, cucumber, grape tomato, shallot, mint, Thai basil, peanut, crispy garlic.\nServed with rice paper cracker.",
-        dietary: ["peanut"],
-      },
-    ] satisfies SignatureSetDish[],
-  },
-  thirdCourse: {
-    label: "3rd course",
-    fixed: {
-      titleVi: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
-      titleEn: "Bà's Caramelized Pork Tomahawk",
-      description:
-        "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil.\nServed with mango cucumber salad (dưa góp) and sticky rice.",
-    } satisfies SignatureSetDish,
-    oneOfLabel: "And one of:",
-    oneOf: [
-      {
-        titleVi: "Bún Riêu Cua Lột",
-        titleEn: "Tomato Soft Shell Crab Vermicelli",
-        description:
-          "Sweet-sour tomato seafood broth, deep fry soft shell crab, field crab paste, shrimp, AAA rare beef, fried tofu, thin vermicelli.",
+          "Served with wonton chip.\nShrimp, onion, cucumber, tomato, avocado, Vietnamese lime garlic fish sauce dressing.",
         dietary: ["seafood"],
       },
       {
-        titleVi: "Bún Chả Hà Nội Ủ Khói",
-        titleEn: "Hà Nội Smoky Grilled Pork Vermicelli",
-        description:
-          "Smoked grilled pork jowl and pork patty, vermicelli, herbs, pickled papaya, umami fish sauce.",
+        titleVi: "Ba Chỉ Chiên Giòn Caesar Salad",
+        titleEn: "Crispy Pork Belly Caesar Salad",
+        description: "Five spices crispy pork belly, Romaine lettuce, Vietnamese Caesar dressing.",
       },
+    ],
+    [
       {
-        titleVi: "Mì Trứng Sốt Bò Kho",
-        titleEn: "Beef Ragu Pappardelle",
-        description:
-          "Five spices beef ragu, roasted grape tomato, pappardelle, sous-vide egg, parmesan, cilantro.",
+        titleVi: "Xíu Mại Cà Chua",
+        titleEn: "Tomato Meatball",
+        description: "Served with banh mi.\nTomato pork meatball. Topped with parmesan.",
         dietary: ["gluten"],
-      },
-    ] satisfies SignatureSetDish[],
-  },
-  dessertLine: "Choice of 1 dessert",
-};
-
-export const signatureSetFor4 = {
-  heading: "Signature Set",
-  priceLine: "For 4 — $50 per person",
-  firstCourse: {
-    included: [
-      {
-        titleVi: "Pate Nấm Truffle",
-        titleEn: "Truffle Duck Pate",
-        description: "Duck and truffle pâté, onion jam, toasted milk bread.",
-        dietary: ["gluten"],
-      },
-      {
-        titleVi: "Bò Tái Chanh Tartare",
-        titleEn: "Wagyu Butter Beef Tartare",
-        description:
-          "Tajima wagyu beef, garlic fish sauce dressing, Dijon, shallot, mint, basil, Vietnamese coriander, toasted peanuts.\nServed with lotus chips.",
-        dietary: ["peanut"],
       },
       {
         titleVi: "Vẹm Xanh Sốt Cà Ri Cốt Dừa",
         titleEn: "Coconut Curry Mussels",
-        description: "Mussels in coconut curry broth, fresh herbs, jalapeño.\nServed with bánh mì.",
-        dietary: ["gluten"],
+        description: "Served with banh mi.\nMussels in coconut curry broth, fresh herbs, jalapeño.",
+        dietary: ["seafood", "gluten"],
       },
-      {
-        titleVi: "Nộm Xoài Đu Đủ Mực Nướng Sa tế",
-        titleEn: "Charred Sate Squid Papaya Salad",
-        description:
-          "Papaya, mango, cucumber, grape tomato, shallot, mint, Thai basil, peanut, crispy garlic.\nServed with rice paper cracker.",
-        dietary: ["peanut"],
-      },
-    ] satisfies SignatureSetDish[],
-    choice: [
-      {
-        titleVi: "Cánh Gà Chiên Mắm",
-        titleEn: "Fish Sauce Glazed Chicken Wings",
-        description: "Lightly battered wings, fish sauce glaze.",
-      },
-      {
-        titleVi: "Đậu Phụ Tẩm Mỡ Hành",
-        titleEn: "Scallion Crispy Tofu",
-        description: "Crispy lemongrass tofu, scallion oil, jalapeño.",
-        dietary: ["vegetarian"],
-      },
-    ] satisfies SignatureSetDish[],
-  },
-  secondCourse: [
+    ],
+  ] satisfies SignatureSetDish[][],
+  entrees: [
     {
-      titleVi: "Xôi Sườn Heo Tomahawk Sốt Thịt Kho",
+      titleVi: "Sườn Heo Tomahawk Sốt Thịt Kho",
       titleEn: "Bà's Caramelized Pork Tomahawk",
       description:
-        "12oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil.\nServed with mango cucumber salad (dưa góp) and sticky rice.",
+        "Served with pickled cucumber (dưa góp) and jasmine rice.\n15oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil.",
+      dietary: ["gluten"],
     },
     {
-      titleVi: "Phở Tái Lăn",
-      titleEn: "Wok Smokey Beef Pho",
+      titleVi: "Chả Cá Lã Vọng",
+      titleEn: "Grilled Turmeric Fish",
       description:
-        "12 hours beef broth, Wok-seared AAA rare beef, beef brisket, beef balls, bone marrow, grated ginger.",
-      note: "Can be replaced by any Classic Noodle Soup from our menu.",
+        "Turmeric marinated fish served sizzling table side with fresh dill and scallion, accompanied by thin vermicelli, toasted peanut and traditional shrimp paste dipping sauce.",
+      dietary: ["seafood", "peanut"],
     },
   ] satisfies SignatureSetDish[],
-  thirdCourse: [
+  dessertLine: "Choice of 1",
+};
+
+export const signatureSetFor4 = {
+  heading: "Signature Set",
+  priceLine: "For 4 — $60 per person",
+  starters: [
     {
-      titleVi: "Bún Riêu Cua Lột",
-      titleEn: "Tomato Soft Shell Crab Vermicelli",
-      description:
-        "Sweet-sour tomato seafood broth, deep fry soft shell crab, field crab paste, shrimp, AAA rare beef, fried tofu, thin vermicelli.",
-      dietary: ["seafood"],
+      titleVi: "Xíu Mại Cà Chua",
+      titleEn: "Tomato Meatball",
+      description: "Served with banh mi.\nTomato pork meatball. Topped with parmesan.",
+      dietary: ["gluten"],
     },
     {
-      titleVi: "Bún Chả Hà Nội Ủ Khói",
-      titleEn: "Hà Nội Smoky Grilled Pork Vermicelli",
+      titleVi: "Bò Tái Chanh Tartare",
+      titleEn: "Wagyu Butter Beef Tartare",
       description:
-        "Smoked grilled pork jowl and pork patty, vermicelli, herbs, pickled papaya, umami fish sauce.",
+        "Served with taro chips.\nWagyu beef, garlic fish sauce dressing, Dijon, shallot, mint, basil, Vietnamese coriander, egg yolk, grated parmesan cheese, toasted peanuts.",
+      dietary: ["peanut"],
+    },
+    {
+      titleVi: "Vẹm Xanh Sốt Cà Ri Cốt Dừa",
+      titleEn: "Coconut Curry Mussels",
+      description: "Served with banh mi.\nMussels in coconut curry broth, fresh herbs, jalapeño.",
+      dietary: ["seafood", "gluten"],
+    },
+    {
+      titleVi: "Gỏi Tôm",
+      titleEn: "Shrimp Ceviche Stack",
+      description:
+        "Served with wonton chip.\nShrimp, onion, cucumber, tomato, avocado, Vietnamese lime garlic fish sauce dressing.",
+      dietary: ["seafood"],
+    },
+  ] satisfies SignatureSetDish[],
+  entrees: [
+    {
+      titleVi: "Sườn Heo Tomahawk Sốt Thịt Kho",
+      titleEn: "Bà's Caramelized Pork Tomahawk",
+      description:
+        "Served with pickled cucumber (dưa góp) and jasmine rice.\n15oz Johnston's Farm pork tomahawk, thịt kho caramel sauce, scallion oil.",
+      dietary: ["gluten"],
+    },
+    {
+      titleVi: "Phở Sườn Bò Wagyu",
+      titleEn: "Wagyu Beef Rib Pho",
+      description:
+        "Spice it up with Bun Bo Hue broth $2.\nSignature braised beef rib, wagyu rare beef, brisket, bone marrow, green onion, cilantro.",
+    },
+    {
+      titleVi: "Chả Cá Lã Vọng",
+      titleEn: "Grilled Turmeric Fish",
+      description:
+        "Turmeric marinated fish served sizzling table side with fresh dill and scallion, accompanied by thin vermicelli, toasted peanut and traditional shrimp paste dipping sauce.",
+      dietary: ["seafood", "peanut"],
     },
     {
       titleVi: "Mì Trứng Sốt Bò Kho",
@@ -167,4 +124,5 @@ export const signatureSetFor4 = {
       dietary: ["gluten"],
     },
   ] satisfies SignatureSetDish[],
+  dessertLine: "Choice of 2",
 };

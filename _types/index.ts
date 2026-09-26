@@ -9,12 +9,12 @@ export type MenuCategoryKey =
   | "desserts";
 
 export type CoquitlamMenuCategoryKey =
-  | "cq_signature_starter"
-  | "cq_classic_starter"
+  | "cq_starter"
+  | "cq_salad_rolls"
   | "cq_banh_mi"
-  | "cq_signature_entree"
-  | "cq_classic_noodle_soup"
   | "cq_rice_and_noodle"
+  | "cq_entree"
+  | "cq_classic_noodle_soup"
   | "cq_desserts";
 
 export type AllMenuCategoryKey = MenuCategoryKey | CoquitlamMenuCategoryKey;
@@ -78,13 +78,16 @@ export type MenuCategory = {
   addOns?: AddOnItem[];
 };
 
-export type CoquitlamMenuCategory = {
-  key: CoquitlamMenuCategoryKey;
+export type CoquitlamMenuSection = {
+  /** Anchor id for the section — prefix it with the menu (e.g. "cq_brunch_starter"). */
+  key: string;
   title: string;
   description?: string;
   /** Short availability constraint shown as a chip near the title (e.g. "Dine-in only", "Lunch only"). */
   note?: string;
   addOns?: AddOnItem[];
+  /** Ids of dishes in `coquitlamMenuItems`, in display order. */
+  itemIds: string[];
 };
 
 export type ProductCategory = {
