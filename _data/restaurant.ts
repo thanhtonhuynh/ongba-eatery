@@ -16,7 +16,7 @@ export const restaurant = {
     display: "+1 (604) 554-1166",
     href: "tel:+16045541166",
   },
-  email: "restaurant@ongbagroup.com",
+  email: "reservations@ongbagroup.com",
   reserveUrl:
     "https://www.opentable.ca/r/ongba-vietnamese-eatery-reservations-vancouver?restref=1489390&lang=en-CA&ot_source=Restaurant%20website",
   hours: {

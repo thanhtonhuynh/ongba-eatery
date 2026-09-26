@@ -41,7 +41,7 @@ export default function CoquitlamMenuPage() {
         <div className="mt-4 space-y-3 text-center text-sm sm:mt-6 sm:text-base">
           <p>We offer catering services for all occasions. Contact us for more details!</p>
           <p>
-            Email: <a href="mailto:restaurant@ongbagroup.com">restaurant@ongbagroup.com</a>
+            Email: <a href="mailto:reservations@ongbagroup.com">reservations@ongbagroup.com</a>
           </p>
           <p>
             Phone: <a href="tel:+16046205595">+1 (604) 620-5595</a>
