@@ -3,7 +3,7 @@ const navCategories = [
   { key: "cq_signature_for_4", title: "For 4" },
 ];
 
-/** Pill-style anchor nav — signature-set only. All-day / Desserts use the simple `MenuNav`. */
+/** Pill-style anchor nav — signature-set only. Brunch / Dinner use the simple `MenuNav`. */
 export function SignatureSetPillNav() {
   return (
     <nav className="font-bricolage-grotesque flex justify-center">

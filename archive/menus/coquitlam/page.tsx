@@ -1,5 +1,4 @@
-import { coquitlamCategories } from "@/_data/coquitlam-categories";
-import { coquitlamItemsByCategory } from "@/_data_access/coquitlam";
+import { brunchSections } from "@/_data_access/coquitlam";
 import { Container } from "@/components/container";
 import { HorizontalPatternBand } from "@/components/deco/horizontal-pattern-band";
 import { Typography } from "@/components/typography";
@@ -19,19 +18,19 @@ export default function CoquitlamMenuPage() {
 
       {/* Menu Nav */}
       <div className="border-gold/50 border p-3 sm:p-6">
-        <MenuNav categories={coquitlamCategories} />
+        <MenuNav categories={brunchSections} />
       </div>
 
       {/* Menu Sections */}
-      {coquitlamCategories.map((category, index) => (
+      {brunchSections.map((section, index) => (
         <MenuSection
-          key={category.key}
-          id={category.key}
+          key={section.key}
+          id={section.key}
           index={index}
-          title={category.title}
-          description={category.description}
-          items={coquitlamItemsByCategory[category.key] ?? []}
-          addOns={category.addOns}
+          title={section.title}
+          description={section.description}
+          items={section.items}
+          addOns={section.addOns}
         />
       ))}
 

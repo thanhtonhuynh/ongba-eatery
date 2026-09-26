@@ -1,8 +1,9 @@
 import { signatureSetFor2 } from "@/_data/coquitlam-signature-set";
+import { Fragment } from "react";
 import { Booklet } from "./booklet";
 import { ChoiceList } from "./choice-list";
 import { DessertSection } from "./dessert-section";
-import { FixedPlusOneOf } from "./fixed-plus-one-of";
+import { DishList } from "./dish-list";
 import { SectionHeader } from "./section-header";
 import { normalizeSignatureDish } from "./types";
 
@@ -13,18 +14,21 @@ export function For2Booklet() {
       <section>
         <SectionHeader title="Starter" />
         <div className="space-y-7">
-          <ChoiceList items={d.firstCourse.options.map(normalizeSignatureDish)} />
-          <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />
-          <ChoiceList items={d.secondCourse.options.map(normalizeSignatureDish)} />
+          {d.starterChoices.map((options, i) => (
+            <Fragment key={i}>
+              {i > 0 && <span aria-hidden="true" className="bg-gold/25 block h-px w-full" />}
+              <ChoiceList items={options.map(normalizeSignatureDish)} />
+            </Fragment>
+          ))}
         </div>
       </section>
 
       <section>
         <SectionHeader title="Entrée" />
-        <FixedPlusOneOf fixed={d.thirdCourse.fixed} options={d.thirdCourse.oneOf} />
+        <DishList items={d.entrees.map(normalizeSignatureDish)} />
       </section>
 
-      <DessertSection choice />
+      <DessertSection choiceLine={d.dessertLine} />
     </Booklet>
   );
 }

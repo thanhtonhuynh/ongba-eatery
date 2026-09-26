@@ -1,18 +1,18 @@
 import { MenuItem } from "@/_types";
 import { banhMi } from "./banh-mi";
 import { classicNoodleSoup } from "./classic-noodle-soup";
-import { classicStarter } from "./classic-starter";
 import { coquitlamDesserts } from "./desserts";
+import { entrees } from "./entrees";
 import { riceAndNoodle } from "./rice-and-noodle";
-import { signatureEntree } from "./signature-entree";
-import { signatureStarter } from "./signature-starter";
+import { saladRolls } from "./salad-rolls";
+import { starters } from "./starters";
 
 export const coquitlamMenuItems: MenuItem[] = [
-  ...signatureStarter,
-  ...classicStarter,
+  ...starters,
+  ...saladRolls,
   ...banhMi,
-  ...signatureEntree,
-  ...classicNoodleSoup,
   ...riceAndNoodle,
+  ...entrees,
+  ...classicNoodleSoup,
   ...coquitlamDesserts,
 ];
